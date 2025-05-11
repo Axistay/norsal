@@ -40,7 +40,7 @@ const MenuPage = () => {
       flex relative flex-col items-center cursor-pointer
       transform hover:scale-105 transition-transform duration-200
       rounded-lg overflow-hidden border-8 border-double ${category.border}
-      rounded-[40%]
+      rounded-[42%]
       w-40 h-40 
       sm:w-40 sm:h-40
       md:w-56 md:h-56
@@ -75,7 +75,7 @@ const MenuPage = () => {
       flex relative flex-col items-center cursor-pointer
       transform hover:scale-105 transition-transform duration-200
       rounded-lg overflow-hidden border-8 border-double ${category.border}
-      rounded-[40%]
+      rounded-[42%]
       w-40 h-40 
       sm:w-40 sm:h-40
       md:w-56 md:h-56
@@ -110,7 +110,7 @@ const MenuPage = () => {
       flex relative flex-col items-center cursor-pointer
       transform hover:scale-105 transition-transform duration-200
       rounded-lg overflow-hidden border-8 border-double ${category.border}
-      rounded-[40%]
+      rounded-[42%]
       w-40 h-40 
       sm:w-40 sm:h-40
       md:w-56 md:h-56
@@ -145,7 +145,7 @@ const MenuPage = () => {
       flex relative flex-col items-center cursor-pointer
       transform hover:scale-105 transition-transform duration-200
       rounded-lg overflow-hidden border-8 border-double ${category.border}
-      rounded-[40%]
+      rounded-[42%]
       w-40 h-40 
       sm:w-40 sm:h-40
       md:w-56 md:h-56
@@ -180,7 +180,7 @@ const MenuPage = () => {
       flex relative flex-col items-center cursor-pointer
       transform hover:scale-105 transition-transform duration-200
       rounded-lg overflow-hidden border-8 border-double ${category.border}
-      rounded-[40%]
+      rounded-[42%]
       w-40 h-40 
       sm:w-40 sm:h-40
       md:w-56 md:h-56
