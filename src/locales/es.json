@@ -1,0 +1,105 @@
+{
+  "app": {
+    "name": "Tasty Bites",
+    "welcome": "Welcome to Tasty Bites",
+    "tagline": "Delicious food delivered fast"
+  },
+  "home": {
+    "search": "Search for food...",
+    "currentLocation": "Current Location",
+    "offers": "Offers",
+    "pickup": "Pick-up",
+    "delivery": "Delivery",
+    "vouchers": "Vouchers",
+    "seeAll": "See All",
+    "orderNow": "Order Now",
+    "discountMessage": "Don't Miss Out {{percent}}% Off Today.",
+    "freeDelivery": "Free Delivery",
+    "getStarted": "Get Started"
+  },
+  "about": {
+    "title": "Our Story",
+    "welcome": "Welcome To Beach Club",
+    "description1": "Nestled in Marina du Marchica, the Beach Club is a Café-Restaurant that offers a friendly setting, ideal for working, relaxing, and cocooning with family or friends.",
+    "description2": "It was created with care and attentive design to satisfy both young and old (play area, Mosque...). Its strategic location in the center of the prestigious Marchica project offers a panoramic view, overlooking the golf course, the magnificent beach of Nador, and its beautiful mountains. Its gastronomic menu offers a variety of cuisine prepared with love.",
+    "closing": "We wish you a pleasant time in our company.",
+    "location": "Location",
+    "contact": "Contact",
+    "hours": "Opening Hours",
+    "hours_value": "Daily: 9:00 AM - 11:00 PM",
+    "email": "Email"
+  },
+  "categories": {
+    "our_menu": "Our Menu",
+    "burger": "Burgers",
+    "pizza": "Pizza",
+    "pasta": "Pasta",
+    "salad": "Salads",
+    "dessert": "Desserts",
+    "drinks": "Drinks",
+    "chicken": "Chicken",
+    "seafood": "Seafood"
+  },
+  "types": {
+    "classic_burgers": "Classic Burgers",
+    "chicken_burgers": "Chicken Burgers",
+    "specialty_burgers": "Specialty Burgers",
+    "traditional_pizza": "Traditional Pizza",
+    "specialty_pizza": "Specialty Pizza",
+    "spaghetti": "Spaghetti",
+    "penne": "Penne",
+    "lasagna": "Lasagna",
+    "risotto": "Risotto",
+    "fresh_salads": "Fresh Salads",
+    "protein_salads": "Protein Salads",
+    "cakes": "Cakes",
+    "ice_cream": "Ice Cream",
+    "pastries": "Pastries",
+    "hot_drinks": "Hot Drinks",
+    "cold_drinks": "Cold Drinks",
+    "smoothies": "Smoothies",
+    "cocktails": "Cocktails",
+    "fried_chicken": "Fried Chicken",
+    "grilled_chicken": "Grilled Chicken",
+    "fish": "Fish",
+    "shellfish": "Shellfish"
+  },
+  "menu": {
+    "searchInCategory": "Search in {{category}}...",
+    "addToCart": "Add to cart",
+    "save": "Save",
+    "price": "Price",
+    "calories": "Calories",
+    "protein": "Protein",
+    "fat": "Fat",
+    "variation": "Variation",
+    "reviews": "Reviews"
+  },
+  "search": {
+    "results": "Search Results",
+    "no_results": "No results found",
+    "categories": "Categories",
+    "view_all": "View all {{count}} results"
+  },
+  "cart": {
+    "title": "Your Cart",
+    "empty": "Your cart is empty",
+    "total": "Total",
+    "checkout": "Checkout",
+    "remove": "Remove",
+    "continueShopping": "Continue Shopping"
+  },
+  "language": {
+    "title": "Select Language",
+    "english": "English",
+    "french": "French",
+    "arabic": "Arabic"
+  },
+  "footer": {
+    "home": "Home",
+    "menu": "Menu",
+    "language": "Language",
+    "cart": "Cart",
+    "about": "About"
+  }
+}

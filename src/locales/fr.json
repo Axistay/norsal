@@ -1,0 +1,105 @@
+{
+  "app": {
+    "name": "Tasty Bites",
+    "welcome": "Bienvenue chez Tasty Bites",
+    "tagline": "Nourriture délicieuse livrée rapidement"
+  },
+  "home": {
+    "search": "Rechercher de la nourriture...",
+    "currentLocation": "Emplacement actuel",
+    "offers": "Offres",
+    "pickup": "À emporter",
+    "delivery": "Livraison",
+    "vouchers": "Bons",
+    "seeAll": "Voir tout",
+    "orderNow": "Commander maintenant",
+    "discountMessage": "Ne manquez pas {{percent}}% de réduction aujourd'hui.",
+    "freeDelivery": "Livraison gratuite",
+    "getStarted": "Commencer"
+  },
+  "about": {
+    "title": "Notre Histoire",
+    "welcome": "Bienvenue au Beach Club",
+    "description1": "Niché à la Marina du Marchica, le Beach Club est un Café-Restaurant qui offre un cadre convivial, idéal pour travailler, se détendre et se cocooner en famille ou entre amis.",
+    "description2": "Il a été créé avec soin et un design attentif pour satisfaire petit et grand (espace de jeu, Mosquée...) Sa situation stratégique au centre du prestigieux projet Marchica, offre une vue panoramique, qui donne sur le golf, la magnifique plage de Nador et ses belles montagnes. Sa carte gastronomique, quant à elle, offre une variété culinaire concoctée avec amour.",
+    "closing": "Nous vous souhaitons de passer un agréable moment en notre compagnie.",
+    "location": "Localisation",
+    "contact": "Contact",
+    "hours": "Heures d'ouverture",
+    "hours_value": "Tous les jours: 9h00 - 23h00",
+    "email": "Email"
+  },
+  "categories": {
+    "our_menu": "Notre Menu",
+    "burger": "Hamburgers",
+    "pizza": "Pizza",
+    "pasta": "Pâtes",
+    "salad": "Salades",
+    "dessert": "Desserts",
+    "drinks": "Boissons",
+    "chicken": "Poulet",
+    "seafood": "Fruits de mer"
+  },
+  "types": {
+    "classic_burgers": "Burgers Classiques",
+    "chicken_burgers": "Burgers au Poulet",
+    "specialty_burgers": "Burgers Spéciaux",
+    "traditional_pizza": "Pizza Traditionnelle",
+    "specialty_pizza": "Pizza Spéciale",
+    "spaghetti": "Spaghetti",
+    "penne": "Penne",
+    "lasagna": "Lasagne",
+    "risotto": "Risotto",
+    "fresh_salads": "Salades Fraîches",
+    "protein_salads": "Salades Protéinées",
+    "cakes": "Gâteaux",
+    "ice_cream": "Glaces",
+    "pastries": "Pâtisseries",
+    "hot_drinks": "Boissons Chaudes",
+    "cold_drinks": "Boissons Fraîches",
+    "smoothies": "Smoothies",
+    "cocktails": "Cocktails",
+    "fried_chicken": "Poulet Frit",
+    "grilled_chicken": "Poulet Grillé",
+    "fish": "Poisson",
+    "shellfish": "Fruits de Mer"
+  },
+  "menu": {
+    "searchInCategory": "Rechercher dans {{category}}...",
+    "addToCart": "Ajouter au panier",
+    "save": "Sauvegarder",
+    "price": "Prix",
+    "calories": "Calories",
+    "protein": "Protéines",
+    "fat": "Matières grasses",
+    "variation": "Variation",
+    "reviews": "Avis"
+  },
+  "search": {
+    "results": "Résultats de recherche",
+    "no_results": "Aucun résultat trouvé",
+    "categories": "Catégories",
+    "view_all": "Voir tous les {{count}} résultats"
+  },
+  "cart": {
+    "title": "Votre Panier",
+    "empty": "Votre panier est vide",
+    "total": "Total",
+    "checkout": "Payer",
+    "remove": "Supprimer",
+    "continueShopping": "Continuer vos achats"
+  },
+  "language": {
+    "title": "Sélectionner la langue",
+    "english": "Anglais",
+    "french": "Français",
+    "arabic": "Arabe"
+  },
+  "footer": {
+    "home": "Accueil",
+    "menu": "Menu",
+    "language": "Langue",
+    "cart": "Panier",
+    "about": "À propos"
+  }
+}
