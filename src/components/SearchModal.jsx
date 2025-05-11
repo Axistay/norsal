@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { useNavigate } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 import { useTranslation } from "react-i18next"
 import { useSelector } from "react-redux"
 import { X, Search } from "lucide-react"
@@ -43,13 +43,13 @@ const SearchModal = ({ isOpen, onClose, searchTerm }) => {
     setResults(filteredResults.slice(0, 5)) // Show only 5 results
   }, [searchTerm, plates])
 
+  const {cityId}= useParams()
   const handlePlateClick = (id) => {
-    navigate(`/plate/${id}`)
+    navigate(`/${cityId}/menu/category/plate/${id}`)
     onClose()
   }
-
   const handleCategoryClick = (categoryId) => {
-    navigate(`/category/${categoryId}`)
+    navigate(`/${cityId}/menu/category/${categoryId}`)
     onClose()
   }
 

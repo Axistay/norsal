@@ -19,6 +19,7 @@ import MenuModal from "./pages/MenuPage"
 import CitySelection from "./pages"
 import { loadMenuData } from "./utils/loadMenuData"
 import { setInitialMenuData } from "./redux/slices/menuSlice"
+import SimplifiedCitySelector from "./components/ModuleSelectCity"
 
    // Restaurant data for our 3 cities
    const cities = [
@@ -88,18 +89,22 @@ useEffect(() => {
   initMenu();
 }, []);
 
-  const [isMenuModalOpen, setIsMenuModalOpen] = useState(true)
-  
   const location = useLocation()
  
   const storedCityId = localStorage.getItem('selectedCity');
 
-
+  if ((!storedCityId || storedCityId === 'select') && location.pathname !== "/")  {
+    return (
+      <>
+        <SimplifiedCitySelector cities={cities} />
+      </>
+    )
+  }
   const showBackButton = location.pathname !== "/" && location.pathname !== `/${storedCityId}/menu`
 
   return (
-    <div className="flex flex-col min-h-screen w-full md:items-center md:justify-center bg-gradient-to-tr from-[#ffd699] via-[#008080] to-[#004d4d] ">
-      <div className="flex-grow pb-16 md:max-w-5xl w-full">
+    <div className="flex flex-col  min-h-screen h-full md:items-center md:justify-center bg-gradient-to-tr from-[#ffd699] via-[#008080] to-[#004d4d] ">
+      <div className="flex-grow md:ps-20 lg:ps-0 pb-16 md:max-w-5xl w-full">
         {showBackButton && <BackButton />}
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>

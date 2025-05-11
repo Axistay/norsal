@@ -14,9 +14,10 @@ const SearchBar = ({ placeholder, className = "", onSearch, border }) => {
   const handleSearch = (e) => {
     const value = e.target.value
     setSearchValue(value)
-    dispatch(setSearchTerm(value))
-    if (onSearch) {
-      onSearch(value)
+
+      dispatch(setSearchTerm(value))
+      if (onSearch) {
+        onSearch(value)
     }
   }
 

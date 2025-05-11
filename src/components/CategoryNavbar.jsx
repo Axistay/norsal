@@ -33,9 +33,9 @@ const CategoryNavbar = ({ types, activeType, setActiveType, bg='bg-teal-500' }) 
     <motion.div
       initial={{ y: -50, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      className={`fixed top-0 ps-12 left-0 right-0 h-[72px] pt-2  rounded-b-xl z-20 shadow-md ${bg} shadow-xl shadow-teal-900 `}
+      className={`fixed top-0 ps-12 left-0  ${langused === 'ar' ? 'md:left-0 right-0 ' : 'md:left-20  l right-0 '} h-[72px] pt-2  rounded-b-xl  z-20   bg-[#eec085] shadow-xl shadow-teal-900 `}
     >
-      <div ref={navbarRef} className="flex overflow-x-auto py-3 px-4 space-x-4 hide-scrollbar">
+      <div ref={navbarRef} className="flex overflow-x-auto py-3 px-4 gap-4 hide-scrollbar">
         {types.map((type) => (
           <button
             key={type.id}

@@ -91,7 +91,7 @@ export default function CityGrid({ cities }) {
                                 disabled={!city.id}
                                 aria-label={`Select ${city.name[langused]}`}
                             >
-                                <div className="relative h-60">
+                                <div className="relative h-48 md:60">
                                     <img
                                         src={city.image}
                                         alt={`${city.name[langused]} city view`}

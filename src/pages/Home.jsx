@@ -20,14 +20,7 @@ import SimplifiedCitySelector from "../components/ModuleSelectCity"
 
 const Home = ({ cities }) => {
   const { cityId } = useParams();
-  const storedCityId = localStorage.getItem('selectedCity');
-  if (!storedCityId || storedCityId === 'select') {
-    return (
-      <>
-        <SimplifiedCitySelector cities={cities} />
-      </>
-    )
-  }
+  
 
 
   const [city, setCity] = useState({});
@@ -84,7 +77,8 @@ const Home = ({ cities }) => {
 
         <div className="text-white my-6">
           <div className="flex items-center flex-col">
-            <h2 className="text-xl font-bold">{t('app.welcome')} <span className={`text-sm ${city?.bg} py-1 px-2 rounded-xl`} >{city?.name && city?.name[langused]}</span>   </h2>
+            <h2 className="text-xl font-bold">{t('app.welcome')}   </h2>
+            <span className={`text-sm ${city?.bg} py-1 px-2 rounded-xl`} >{city?.name && city?.name[langused]}</span> 
             <p>{t('home.welcity') }</p>
           </div>
         </div>
@@ -103,7 +97,7 @@ const Home = ({ cities }) => {
 
       {/* Search Modal */}
       {
-        isSearchModalOpen && <div className={`absolute top-[310px] z-50 border-4 rounded-2xl  mx-4 ${city?.border}`}>
+        isSearchModalOpen && <div className={`absolute top-[340px] z-50 border-4 rounded-2xl  mx-4 ${city?.border}`}>
           <SearchModal isOpen={isSearchModalOpen} onClose={() => setIsSearchModalOpen(false)} searchTerm={searchQuery} />
 
         </div>
