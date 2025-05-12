@@ -1,20 +1,32 @@
 {
   "app": {
     "welcome": "مرحبًا بك لدى ",
+    "welcometo": "مرحبًا بك في  ",
     "tagline": "طعام لذيذ يتم توصيله بسرعة"
   },
   "home": {
     "search": "ابحث عن الطعام...",
     "welcity": "استرخِ واختر ما يناسبك."
   }, 
+  "menu": {
+  "searchInCategory": "ابحث في {{category}}...",
+  "addToCart": "أضف إلى السلة",
+  "inToCart": "موجود في سلتك",
+  "price": "السعر",
+  "calories": "السعرات الحرارية",
+  "protein": "البروتين",
+  "fat": "الدهون",
+  "variation": "النوع"
+},
   "cart": {
-    "title": "سلة التسوق",
-    "empty": "سلة التسوق فارغة",
-    "total": "المجموع",
-    "checkout": "إتمام الشراء",
-    "remove": "إزالة",
-    "continueShopping": "مواصلة التسوق"
-  },
+  "title": "طلبك",
+  "empty": "لا توجد عناصر في الطلب حالياً",
+  "total": "الإجمالي",
+  "checkout": "تأكيد الطلب",
+  "remove": "حذف",
+  "continueShopping": "العودة للقائمة"
+}
+,
   "language": {
     "title": "اختر اللغة",
     "english": "الإنجليزية",

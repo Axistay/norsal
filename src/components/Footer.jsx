@@ -7,6 +7,7 @@ import { Home, Menu, Globe, ShoppingCart } from "lucide-react"
 const Footer = () => {
   const [city, setCity] = useState("select")
   const location = useLocation()
+  const path = location.pathname
 
   useEffect(() => {
     const savedCity = localStorage.getItem("selectedCity")
@@ -39,13 +40,13 @@ const Footer = () => {
             to={`/${city}/menu`}
             className={({ isActive }) =>
               `relative flex items-center justify-center p-2 rounded-full transition-all duration-300 ease-in-out flex-1  ${
-                isActive ? "text-black" : "text-gray-400 hover:text-gray-200"
+                path.includes('menu') ? "text-black" : "text-gray-400 hover:text-gray-200"
               }`
             }
           >
             {({ isActive }) => (
               <>
-                {isActive && <span className="absolute inset-0 bg-[#ffd699] rounded-full z-10"></span>}
+                {path.includes('menu') && <span className="absolute inset-0 bg-[#ffd699] rounded-full z-10"></span>}
                 <Menu size={20} className="relative z-10" />
               </>
             )}

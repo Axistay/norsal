@@ -5,17 +5,21 @@ import { useTranslation } from "react-i18next"
 import { useSelector, useDispatch } from "react-redux"
 import { Star, ShoppingCart } from "lucide-react"
 import { motion } from "framer-motion"
-
+import { useMemo } from "react"; // Add this import
 import { addToCart } from "../redux/slices/cartSlice"
 
 const PlateDetail = () => {
+
   const { id } = useParams()
   const { t, i18n } = useTranslation()
   const langused = i18n.language;
   const dispatch = useDispatch()
 
   const { plates } = useSelector((state) => state.menu)
-  const plate = plates.find((p) => p.id === Number.parseInt(id))
+  const plate = plates.find((p) => p?.id === Number.parseInt(id))
+  const cartItems = useSelector((state) => state.cart.items);
+  const isInCart = useMemo(() => cartItems.some((item) => item?.id === plate?.id), [cartItems, plate?.id]);
+
 
   if (!plate) return <div>Loading...</div>
 
@@ -35,9 +39,11 @@ const PlateDetail = () => {
         </div>
 
         <div className="mt-4">
-          <h1 className="text-2xl font-bold text-teal-50">{plate.title[langused]}</h1>
+          <div className="relative ps-2 shadow-2xl shadow-yellow-200 bg-teal-300 rounded-md ">
+          <h1 className="text-2xl font-bold text-teal-900">{plate.title[langused]}</h1>
+          <div className="absolute h-1 w-20 bg-teal-100  top-8 left-2"></div>
+          </div>
 
-          
 
           <p className="mt-4 text-gray-100">{plate.description[langused]}</p>
 
@@ -103,9 +109,13 @@ const PlateDetail = () => {
             <h3 className="font-semibold text-lg">{t("menu.price")}</h3>
             <div className="flex justify-between items-center mt-2">
               <span className="text-2xl font-bold">{plate.price.toFixed(2)} MAD</span>
-              <button onClick={handleAddToCart} className="bg-teal-950 text-teal-100 p-4 text-lg  rounded-full  flex items-center">
+              <button
+                onClick={handleAddToCart}
+                className={`p-4 text-sm rounded-full flex items-center transition-colors duration-300 ${isInCart ? "bg-green-600 text-white" : "bg-teal-950 text-teal-100"
+                  }`}
+              >
                 <ShoppingCart className="w-5 h-5 mr-2" />
-                {t("menu.addToCart")}
+                {isInCart ? t("menu.inToCart") : t("menu.addToCart")}
               </button>
             </div>
           </div>

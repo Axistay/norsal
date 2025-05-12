@@ -9,7 +9,6 @@ import { AnimatePresence } from "framer-motion"
 import Home from "./pages/Home"
 import CategoryMenu from "./pages/CategoryMenu"
 import PlateDetail from "./pages/PlateDetail"
-import Cart from "./pages/Cart"
 import Language from "./pages/Language"
 
 // Components
@@ -20,6 +19,9 @@ import CitySelection from "./pages"
 import { loadMenuData } from "./utils/loadMenuData"
 import { setInitialMenuData } from "./redux/slices/menuSlice"
 import SimplifiedCitySelector from "./components/ModuleSelectCity"
+import CartSummary from "./pages/cart-summary"
+import Cart from "./pages/Cart"
+import CartQRCode from "./components/qrcode-generate"
 
    // Restaurant data for our 3 cities
    const cities = [
@@ -104,7 +106,7 @@ useEffect(() => {
 
   return (
     <div className="flex flex-col  min-h-screen h-full md:items-center md:justify-center bg-gradient-to-tr from-[#ffd699] via-[#008080] to-[#004d4d] ">
-      <div className="flex-grow md:ps-20 lg:ps-0 pb-16 md:max-w-5xl w-full">
+      <div className="flex-grow md:ps-20 lg:ps-0 pb-16 md:pb-0 md:max-w-5xl w-full">
         {showBackButton && <BackButton />}
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
@@ -114,6 +116,9 @@ useEffect(() => {
             <Route path="/:cityId/menu/category/plate/:id" element={<PlateDetail />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/language" element={<Language />} />
+            <Route path="/summary" element={<CartSummary />} />
+            <Route path="/cart-qr" element={<CartQRCode />} />
+
           </Routes>
         </AnimatePresence>
       </div>

@@ -4,17 +4,19 @@ import React from "react"
 import { useTranslation } from "react-i18next"
 import { Link, useParams } from "react-router-dom"
 import { useDispatch } from "react-redux"
-import { Heart } from "lucide-react"
-import { motion } from "framer-motion"
+import { Eye, EyeOff, Heart } from "lucide-react"
+import { motion, AnimatePresence  } from "framer-motion"
 import { addToCart } from "../redux/slices/cartSlice"
+import EyeBlinkButton from "./eye/eye"
 
 const PlateCard = ({ plate }) => {
   const { t, i18n } = useTranslation()
   const langused = i18n.language;
   const dispatch = useDispatch()
   const [isSaved, setIsSaved] = React.useState(false)
+  const [isVisible, setIsVisible] = React.useState(false);
 
-  const {cityId} = useParams()
+  const { cityId } = useParams()
 
   const handleSave = (e) => {
     e.preventDefault()
@@ -38,9 +40,10 @@ const PlateCard = ({ plate }) => {
       <Link to={`/${cityId}/menu/category/plate/${plate.id}`} className="block">
         <div className="relative">
           <img src={plate.image || "/placeholder.svg"} alt={plate.title[langused]} className="w-full h-48 object-cover" />
-          <button onClick={handleAddToCart} className="absolute top-2 right-2 bg-white p-2 rounded-full shadow-md">
-            <Heart size={20} className={isSaved ? "fill-red-500 text-red-500" : "text-gray-400"} />
-          </button>
+          <div className="absolute top-2 right-2 shadow-xl">
+          {
+            <EyeBlinkButton />
+          } </div>
         </div>
         <div className="p-4">
           <h3 className="font-bold text-lg">{plate.title[langused]}</h3>
@@ -57,4 +60,4 @@ const PlateCard = ({ plate }) => {
   )
 }
 
-export default PlateCard
+export default PlateCard;

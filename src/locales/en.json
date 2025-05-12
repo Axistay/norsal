@@ -2,6 +2,7 @@
   "app": {
     "name": "Tasty Bites",
     "welcome": "Welcome to",
+    "welcometo" : "Welcome to",
     "tagline": "Delicious food delivered fast"
   },
   "home": {
@@ -68,13 +69,12 @@
   "menu": {
     "searchInCategory": "Search in {{category}}...",
     "addToCart": "Add to cart",
-    "save": "Save",
+    "inToCart": "Is in your cart",
     "price": "Price",
     "calories": "Calories",
     "protein": "Protein",
     "fat": "Fat",
-    "variation": "Variation",
-    "reviews": "Reviews"
+    "variation": "Variation"
   },
   "search": {
     "results": "Search Results",
@@ -83,13 +83,14 @@
     "view_all": "View all {{count}} results"
   },
   "cart": {
-    "title": "Your Cart",
-    "empty": "Your cart is empty",
-    "total": "Total",
-    "checkout": "Checkout",
-    "remove": "Remove",
-    "continueShopping": "Continue Shopping"
-  },
+  "title": "Your Order",
+  "empty": "Your order is currently empty",
+  "total": "Total",
+  "checkout": "Place Order",
+  "remove": "Remove",
+  "continueShopping": "Back to Menu"
+}
+,
   "language": {
     "title": "Select Language",
     "english": "English",

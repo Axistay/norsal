@@ -12,11 +12,11 @@ const BackButton = () => {
   return (
     <button
       onClick={() => navigate(-1)}
-      className={`fixed top-4  ${langused === 'ar' ? 'right-4 md:right-24' : ' left-4 md:left-24'} z-50 bg-teal-600 rounded-full p-2 shadow-md shodow-xl shadow-black hover:bg-teal-500 transition-all duration-300`}
+      className={`fixed top-4  ${langused === 'ar' ? 'right-4 md:right-24' : ' left-4 md:left-24'} z-50 bg-[#ffd699]  rounded-full p-2 shadow-md shodow-xl shadow-black hover:bg-[#ddb16e]  transition-all duration-300`}
       aria-label="Go back"
     >
       {
-        langused === 'ar' ?  <ChevronRight size={24} className="text-white" /> :  <ChevronLeft size={24} className="text-white" />
+        langused === 'ar' ?  <ChevronRight size={24} className="text-black" /> :  <ChevronLeft size={24} className="text-black" />
       }
      
     </button>

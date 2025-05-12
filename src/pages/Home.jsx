@@ -77,9 +77,9 @@ const Home = ({ cities }) => {
 
         <div className="text-white my-6">
           <div className="flex items-center flex-col">
-            <h2 className="text-xl font-bold">{t('app.welcome')}   </h2>
-            <span className={`text-sm ${city?.bg} py-1 px-2 rounded-xl`} >{city?.name && city?.name[langused]}</span> 
-            <p>{t('home.welcity') }</p>
+            <h2 className="text-xl font-bold">{t('app.welcometo')}   </h2>
+            <span className={`text-xl ${city?.bg} bg-opacity-40 py-1 px-2 rounded-full w-2/5 text-center`} >{city?.name && city?.name[langused]}</span> 
+            <p className="text-md">{t('home.welcity') }</p>
           </div>
         </div>
         <SearchBar  border={city?.border} onSearch={handleSearch} />

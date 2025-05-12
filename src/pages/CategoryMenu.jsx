@@ -74,7 +74,7 @@ const CategoryMenu = () => {
             alt={currentCategory.name[langused]}
             className="w-full h-40 object-cover rounded-xl"
           />
-          <div className="absolute inset-0 bg-black/30 rounded-xl flex items-center justify-center">
+          <div className="absolute inset-0 bg-black/50 rounded-xl flex items-center justify-center">
             <h1 className="text-white text-3xl font-bold">{currentCategory.name[langused]}</h1>
           </div>
         </div>
@@ -88,7 +88,7 @@ const CategoryMenu = () => {
         <div className="pt-16">
           {categoryTypes?.map((type) => (
             <div key={type.id} id={`type-${type.id}`} className="mb-10">
-              <h2 className="font-bold text-xl mb-4">{type.name[langused]}</h2>
+              <h2 className="font-bold text-xl mb-4 bg-teal-400 text-center rounded">{type.name[langused]}</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {typedPlates[type.id]?.map((plate) => (
                   <PlateCard key={plate.id} plate={plate} />
