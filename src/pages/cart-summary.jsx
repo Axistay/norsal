@@ -34,7 +34,7 @@ const CartSummary = () => {
   }
 
   return (
-    <div className="p-4 max-w-5xl mx-auto">
+    <div className="p-4 max-w-5xl mx-auto pt-20 md">
       <h1 className="text-2xl font-bold mb-4">{t("Cart Summary")}</h1>
       <p className="mb-6 text-gray-100" >
         {t("City ID")}: <strong>{data.cityId}</strong>
