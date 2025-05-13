@@ -83,12 +83,8 @@ const PlateDetail = ({ dataPlate, onClose }) => {
     exit: { 
       x: 100, // moves the element to the right
       opacity: 0,
-      scale: 0.8,
-      transition: {
-        type: "spring",
-        damping: 10,
-        stiffness: 100
-      }
+      scale: 0.1,
+     
     }
     
   }
