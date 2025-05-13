@@ -117,7 +117,7 @@ useEffect(() => {
             <Route path="/cart" element={<Cart />} />
             <Route path="/language" element={<Language />} />
             <Route path="/summary" element={<CartSummary />} />
-            <Route path="/cart-qr" element={<CartQRCode />} />
+            <Route path="/cart/qr" element={<CartQRCode />} />
 
           </Routes>
         </AnimatePresence>

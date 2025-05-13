@@ -26,7 +26,7 @@ const Cart = () => {
 
  const cityId = localStorage.getItem('selectedCity')
   const handleGenerateQRCode = () => {
-    navigate("/cart-qr", {
+    navigate("/cart/qr", {
       state: {
         // cityId : cityId,
         items: items.map((item) => ({

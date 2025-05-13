@@ -1,22 +1,23 @@
 "use client"
 
-import React from "react"
+import React, { useState } from "react"
 import { useTranslation } from "react-i18next"
-import { Link, useParams } from "react-router-dom"
 import { useDispatch } from "react-redux"
-import { Eye, EyeOff, Heart } from "lucide-react"
-import { motion, AnimatePresence  } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 import { addToCart } from "../redux/slices/cartSlice"
-import EyeBlinkButton from "./eye/eye"
+import PlateDetail from "../pages/PlateDetail"
+import { Expand } from "lucide-react"
 
 const PlateCard = ({ plate }) => {
   const { t, i18n } = useTranslation()
-  const langused = i18n.language;
+  const langused = i18n.language
   const dispatch = useDispatch()
-  const [isSaved, setIsSaved] = React.useState(false)
-  const [isVisible, setIsVisible] = React.useState(false);
+  const [showDetail, setShowDetail] = useState(false)
+  const [isSaved, setIsSaved] = useState(false)
 
-  const { cityId } = useParams()
+  const toggle = () => {
+    setShowDetail(!showDetail)
+  }
 
   const handleSave = (e) => {
     e.preventDefault()
@@ -37,27 +38,38 @@ const PlateCard = ({ plate }) => {
       transition={{ duration: 0.3 }}
       className="card mb-4"
     >
-      <Link to={`/${cityId}/menu/category/plate/${plate.id}`} className="block">
+      <div
+        onClick={toggle}
+        className="block cursor-pointer"
+      >
         <div className="relative">
-          <img src={plate.image || "/placeholder.svg"} alt={plate.title[langused]} className="w-full h-48 object-cover" />
+          <img 
+            src={plate.image || "/placeholder.svg"} 
+            alt={plate.title[langused]} 
+            className="w-full h-48 object-cover" 
+          />
           <div className="absolute top-2 right-2 shadow-xl">
-          {
-            <EyeBlinkButton />
-          } </div>
+          </div>
         </div>
         <div className="p-4">
           <h3 className="font-bold text-lg">{plate.title[langused]}</h3>
           <p className="text-gray-600 text-sm mt-1 line-clamp-2">{plate.description[langused]}</p>
           <div className="flex justify-between items-center mt-4">
             <span className="font-bold text-lg">{plate.price.toFixed(2)} MAD</span>
-            {/* <button onClick={handleAddToCart} className="btn-primary text-sm py-1.5">
-              {t("menu.save")}
-            </button> */}
+            <button 
+              className="btn-primary text-sm py-1.5"
+            >
+              <Expand />
+            </button>
           </div>
         </div>
-      </Link>
+      </div>
+      
+      <AnimatePresence>
+        {showDetail && <PlateDetail dataPlate={plate} onClose={setShowDetail} />}
+      </AnimatePresence>
     </motion.div>
   )
 }
 
-export default PlateCard;
+export default PlateCard

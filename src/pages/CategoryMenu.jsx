@@ -88,8 +88,8 @@ const CategoryMenu = () => {
         <div className="pt-16">
           {categoryTypes?.map((type) => (
             <div key={type.id} id={`type-${type.id}`} className="mb-10">
-              <h2 className="font-bold text-xl mb-4 bg-teal-400 text-center rounded">{type.name[langused]}</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <h2 className="font-bold text-xl mb-4 bg-[#ffd699] text-center rounded">{type.name[langused]}</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {typedPlates[type.id]?.map((plate) => (
                   <PlateCard key={plate.id} plate={plate} />
                 ))}

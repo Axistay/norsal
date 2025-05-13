@@ -2,7 +2,7 @@ import { useLocation } from "react-router-dom";
 import { menuData } from "../data/mockData1";
 import { useTranslation } from "react-i18next";
 
-const allData = menuData;
+const allData = menuData ;
 
 const CartSummary = () => {
   const { t, i18n } = useTranslation();

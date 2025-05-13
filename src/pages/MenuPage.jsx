@@ -35,58 +35,28 @@ const MenuPage = () => {
           <div className={`grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-4 lg:gap-8 mt-12 sm:mt-16 pt-2 ${langused === 'ar' ? 'text-right' : 'text-left'}`}>
           
 
-            {categories.map((category) => (
-              <div
-                key={category.id}
-                className={`
-      flex relative flex-col items-center cursor-pointer
-      transform hover:scale-105 transition-transform duration-200
-      rounded-lg overflow-hidden border-8 border-double ${category.border}
-      
-      w-40 h-40 
-      sm:w-40 sm:h-40
-      md:w-56 md:h-56
-      lg:w-64 lg:h-64
-      shadow-lg mb-3 sm:mb-4
-      ${langused === 'ar' ? 'flex-row-reverse' : 'flex-row'}
-    `}
-                style={{
-                  backgroundImage: `url(${category.image})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                  backgroundRepeat: 'no-repeat',
-                  borderRadius: '42%'
-                }}
-                onClick={() => handleCategoryClick(category.id)}
-              >
-                <p className={`
-      text-center absolute top-2 w-full
-      font-semibold py-1.5 sm:py-2 text-white ${category.color}
-      text-xs sm:text-sm md:text-base lg:text-lg
-    `}>
-                  {category.name[langused]}
-                </p>
-                {/* This empty div ensures the card maintains its height */}
-                <div className="w-full h-full" />
-              </div>
-            ))}
+            
+
+            
+
+            
 
             {categories.map((category) => (
               <div
                 key={category.id}
                 className={`
-      flex relative flex-col items-center cursor-pointer
-      transform hover:scale-105 transition-transform duration-200
-      rounded-lg overflow-hidden border-8 border-double ${category.border}
-      
-      w-40 h-40 
-      sm:w-40 sm:h-40
-      md:w-56 md:h-56
-      lg:w-64 lg:h-64
-      shadow-lg mb-3 sm:mb-4
-      ${langused === 'ar' ? 'flex-row-reverse' : 'flex-row'}
-    `}
-                style={{
+                flex relative flex-col items-center cursor-pointer
+                transform hover:scale-105 transition-transform duration-200
+                rounded-lg overflow-hidden border-8 border-double ${category.border}
+                
+                w-40 h-40 
+                sm:w-40 sm:h-40
+                md:w-56 md:h-56
+                lg:w-64 lg:h-64
+                shadow-lg mb-3 sm:mb-4
+                ${langused === 'ar' ? 'flex-row-reverse' : 'flex-row'}
+              `}
+                          style={{
                   backgroundImage: `url(${category.image})`,
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
@@ -96,84 +66,16 @@ const MenuPage = () => {
                 onClick={() => handleCategoryClick(category.id)}
               >
                 <p className={`
-      text-center absolute top-2 w-full
-      font-semibold py-1.5 sm:py-2 text-white ${category.color}
-      text-xs sm:text-sm md:text-base lg:text-lg
-    `}>
-                  {category.name[langused]}
-                </p>
-                {/* This empty div ensures the card maintains its height */}
-                <div className="w-full h-full" />
-              </div>
-            ))}
+              text-center absolute top-[40%] w-full
+              font-semibold py-1.5 sm:py-2 bg-[#ffd699] text-${category.color}
+              text-xs sm:text-sm md:text-base lg:text-lg
+            `}>
 
-            {categories.map((category) => (
-              <div
-                key={category.id}
-                className={`
-      flex relative flex-col items-center cursor-pointer
-      transform hover:scale-105 transition-transform duration-200
-      rounded-lg overflow-hidden border-8 border-double ${category.border}
-      
-      w-40 h-40 
-      sm:w-40 sm:h-40
-      md:w-56 md:h-56
-      lg:w-64 lg:h-64
-      shadow-lg mb-3 sm:mb-4
-      ${langused === 'ar' ? 'flex-row-reverse' : 'flex-row'}
-    `}
-                style={{
-                  backgroundImage: `url(${category.image})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                  backgroundRepeat: 'no-repeat',
-                  borderRadius: '42%'
-                }}
-                onClick={() => handleCategoryClick(category.id)}
-              >
-                <p className={`
-      text-center absolute top-2 w-full
-      font-semibold py-1.5 sm:py-2 text-white ${category.color}
-      text-xs sm:text-sm md:text-base lg:text-lg
-    `}>
                   {category.name[langused]}
                 </p>
-                {/* This empty div ensures the card maintains its height */}
-                <div className="w-full h-full" />
-              </div>
-            ))}
+                <div className={`absolute inset-0 -z-10 bg-${category.color} bg-opacity-40 `}></div>
 
-            {categories.map((category) => (
-              <div
-                key={category.id}
-                className={`
-      flex relative flex-col items-center cursor-pointer
-      transform hover:scale-105 transition-transform duration-200
-      rounded-lg overflow-hidden border-8 border-double ${category.border}
-      
-      w-40 h-40 
-      sm:w-40 sm:h-40
-      md:w-56 md:h-56
-      lg:w-64 lg:h-64
-      shadow-lg mb-3 sm:mb-4
-      ${langused === 'ar' ? 'flex-row-reverse' : 'flex-row'}
-    `}
-                style={{
-                  backgroundImage: `url(${category.image})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                  backgroundRepeat: 'no-repeat',
-                  borderRadius: '42%'
-                }}
-                onClick={() => handleCategoryClick(category.id)}
-              >
-                <p className={`
-      text-center absolute top-2 w-full
-      font-semibold py-1.5 sm:py-2 text-white ${category.color}
-      text-xs sm:text-sm md:text-base lg:text-lg
-    `}>
-                  {category.name[langused]}
-                </p>
+                {/* <p className='mt-[30%] text-white px-4 text-sm md:text-md font-bold md:text-xl'>{category.description[langused]}</p> */}
                 {/* This empty div ensures the card maintains its height */}
                 <div className="w-full h-full" />
               </div>

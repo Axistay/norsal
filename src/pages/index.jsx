@@ -1,114 +1,261 @@
 import React, { useState, useEffect } from 'react';
-import { motion } from "framer-motion"
 import { useNavigate } from 'react-router-dom';
-
-import imagetop from '../../public/image0.png'
 import { useTranslation } from 'react-i18next';
-import SimplifiedCitySelector from '../components/ModuleSelectCity';
+import { motion, AnimatePresence } from "framer-motion";
+import { MapPin, ChevronRight, Globe } from 'lucide-react';
+
+import imagetop from '../../public/image0.png';
 
 /**
  * @typedef {Object} City
  * @property {string} id - Unique identifier for the city
- * @property {string} name - Name of the city
+ * @property {string} name - Name of the city in multiple languages
  * @property {string} image - URL of the city image
  * @property {string} color - Tailwind color class
  * @property {string} bg - Tailwind background class
+ * @property {string} border - Tailwind border class for selection
  */
 
 /**
- * CityGrid component displays a grid of selectable cities
+ * CityGrid component displays a grid of selectable cities with enhanced animations
  * @returns {JSX.Element}
  */
 export default function CityGrid({ cities }) {
+  const { t, i18n } = useTranslation();
+  const langused = i18n.language;
+  const navigate = useNavigate();
 
-    const { t, i18n } = useTranslation()
-    const langused = i18n.language;
-    const navigate = useNavigate();
+  const [selectedCity, setSelectedCity] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
-    const [selectedCity, setSelectedCity] = useState(null);
+  // Retrieve selected city from local storage on component mount
+  useEffect(() => {
+    // Simulate loading for smoother transitions
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 500);
 
-    // Retrieve selected city from local storage on component mount
-    useEffect(() => {
-        const storedCityId = localStorage.getItem('selectedCity');
-        if (storedCityId) {
-            setSelectedCity(storedCityId);
-        } else {
-            localStorage.setItem('selectedCity', 'select');
-        }
-    }, []);
+    const storedCityId = localStorage.getItem('selectedCity');
+    if (storedCityId) {
+      setSelectedCity(storedCityId);
+    } else {
+      localStorage.setItem('selectedCity', 'select');
+    }
 
-    const handleCitySelect = (cityId) => {
-        if (!cityId) return; // Prevent selection of "Coming Soon"
-        setSelectedCity(cityId);
-        localStorage.setItem('selectedCity', cityId); // Save selected city to local storage
-        const city = cities.find(c => c.id === cityId);
-        navigate(`/${city.id}/menu`);
-    };
+    return () => clearTimeout(timer);
+  }, []);
 
-    return (
-        <div className="min-h flex flex-col">
-            <motion.header
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                className="pb-6"
-            >
-                <div className="w-full">
-                    <div
-                        className="w-full rounded-b-2xl shadow-xl shadow-yellow-100 bg-[#114e51]"
-                        style={{
-                            backgroundImage: `url(${imagetop})`,
-                            backgroundSize: 'contain',
-                            backgroundPosition: 'center',
-                            backgroundRepeat: 'no-repeat',
-                            aspectRatio: '19/7',
-                        }}
-                        role="banner"
-                        aria-label="City selection header"
-                    />
-                </div>
-            </motion.header>
-            <h1 className='text-4xl font-bold text-center'>{t('app.welcome')}</h1>
+  const handleCitySelect = (cityId) => {
+    if (!cityId) return; // Prevent selection of "Coming Soon"
+    
+    // Create a visual feedback before navigation
+    setSelectedCity(cityId);
+    localStorage.setItem('selectedCity', cityId);
+    
+    // Slight delay for animation to be visible
+    setTimeout(() => {
+      const city = cities.find(c => c.id === cityId);
+      navigate(`/${city.id}/menu`);
+    }, 300);
+  };
 
-            <main className="flex-grow">
-                <div className="max-w-7xl mx-auto py-10 px-4 sm:px-6 lg:px-8">
-                    <div
-                        className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-8"
-                        role="grid"
-                        aria-label="City selection grid"
-                    >
-                        {cities.map((city) => (
-                            <button
-                                key={city.id}
-                                className={`
-                                    group relative overflow-hidden rounded-2xl shadow-lg 
-                                    hover:shadow-xl transition-all duration-300 transform
-                                    hover:-translate-y-1
-                                    ${selectedCity === city.id ? `border-4 ${city?.border}` : ''}
-                                    ${!city.id ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}
-                                `}
-                                onClick={() => handleCitySelect(city.id)}
-                                disabled={!city.id}
-                                aria-label={`Select ${city.name[langused]}`}
-                            >
-                                <div className="relative h-48 md:60">
-                                    <img
-                                        src={city.image}
-                                        alt={`${city.name[langused]} city view`}
-                                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                                        loading="lazy"
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-                                    <div className="absolute bottom-0 left-0 right-0 p-6">
-                                        <h3 className="text-white text-2xl font-bold mb-2">{city.name[langused]}</h3>
-                                        <div className={`h-1 w-20 ${city.bg} rounded-full`} />
-                                    </div>
-                                </div>
-                            </button>
-                        ))}
+  // City card animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const cardVariants = {
+    hidden: { y: 50, opacity: 0 },
+    visible: { 
+      y: 0, 
+      opacity: 1,
+      transition: { 
+        type: "spring",
+        stiffness: 100,
+        damping: 12
+      }
+    },
+    hover: {
+      y: -8,
+      boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+      transition: {
+        type: "spring",
+        stiffness: 400,
+        damping: 10
+      }
+    }
+  };
+
+  // Skeleton loading component
+  const SkeletonLoader = () => (
+    <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      {[1, 2, 3, 4, 5, 6].map((item) => (
+        <div 
+          key={item} 
+          className="rounded-2xl h-48 bg-gray-200 animate-pulse"
+        />
+      ))}
+    </div>
+  );
+
+  return (
+    <div className="min-h-screen ">
+      <AnimatePresence>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-20"
+        >
+          {/* Hero Header */}
+          <motion.header
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="pb-6 relative"
+          >
+            <div className="w-full overflow-hidden rounded-3xl shadow-2xl">
+              <motion.div
+                className="w-full bg-[#114e51] relative"
+                style={{
+                  backgroundSize: 'contain',
+                  backgroundPosition: 'center',
+                  backgroundRepeat: 'no-repeat',
+                  aspectRatio: '19/7',
+                }}
+                initial={{ scale: 1.1 }}
+                animate={{ scale: 1 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                role="banner"
+                aria-label="City selection header"
+              >
+                <motion.img 
+                  src={imagetop} 
+                  alt="City selection banner"
+                  className="w-full h-full object-contain"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.3, duration: 0.8 }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent rounded-3xl" />
+              </motion.div>
+            </div>
+          </motion.header>
+
+          {/* Welcome Message */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <div className="bg-[#ffd699] rounded">
+            <h1 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-emerald-600">
+              {t('app.welcome')}
+            </h1>
+            </div>
+           
+          </motion.div>
+
+          {/* City Grid */}
+          <main className="flex-grow">
+            {isLoading ? (
+              <SkeletonLoader />
+            ) : (
+              <motion.div
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+                variants={containerVariants}
+                initial="hidden"
+                animate="visible"
+                role="grid"
+                aria-label="City selection grid"
+              >
+                {cities.map((city, index) => (
+                  <motion.button
+                    key={city.id || `coming-soon-${index}`}
+                    className={`
+                      group relative overflow-hidden rounded-2xl shadow-lg 
+                      transition-all duration-300
+                      ${!city.id ? 'opacity-70 cursor-not-allowed' : 'cursor-pointer'}
+                      ${selectedCity === city.id ? `ring-4 ring-offset-2 ${city?.border || 'ring-blue-500'}` : ''}
+                    `}
+                    onClick={() => handleCitySelect(city.id)}
+                    disabled={!city.id}
+                    aria-label={`Select ${city.name?.[langused] || 'Coming Soon'}`}
+                    variants={cardVariants}
+                    whileHover="hover"
+                  >
+                    <div className="relative h-52 md:h-64">
+                      <motion.img
+                        src={city.image}
+                        alt={`${city.name?.[langused] || 'Coming Soon'} city view`}
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                        initial={{ scale: 1 }}
+                        whileHover={{ scale: 1.05 }}
+                        transition={{ duration: 0.4 }}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                      
+                      {/* City Details Overlay */}
+                      <div className="absolute bottom-0 left-0 right-0 p-6">
+                        <h3 className="text-white text-2xl font-bold mb-2">
+                          {city.name?.[langused] || t('app.comingSoon')}
+                        </h3>
+                        <motion.div 
+                          className={`h-1 w-16 ${city.bg || 'bg-gray-300'} rounded-full`}
+                          initial={{ width: "20px" }}
+                          whileHover={{ width: "60px" }}
+                          transition={{ duration: 0.3 }}
+                        />
+                        
+                        {city.id && (
+                          <motion.div 
+                            className="mt-3 flex items-center text-white/80 text-sm"
+                            initial={{ opacity: 0, y: 10 }}
+                            whileHover={{ opacity: 1, y: 0 }}
+                          >
+                            <Globe className="w-4 h-4 mr-1" />
+                            <span>{t('app.explore')}</span>
+                            <ChevronRight className="w-4 h-4 ml-1" />
+                          </motion.div>
+                        )}
+                      </div>
+                      
+                      {/* Selected Indicator */}
+                      {selectedCity === city.id && (
+                        <motion.div 
+                          className="absolute top-4 right-4 w-6 h-6 rounded-full bg-white shadow-lg flex items-center justify-center"
+                          initial={{ scale: 0 }}
+                          animate={{ scale: 1 }}
+                          transition={{ type: "spring", stiffness: 500, damping: 15 }}
+                        >
+                          <div className={`w-4 h-4 rounded-full ${city.bg || 'bg-blue-500'}`} />
+                        </motion.div>
+                      )}
                     </div>
-                </div>
-            </main>
-        </div>
-    );
+                  </motion.button>
+                ))}
+              </motion.div>
+            )}
+          </main>
+          
+          {/* Footer */}
+          <motion.footer 
+            className="mt-16 text-center text-gray-500 text-sm"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.8 }}
+          >
+          </motion.footer>
+        </motion.div>
+      </AnimatePresence>
+    </div>
+  );
 }
