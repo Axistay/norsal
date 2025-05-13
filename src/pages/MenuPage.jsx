@@ -67,7 +67,7 @@ const MenuPage = () => {
               >
                 <p className={`
               text-center absolute top-[40%] w-full
-              font-semibold py-1.5 sm:py-2 bg-[#ffd699] text-${category.color}
+              font-semibold py-1.5 sm:py-2 bg-[#ffd699] text-teal-900 rounded-full
               text-xs sm:text-sm md:text-base lg:text-lg
             `}>
 
