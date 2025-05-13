@@ -73,7 +73,7 @@ const MenuPage = () => {
 
                   {category.name[langused]}
                 </p>
-                <div className={`absolute inset-0 -z-10 bg-${category.color} bg-opacity-40 `}></div>
+                <div className={`absolute inset-0 -z-10 ${category.color} bg-opacity-40 `}></div>
 
                 {/* <p className='mt-[30%] text-white px-4 text-sm md:text-md font-bold md:text-xl'>{category.description[langused]}</p> */}
                 {/* This empty div ensures the card maintains its height */}

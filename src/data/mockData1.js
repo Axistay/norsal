@@ -14,7 +14,7 @@ export const menuData = {
         es: "Desayuno delicioso para empezar bien el día",
         ar: "إفطار لذيذ لبداية يوم رائع"
       },
-      color: "yellow-900",
+      color: "bg-yellow-900",
       border: "border-yellow-900",
       shadow: "shadow-yellow-500",
       image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836"
@@ -33,7 +33,7 @@ export const menuData = {
         es: "Elija entre una amplia variedad de platos, preparados a su gusto.",
         ar: "اختر من مجموعة واسعة من الأطباق المحضّرة كما تحب."
       },
-      color: "sky-900",
+      color: "bg-sky-900",
       border: "border-sky-900",
       shadow: "shadow-sky-600",
       image: "https://images.unsplash.com/photo-1600891964599-f61ba0e24092"
@@ -52,7 +52,7 @@ export const menuData = {
         es: "Comidas abundantes y satisfactorias para mantenerte con energía.",
         ar: "وجبات مشبعة ومرضية لإبقائك نشيطًا."
       },
-      color: "green-700",
+      color: "bg-green-700",
       border: "border-green-700",
       shadow: "shadow-green-500",
       image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836"
@@ -71,7 +71,7 @@ export const menuData = {
         es: "Termina tu día con una cena deliciosa.",
         ar: "اختم يومك بعشاء لذيذ."
       },
-      color: "purple-800",
+      color: "bg-purple-800",
       border: "border-purple-800",
       shadow: "shadow-purple-500",
       image: "https://images.unsplash.com/photo-1600891964599-f61ba0e24092"
@@ -90,7 +90,7 @@ export const menuData = {
         es: "Dulces para satisfacer tus antojos.",
         ar: "حلويات لإرضاء شهيتك."
       },
-      color: "pink-700",
+      color: "bg-pink-700",
       border: "border-pink-700",
       shadow: "shadow-pink-500",
       image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836"
@@ -109,7 +109,7 @@ export const menuData = {
         es: "Bebidas refrescantes para complementar tu comida.",
         ar: "مشروبات منعشة لتكمل وجبتك."
       },
-      color: "blue-700",
+      color: "bg-blue-700",
       border: "border-blue-700",
       shadow: "shadow-blue-500",
       image: "https://images.unsplash.com/photo-1600891964599-f61ba0e24092"
@@ -128,7 +128,7 @@ export const menuData = {
         es: "Opciones de ensaladas frescas y saludables.",
         ar: "خيارات سلطات طازجة وصحية."
       },
-      color: "lime-700",
+      color: "bg-lime-700",
       border: "border-lime-700",
       shadow: "shadow-lime-500",
       image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836"
@@ -147,7 +147,7 @@ export const menuData = {
         es: "Sopas cálidas y reconfortantes para cualquier ocasión.",
         ar: "شوربات دافئة ومريحة لأي مناسبة."
       },
-      color: "orange-700",
+      color: "bg-orange-700",
       border: "border-orange-700",
       shadow: "shadow-orange-500",
       image: "https://images.unsplash.com/photo-1600891964599-f61ba0e24092"
@@ -166,7 +166,7 @@ export const menuData = {
         es: "Delicias a la parrilla con sabores ahumados.",
         ar: "أطباق مشوية بنكهات مدخنة."
       },
-      color: "red-700",
+      color: "bg-red-700",
       border: "border-red-700",
       shadow: "shadow-red-500",
       image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836"
@@ -185,7 +185,7 @@ export const menuData = {
         es: "Platos de mariscos frescos del océano.",
         ar: "أطباق مأكولات بحرية طازجة من المحيط."
       },
-      color: "teal-700",
+      color: "bg-teal-700",
       border: "border-teal-700",
       shadow: "shadow-teal-500",
       image: "https://images.unsplash.com/photo-1600891964599-f61ba0e24092"
