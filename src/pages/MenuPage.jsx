@@ -33,30 +33,32 @@ const MenuPage = () => {
           onClick={(e) => e.stopPropagation()}
         >
           <div className={`grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-4 lg:gap-8 mt-12 sm:mt-16 pt-2 ${langused === 'ar' ? 'text-right' : 'text-left'}`}>
-          
 
-            
 
-            
 
-            
+
+
+
+
 
             {categories.map((category) => (
+
               <div
                 key={category.id}
                 className={`
                 flex relative flex-col items-center cursor-pointer
                 transform hover:scale-105 transition-transform duration-200
                 rounded-lg overflow-hidden border-8 border-double ${category.border}
-                
+                // ... existing code ...
+                shadow-teal-400  shadow-2xl
                 w-40 h-40 
                 sm:w-40 sm:h-40
                 md:w-56 md:h-56
                 lg:w-64 lg:h-64
-                shadow-lg mb-3 sm:mb-4
+                 mb-3 sm:mb-4
                 ${langused === 'ar' ? 'flex-row-reverse' : 'flex-row'}
               `}
-                          style={{
+                style={{
                   backgroundImage: `url(${category.image})`,
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
@@ -64,7 +66,7 @@ const MenuPage = () => {
                   borderRadius: '42%'
                 }}
                 onClick={() => handleCategoryClick(category.id)}
-              >
+              >  
                 <p className={`
               text-center absolute top-[40%] w-full
               font-semibold py-1.5 sm:py-2 bg-[#ffd699] text-teal-900 rounded-full

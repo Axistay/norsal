@@ -111,7 +111,7 @@ export default function CityGrid({ cities }) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-20"
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-20 shadow-xl"
         >
           {/* Hero Header */}
           <motion.header
@@ -120,7 +120,7 @@ export default function CityGrid({ cities }) {
             transition={{ duration: 0.6 }}
             className="pb-6 relative"
           >
-            <div className="w-full overflow-hidden rounded-3xl shadow-2xl">
+            <div className="w-full overflow-hidden rounded-3xl   shadow-xl shadow-teal-300">
               <motion.div
                 className="w-full bg-[#114e51] relative"
                 style={{
@@ -155,8 +155,9 @@ export default function CityGrid({ cities }) {
             transition={{ delay: 0.4, duration: 0.6 }}
             className="text-center mb-12"
           >
-            <div className="bg-[#ffd699] rounded">
-            <h1 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-emerald-600">
+            {/* bg-[#ffd699] */}
+            <div className=" rounded pt-6"> 
+            <h1 className="text-4xl md:text-5xl font-bold bg-clip-text text-[#ffd699]    rounded-b bg-gradient-to-r from-[#ffd699] to-teal-300">
               {t('app.welcome')}
             </h1>
             </div>
@@ -179,11 +180,11 @@ export default function CityGrid({ cities }) {
                 {cities.map((city, index) => (
                   <motion.button
                     key={city.id || `coming-soon-${index}`}
-                    className={`
-                      group relative overflow-hidden rounded-2xl shadow-lg 
+                    className={`group relative overflow-hidden rounded-2xl shadow-lg 
                       transition-all duration-300
                       ${!city.id ? 'opacity-70 cursor-not-allowed' : 'cursor-pointer'}
                       ${selectedCity === city.id ? `ring-4 ring-offset-2 ${city?.border || 'ring-blue-500'}` : ''}
+                      ${index === cities.length - 1 ? 'col-span-full' : ''}
                     `}
                     onClick={() => handleCitySelect(city.id)}
                     disabled={!city.id}
