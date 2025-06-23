@@ -211,8 +211,6 @@ export default function CityGrid({ cities }) {
                             whileHover={{ opacity: 1, y: 0 }}
                           >
                             <Globe className="w-4 h-4 mr-1" />
-                            <span>{t('app.explore')}</span>
-                            <ChevronRight className="w-4 h-4 ml-1" />
                           </motion.div>
                         )}
                       </div>

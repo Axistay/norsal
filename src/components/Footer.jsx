@@ -3,11 +3,12 @@ import { useState, useEffect, useRef } from "react"
 import { NavLink, useLocation, useNavigate } from "react-router-dom"
 import { Home, Menu, Globe, ShoppingCart, X, ArrowLeft } from "lucide-react"
 import { useSelector } from "react-redux"
-
-// Import Language as a component rather than a page
 import Language from "../pages/Language" // Assuming you'll move it to components folder
+import { useTranslation } from "react-i18next"
 
 const Footer = () => {
+  const { i18n } = useTranslation()
+  const lang = i18n.language
   const [city, setCity] = useState("select")
   const location = useLocation()
   const path = location.pathname
@@ -87,7 +88,7 @@ const Footer = () => {
               onClick={handleHomeClick}
               className="relative flex items-center justify-center p-2 rounded-full transition-all duration-300 ease-in-out border-2 flex-1 border-teal-700 text-gray-400 hover:text-gray-200"
             >
-              <ArrowLeft size={20} className="relative z-10" />
+              <ArrowLeft size={20} className={`relative z-10${lang === 'ar' ? ' rotate-180' : ''}`} />
             </button>
           )}
 

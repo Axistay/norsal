@@ -59,11 +59,51 @@ const Home = ({ cities }) => {
     }
   }
 
+  
+    // Animation variants
+    const containerVariants = {
+      initial: { opacity: 0 },
+      animate: { opacity: 1, transition: { duration: 0.6 } },
+      exit: { opacity: 0 }
+  };
+
+  const headerVariants = {
+      initial: { y: -50, opacity: 0 },
+      animate: { y: 0, opacity: 1, transition: { duration: 0.8, ease: "easeOut" } }
+  };
+
+  const menuVariants = {
+      initial: { y: 30, opacity: 0 },
+      animate: { y: 0, opacity: 1, transition: { duration: 0.6, delay: 0.3 } }
+  };
+
+  const menuItemVariants = {
+      initial: { scale: 0.95, opacity: 0 },
+      animate: { scale: 1, opacity: 1 },
+      hover: {
+          scale: 1.02,
+          transition: { duration: 0.3, ease: "easeInOut" }
+      },
+      tap: { scale: 0.98 }
+  };
+
+  const comingSoonVariants = {
+      initial: { scale: 0.8, opacity: 0 },
+      animate: {
+          scale: 1,
+          opacity: 1,
+          transition: { duration: 0.8, ease: "easeOut" }
+      }
+  };
+
+
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="pb-6 w-7xl">
       {/* Header with Search and Cart */}
-      <div className="bg-gradient-to-b from-[#114e51] via-[#114e51] to-blue-600 w-full  pb-8 px-4 rounded-b-3xl shadow-xl shadow-yellow-100  relative  ">
-        {/* Animated Logo */}
+      <motion.header
+                variants={headerVariants}
+                className={`bg-gradient-to-b from-[#114e51] via-[#1a5c5f] ${city.to} w-full pb-6 px-4 rounded-b-3xl shadow-2xl relative overflow-hidden`}
+            >  {/* Animated Logo */}
         <Link
           to="/"
           className="relative z-10 w-full flex items-center justify-center pt-4 focus:outline-none focus:ring-2 focus:ring-yellow-300 rounded-lg transition-transform hover:scale-105"
@@ -191,7 +231,7 @@ const Home = ({ cities }) => {
         <div className="mt-8">
           <SearchBar border={city?.border} onSearch={handleSearch} />
         </div>
-      </div>
+        </motion.header>
 
       <MenuPage />
 

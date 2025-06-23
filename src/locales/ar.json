@@ -1,37 +1,120 @@
 {
   "app": {
-    "welcome": "مرحبًا بك لدى ",
-    "welcometo": "مرحبًا بك في  ",
-    "tagline": "طعام لذيذ يتم توصيله بسرعة"
+    "name": "لذّات تيستي",
+    "welcome": "مرحبًا بك في",
+    "welcometo": "مرحبًا بك في",
+    "tagline": "طعام لذيذ يُوصَل بسرعة"
   },
   "home": {
     "search": "ابحث عن الطعام...",
-    "welcity": "استرخِ واختر ما يناسبك."
+    "welcity": "استرخِ واختر ما يناسبك.",
+    "currentLocation": "الموقع الحالي",
+    "offers": "العروض",
+    "pickup": "استلام",
+    "delivery": "توصيل",
+    "vouchers": "قسائم",
+    "seeAll": "عرض الكل",
+    "orderNow": "اطلب الآن",
+    "discountMessage": "لا تفوّت خصم {{percent}}٪ اليوم.",
+    "freeDelivery": "توصيل مجاني",
+    "getStarted": "ابدأ الآن",
+    "comingSoon": "قريبًا!",
+    "chooseMenu": "خصص تجربتك الغذائية"
+  },
+  "about": {
+    "title": "قصتنا",
+    "welcome": "مرحبًا بك في نادي الشاطئ",
+    "description1": "يقع نادي الشاطئ في مارينا المارشيكا، وهو مقهى-مطعم يوفر أجواءً ودّية، مثالية للعمل أو الاسترخاء أو قضاء وقت مع العائلة أو الأصدقاء.",
+    "description2": "تم تصميمه بعناية ليلبي احتياجات الصغار والكبار (مساحة ألعاب، مسجد...). يتميّز موقعه الاستراتيجي في مركز مشروع المارشيكا الراقي بإطلالة بانورامية على ملعب الغولف، شاطئ الناظور الرائع، وجباله الجميلة. يقدم مطبخه المتنوّع أطباقًا مُحضّرة بالحب.",
+    "closing": "نتمنى لك قضاء وقت ممتع في صحبتنا.",
+    "location": "الموقع",
+    "contact": "اتصل بنا",
+    "hours": "ساعات العمل",
+    "hours_value": "يوميًا: 9:00 صباحًا – 11:00 مساءً",
+    "email": "البريد الإلكتروني"
+  },
+  "categories": {
+    "our_menu": "قائمتنا",
+    "burger": "برغر",
+    "pizza": "بيتزا",
+    "pasta": "باستا",
+    "salad": "سلطات",
+    "dessert": "حلويات",
+    "drinks": "مشروبات",
+    "chicken": "دجاج",
+    "seafood": "المأكولات البحرية"
+  },
+  "types": {
+    "classic_burgers": "برغر كلاسيكي",
+    "chicken_burgers": "برغر دجاج",
+    "specialty_burgers": "برغر خاص",
+    "traditional_pizza": "بيتزا تقليدية",
+    "specialty_pizza": "بيتزا خاصة",
+    "spaghetti": "سباغيتي",
+    "penne": "بيني",
+    "lasagna": "لازانيا",
+    "risotto": "ريزوتو",
+    "fresh_salads": "سلطات طازجة",
+    "protein_salads": "سلطات بروتين",
+    "cakes": "كعكات",
+    "ice_cream": "آيس كريم",
+    "pastries": "معجنات",
+    "hot_drinks": "مشروبات ساخنة",
+    "cold_drinks": "مشروبات باردة",
+    "smoothies": "سموذي",
+    "cocktails": "كوكتيلات",
+    "fried_chicken": "دجاج مقلي",
+    "grilled_chicken": "دجاج مشوي",
+    "fish": "سمك",
+    "shellfish": "محار"
   },
   "menu": {
     "searchInCategory": "ابحث في {{category}}...",
     "addToCart": "حفظ",
     "inToCart": "تم الحفظ",
     "price": "السعر",
-    "calories": "السعرات الحرارية",
-    "protein": "البروتين",
-    "fat": "الدهون",
-    "variation": "النوع",
-    "mad": "درهم"
+    "calories": "السعرات",
+    "protein": "بروتين",
+    "fat": "دهون",
+    "variation": "تنويعة",
+    "menu1": "قائمة نورسال",
+    "menu2": "قائمة التراس",
+    "section": "اختيار القائمة",
+   "mad": "درهم"
+  },
+  "search": {
+    "results": "نتائج البحث",
+    "no_results": "لم يتم العثور على نتائج",
+    "categories": "الفئات",
+    "view_all": "عرض جميع النتائج ({{count}})"
   },
   "cart": {
     "title": "طلبك",
-    "empty": "لا توجد عناصر في الطلب حالياً",
-    "total": "الإجمالي",
-    "checkout": "تأكيد الطلب",
-    "remove": "حذف",
-    "continueShopping": "العودة للقائمة"
+    "empty": "طلبك فارغ حالياً",
+    "total": "المجموع",
+    "checkout": "أتمم الطلب",
+    "remove": "إزالة",
+    "continueShopping": "العودة إلى القائمة"
   },
   "language": {
     "title": "اختر اللغة",
     "english": "الإنجليزية",
     "french": "الفرنسية",
-    "arabic": "العربية",
-    "spanish": "spanish"
+    "arabic": "العربية"
+  },
+  "errors": {
+    "title": "عذراً! حدث خطأ",
+    "cityNotFound": "لم يتم العثور على المدينة",
+    "menuLoadFailed": "فشل تحميل بيانات القائمة"
+  },
+  "common": {
+    "goHome": "العودة إلى الرئيسية",
+    "logoAlt": "شعار الشركة",
+    "loading": "جاري التحميل..."
+  },
+  "comingSoon": {
+    "title": "قريبًا!",
+    "description": "نجهّز شيئًا رائعًا لك",
+    "openingDate": "تاريخ الافتتاح"
   }
 }

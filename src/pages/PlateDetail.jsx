@@ -134,13 +134,12 @@ const CloseButton = React.memo(({ onClose }) => (
   </button>
 ))
 
-const ImageSection = React.memo(({ plate, onZoomClick }) => (
-  <AnimatedDiv delay={0.1} className="relative h-96 overflow-hidden rounded-2xl cursor-pointer group">
+const ImageSection = React.memo(({ plate, onZoomClick, langused }) => (
+  <AnimatedDiv delay={0.1} className="relative h-96 overflow-hidden rounded-2xl cursor-pointer group" onClick={onZoomClick}>
     <img
       src={plate.image}
-      alt={plate.title?.en || 'Dish image'}
+      alt={plate.title?.[langused] || plate.title?.en || 'Dish image'}
       className="w-full h-full object-cover transition-all duration-300 ease-out group-hover:scale-105"
-      onClick={onZoomClick}
     />
     
     {/* Gradient overlay */}
@@ -154,10 +153,7 @@ const ImageSection = React.memo(({ plate, onZoomClick }) => (
       <AnimatedDiv delay={0.3}>
         <button
           className="bg-white/20 backdrop-blur-sm p-3 rounded-full text-white hover:bg-white/30 transition-all duration-200 hover:scale-110 active:scale-90"
-          onClick={(e) => {
-            e.stopPropagation()
-            onZoomClick()
-          }}
+          onClick={e => { e.stopPropagation(); onZoomClick(); }}
         >
           <ZoomIn className="w-5 h-5" />
         </button>
@@ -269,7 +265,7 @@ const PlateDetail = ({ dataPlate, onClose }) => {
             
             <div className="overflow-y-auto max-h-[90vh] pt-10">
               <div className="p-8 space-y-6">
-                <ImageSection plate={plate} onZoomClick={handleZoomOpen} />
+                <ImageSection plate={plate} onZoomClick={handleZoomOpen} langused={langused} />
                 
                 <div className="space-y-6">
                   <AnimatedDiv delay={0.2} className="space-y-2">

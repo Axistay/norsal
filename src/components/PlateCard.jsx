@@ -68,7 +68,7 @@ const PlateCard = ({ plate }) => {
           <h3 className="font-bold text-lg">{plate.title[langused]}</h3>
           <p className="text-gray-600 text-sm mt-1 line-clamp-2">{plate.description[langused]}</p>
           <div className="flex justify-between items-center mt-4">
-            <span className="font-bold text-lg">{plate.price.toFixed(2)} MAD</span>
+            <span className="font-bold text-lg">{plate.price.toFixed(2)} {t('menu.mad')} </span>
             <button
               className="btn-primary text-sm py-1.5"
             >

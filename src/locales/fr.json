@@ -1,11 +1,13 @@
 {
   "app": {
-    "name": "Tasty Bites",
-    "welcome": "Bienvenue chez Tasty Bites",
+    "name": "Bouchées Savoureuses",
+    "welcome": "Bienvenue à",
+    "welcometo": "Bienvenue à",
     "tagline": "Nourriture délicieuse livrée rapidement"
   },
   "home": {
     "search": "Rechercher de la nourriture...",
+    "welcity": "Détendez-vous et choisissez ce qui vous convient le mieux.",
     "currentLocation": "Emplacement actuel",
     "offers": "Offres",
     "pickup": "À emporter",
@@ -13,26 +15,28 @@
     "vouchers": "Bons",
     "seeAll": "Voir tout",
     "orderNow": "Commander maintenant",
-    "discountMessage": "Ne manquez pas {{percent}}% de réduction aujourd'hui.",
+    "discountMessage": "Ne manquez pas {{percent}} % de réduction aujourd'hui.",
     "freeDelivery": "Livraison gratuite",
-    "getStarted": "Commencer"
+    "getStarted": "Commencer",
+    "comingSoon": "Bientôt disponible !",
+    "chooseMenu": "Personnalisez votre expérience culinaire"
   },
   "about": {
-    "title": "Notre Histoire",
+    "title": "Notre histoire",
     "welcome": "Bienvenue au Beach Club",
-    "description1": "Niché à la Marina du Marchica, le Beach Club est un Café-Restaurant qui offre un cadre convivial, idéal pour travailler, se détendre et se cocooner en famille ou entre amis.",
-    "description2": "Il a été créé avec soin et un design attentif pour satisfaire petit et grand (espace de jeu, Mosquée...) Sa situation stratégique au centre du prestigieux projet Marchica, offre une vue panoramique, qui donne sur le golf, la magnifique plage de Nador et ses belles montagnes. Sa carte gastronomique, quant à elle, offre une variété culinaire concoctée avec amour.",
-    "closing": "Nous vous souhaitons de passer un agréable moment en notre compagnie.",
-    "location": "Localisation",
+    "description1": "Situé à la Marina du Marchica, le Beach Club est un café-restaurant qui offre un cadre convivial, idéal pour travailler, se détendre ou passer un bon moment en famille ou entre amis.",
+    "description2": "Il a été conçu avec soin et une attention particulière pour satisfaire petits et grands (aire de jeux, mosquée...). Son emplacement stratégique au cœur du prestigieux projet Marchica offre une vue panoramique sur le parcours de golf, la magnifique plage de Nador et ses belles montagnes. Son menu gastronomique propose une variété de plats préparés avec amour.",
+    "closing": "Nous vous souhaitons un agréable moment en notre compagnie.",
+    "location": "Emplacement",
     "contact": "Contact",
-    "hours": "Heures d'ouverture",
-    "hours_value": "Tous les jours: 9h00 - 23h00",
-    "email": "Email"
+    "hours": "Horaires d’ouverture",
+    "hours_value": "Tous les jours : 9h00 - 23h00",
+    "email": "E-mail"
   },
   "categories": {
-    "our_menu": "Notre Menu",
-    "burger": "Hamburgers",
-    "pizza": "Pizza",
+    "our_menu": "Notre menu",
+    "burger": "Burgers",
+    "pizza": "Pizzas",
     "pasta": "Pâtes",
     "salad": "Salades",
     "dessert": "Desserts",
@@ -41,28 +45,28 @@
     "seafood": "Fruits de mer"
   },
   "types": {
-    "classic_burgers": "Burgers Classiques",
-    "chicken_burgers": "Burgers au Poulet",
-    "specialty_burgers": "Burgers Spéciaux",
-    "traditional_pizza": "Pizza Traditionnelle",
-    "specialty_pizza": "Pizza Spéciale",
+    "classic_burgers": "Burgers classiques",
+    "chicken_burgers": "Burgers au poulet",
+    "specialty_burgers": "Burgers spéciaux",
+    "traditional_pizza": "Pizzas traditionnelles",
+    "specialty_pizza": "Pizzas spéciales",
     "spaghetti": "Spaghetti",
-    "penne": "Penne",
-    "lasagna": "Lasagne",
+    "penne": "Pennes",
+    "lasagna": "Lasagnes",
     "risotto": "Risotto",
-    "fresh_salads": "Salades Fraîches",
-    "protein_salads": "Salades Protéinées",
+    "fresh_salads": "Salades fraîches",
+    "protein_salads": "Salades protéinées",
     "cakes": "Gâteaux",
-    "ice_cream": "Glaces",
+    "ice_cream": "Glace",
     "pastries": "Pâtisseries",
-    "hot_drinks": "Boissons Chaudes",
-    "cold_drinks": "Boissons Fraîches",
+    "hot_drinks": "Boissons chaudes",
+    "cold_drinks": "Boissons froides",
     "smoothies": "Smoothies",
     "cocktails": "Cocktails",
-    "fried_chicken": "Poulet Frit",
-    "grilled_chicken": "Poulet Grillé",
+    "fried_chicken": "Poulet frit",
+    "grilled_chicken": "Poulet grillé",
     "fish": "Poisson",
-    "shellfish": "Fruits de Mer"
+    "shellfish": "Fruits de mer"
   },
   "menu": {
     "searchInCategory": "Rechercher dans {{category}}...",
@@ -71,36 +75,47 @@
     "price": "Prix",
     "calories": "Calories",
     "protein": "Protéines",
-    "fat": "Matières grasses",
-    "variation": "Variation",
-    "reviews": "Avis",
+    "fat": "Lipides",
+    "variation": "Variante",
+    "menu1": "MENU NORSAL",
+    "menu2": "MENU TERRASSE",
+    "section": "Sélection du menu",
     "mad" : "MAD"
+
   },
   "search": {
-    "results": "Résultats de recherche",
+    "results": "Résultats de la recherche",
     "no_results": "Aucun résultat trouvé",
     "categories": "Catégories",
-    "view_all": "Voir tous les {{count}} résultats"
+    "view_all": "Voir les {{count}} résultats"
   },
   "cart": {
-    "title": "Votre Panier",
-    "empty": "Votre panier est vide",
+    "title": "Votre commande",
+    "empty": "Votre commande est vide",
     "total": "Total",
-    "checkout": "Payer",
+    "checkout": "Passer la commande",
     "remove": "Supprimer",
-    "continueShopping": "Continuer vos achats"
+    "continueShopping": "Retour au menu"
   },
   "language": {
-    "title": "Sélectionner la langue",
+    "title": "Choisir la langue",
     "english": "Anglais",
     "french": "Français",
     "arabic": "Arabe"
   },
-  "footer": {
-    "home": "Accueil",
-    "menu": "Menu",
-    "language": "Langue",
-    "cart": "Panier",
-    "about": "À propos"
+  "errors": {
+    "title": "Oups ! Une erreur s'est produite",
+    "cityNotFound": "Ville introuvable",
+    "menuLoadFailed": "Échec du chargement du menu"
+  },
+  "common": {
+    "goHome": "Accueil",
+    "logoAlt": "Logo de l’entreprise",
+    "loading": "Chargement..."
+  },
+  "comingSoon": {
+    "title": "Bientôt disponible !",
+    "description": "Nous préparons quelque chose d'incroyable pour vous",
+    "openingDate": "Date d’ouverture"
   }
 }

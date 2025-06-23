@@ -17,7 +17,9 @@
     "orderNow": "Order Now",
     "discountMessage": "Don't Miss Out {{percent}}% Off Today.",
     "freeDelivery": "Free Delivery",
-    "getStarted": "Get Started"
+    "getStarted": "Get Started",
+    "comingSoon": "Opening Soon!",
+    "chooseMenu": "Customize Your Dining Experience"
   },
   "about": {
     "title": "Our Story",
@@ -74,7 +76,12 @@
     "calories": "Calories",
     "protein": "Protein",
     "fat": "Fat",
-    "variation": "Variation"
+    "variation": "Variation",
+    "menu1": "MENU NORSAL",
+    "menu2": "MENU TERASSE",
+    "section": "Menu selection",
+    "mad" : "MAD"
+
   },
   "search": {
     "results": "Search Results",
@@ -96,5 +103,20 @@
     "english": "English",
     "french": "French",
     "arabic": "Arabic"
+  },
+  "errors": {
+    "title": "Oops! Something went wrong",
+    "cityNotFound": "City not found",
+    "menuLoadFailed": "Failed to load menu data"
+  },
+  "common": {
+    "goHome": "Go Home",
+    "logoAlt": "Company Logo",
+    "loading": "Loading..."
+  },
+  "comingSoon": {
+    "title": "Coming Soon!",
+    "description": "We're preparing something amazing for you",
+    "openingDate": "Opening Date"
   }
 }
