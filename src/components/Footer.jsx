@@ -1,8 +1,11 @@
 "use client"
 import { useState, useEffect, useRef } from "react"
-import { NavLink, useLocation } from "react-router-dom"
-import { Home, Menu, Globe, ShoppingCart } from "lucide-react"
+import { NavLink, useLocation, useNavigate } from "react-router-dom"
+import { Home, Menu, Globe, ShoppingCart, X, ArrowLeft } from "lucide-react"
 import { useSelector } from "react-redux"
+
+// Import Language as a component rather than a page
+import Language from "../pages/Language" // Assuming you'll move it to components folder
 
 const Footer = () => {
   const [city, setCity] = useState("select")
@@ -12,14 +15,19 @@ const Footer = () => {
   const totalItem = items?.length || 0
   const prevItemCount = useRef(totalItem)
   const [isAnimating, setIsAnimating] = useState(false)
-  
+  const [showLanguageOptions, setShowLanguageOptions] = useState(false)
+  const navigate = useNavigate()
+
+  // Check if we're on the home page
+  const isHomePage = path === '/'
+
   useEffect(() => {
     const savedCity = localStorage.getItem("selectedCity")
     if (savedCity) {
       setCity(savedCity)
     }
   }, [])
-  
+
   useEffect(() => {
     // Only animate if the total items changed and is not the initial render
     if (prevItemCount.current !== totalItem && prevItemCount.current !== 0) {
@@ -27,32 +35,61 @@ const Footer = () => {
       const timer = setTimeout(() => {
         setIsAnimating(false)
       }, 700) // Animation duration
-      
+
       return () => clearTimeout(timer)
     }
-    
+
     // Update the previous count
     prevItemCount.current = totalItem
   }, [totalItem])
 
+  const toggleLanguageOptions = () => {
+    setShowLanguageOptions((prev) => !prev)
+  }
+
+  const closeLanguageOptions = () => {
+    setShowLanguageOptions(false)
+  }
+
+  const handleHomeClick = () => {
+    if (isHomePage) {
+      // Already on home page, do nothing or refresh
+      return
+    } else {
+      // Go back one page
+      navigate(-1)
+    }
+  }
+
   return (
-    <footer className="fixed z-50 md:left-0 md:top-0 md:bottom-0 md:w-20 bottom-0 left-0 right-0">
+    <footer className="fixed z-40 md:left-0 md:top-0 md:bottom-0 md:w-20 bottom-0 left-0 right-0">
       <div className="flex md:flex-col items-center justify-center h-full">
         <div className="w-full max-w-md md:max-w-none md:w-16 bg-[#114e51] rounded-full md:rounded-xl p-2 md:p-4 md:h-auto md:my-4 flex md:flex-col justify-around items-center gap-2 md:gap-8 shadow-lg">
-          <NavLink
-            to="/"
-            className={({ isActive }) =>
-              `relative flex items-center justify-center p-2 rounded-full transition-all duration-300 ease-in-out border-2 flex-1 border-teal-700  ${isActive ? "text-black shadow-lg shadow-yellow-200" : "text-gray-400 hover:text-gray-200"
-              }`
-            }
-          >
-            {({ isActive }) => (
-              <>
-                {isActive && <span className="absolute inset-0 bg-[#ffd699] rounded-full z-10"></span>}
-                <Home size={20} className="relative z-10" />
-              </>
-            )}
-          </NavLink>
+          
+          {/* Home/Back Button - Changed from NavLink to button */}
+          {isHomePage ? (
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                `relative flex items-center justify-center p-2 rounded-full transition-all duration-300 ease-in-out border-2 flex-1 border-teal-700  ${isActive ? "text-black shadow-lg shadow-yellow-200" : "text-gray-400 hover:text-gray-200"
+                }`
+              }
+            >
+              {({ isActive }) => (
+                <>
+                  {isActive && <span className="absolute inset-0 bg-[#ffd699] rounded-full z-10"></span>}
+                  <Home size={20} className="relative z-10" />
+                </>
+              )}
+            </NavLink>
+          ) : (
+            <button
+              onClick={handleHomeClick}
+              className="relative flex items-center justify-center p-2 rounded-full transition-all duration-300 ease-in-out border-2 flex-1 border-teal-700 text-gray-400 hover:text-gray-200"
+            >
+              <ArrowLeft size={20} className="relative z-10" />
+            </button>
+          )}
 
           <NavLink
             to={`/${city}/menu`}
@@ -69,20 +106,16 @@ const Footer = () => {
             )}
           </NavLink>
 
-          <NavLink
-            to="/language"
-            className={({ isActive }) =>
-              `relative flex items-center justify-center p-2 rounded-full transition-all duration-300 ease-in-out flex-1 border-2 border-teal-700 ${isActive ? "text-black shadow-lg shadow-yellow-200" : "text-gray-400 hover:text-gray-200"
-              }`
-            }
+          {/* Changed from NavLink to button for language */}
+          <button
+            onClick={toggleLanguageOptions}
+            className={`relative flex items-center justify-center p-2 rounded-full transition-all duration-300 ease-in-out flex-1 border-2 border-teal-700 ${showLanguageOptions ? "text-black shadow-lg shadow-yellow-200" : "text-gray-400 hover:text-gray-200"}`}
           >
-            {({ isActive }) => (
-              <>
-                {isActive && <span className="absolute inset-0 bg-[#ffd699] rounded-full z-10"></span>}
-                <Globe size={20} className="relative z-10" />
-              </>
-            )}
-          </NavLink>
+            <>
+              {showLanguageOptions && <span className="absolute inset-0 bg-[#ffd699] rounded-full z-10"></span>}
+              <Globe size={20} className="relative z-10" />
+            </>
+          </button>
 
           <NavLink
             to="/cart"
@@ -93,30 +126,50 @@ const Footer = () => {
           >
             {({ isActive }) => (
               <>
-                <span 
-                  className={`absolute -top-1 -right-1 bg-orange-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center z-20 ${
-                    isAnimating ? "animate-ping" : ""
-                  }`}
+                <span
+                  className={`absolute -top-1 -right-1 bg-orange-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center z-20 ${isAnimating ? "animate-ping" : ""
+                    }`}
                 >
                   {totalItem}
                 </span>
-                <span 
-                  className={`absolute -top-1 -right-1 bg-orange-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center z-20 ${
-                    isAnimating ? "scale-125 transition-transform duration-700" : "transition-transform duration-300"
-                  }`}
+                <span
+                  className={`absolute -top-1 -right-1 bg-orange-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center z-20 ${isAnimating ? "scale-125 transition-transform duration-700" : "transition-transform duration-300"
+                    }`}
                 >
                   {totalItem}
                 </span>
                 {isActive && <span className="absolute inset-0 bg-[#ffd699] rounded-full z-10"></span>}
-                <ShoppingCart 
-                  size={20} 
-                  className={`relative z-10 ${isAnimating ? "scale-125 transition-transform duration-300" : ""}`} 
+                <ShoppingCart
+                  size={20}
+                  className={`relative z-10 ${isAnimating ? "scale-125 transition-transform duration-300" : ""}`}
                 />
               </>
             )}
           </NavLink>
         </div>
       </div>
+
+      {/* Language popup panel - Improved responsive layout */}
+      {showLanguageOptions && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-teal-900 rounded-lg p-4 w-full mx-4 relative md:mx-auto 
+                    max-h-[70vh] md:max-h-[50vh] overflow-y-auto 
+                    sm:max-w-md md:max-w-lg lg:max-w-xl">
+            {/* Close button - positioned at top right */}
+            <button
+              onClick={closeLanguageOptions}
+              className="absolute top-2 right-2 p-2 rounded-full bg-red-500 hover:bg-red-600 text-white z-10"
+            >
+              <X size={20} />
+            </button>
+
+            {/* Language component with improved container */}
+            <div className="pt-8 pb-4">
+              <Language onClose={closeLanguageOptions} />
+            </div>
+          </div>
+        </div>
+      )}
     </footer>
   )
 }

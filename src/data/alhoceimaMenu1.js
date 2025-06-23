@@ -3,7 +3,7 @@ export const menuData = {
     {
       id: 1,
       name: {
-        en: "BREAKFAST",
+        en: "BREAKFAST Menu 1",
         fr: "PETIT DÉJEUNER",
         es: "DESAYUNO",
         ar: "الإفطار"

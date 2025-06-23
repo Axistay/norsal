@@ -8,7 +8,7 @@ import { motion } from "framer-motion"
 import { TransContext } from "../context/TransContext"
 import { changeLanguage } from "../i18n"
 
-const Language = () => {
+const Language = ({onClose}) => {
   const { t, i18n } = useTranslation()
   const language = i18n?.language
   const { state, dispatch } = useContext(TransContext)
@@ -54,6 +54,7 @@ const Language = () => {
 
   const handleLanguageChange = (code) => {
     dispatch({ type: "CHANGE_LANGUAGE", payload: code })
+    onClose()
   }
 
   // Animation variants
@@ -80,15 +81,10 @@ const Language = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="flex flex-col items-center justify-center px-4"
+      className="flex flex-col items-center justify-center px-4 w-full"
     >
       <div className="w-full max-w-4xl">
-        <div className="text-center">
-          <div className="flex items-center justify-center mb-10 pt-14">
-            <Globe className="text-orange-600 mr-2" size={28} />
-            <h1 className="text-2xl font-bold text-teal-50">{t("language.title")}</h1>
-          </div>
-        </div>
+        
 
         <motion.div
           variants={containerVariants}
@@ -101,15 +97,15 @@ const Language = () => {
               key={lang.code}
               variants={itemVariants}
               onClick={() => handleLanguageChange(lang.code)}
-              className={`relative p-6 rounded-xl shadow-sm transition-all duration-300 hover:shadow-md h-32 
+              className={`relative p-6 rounded-xl shadow-sm transition-all duration-300 hover:shadow-md h-24 
                 ${language === lang.code
-                  ? "bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-500 shadow-md"
-                  : "bg-white border border-gray-100 hover:border-gray-200"}`}
+                  ? " border-2 border-blue-500 shadow-md"
+                  : " border border-gray-100 hover:border-gray-200"}`}
             >
               <div className="absolute right-0 top-0 bottom-0 left-24 rounded-r-xl bg-cover bg-center bg-no-repeat"
                 style={{ backgroundImage: `url(${lang.img})` }}
               />
-              <div className="absolute inset-0 bg-teal-950 bg-opacity-10" />
+              <div className="absolute inset-0 bg-teal-950 bg-opacity-10 rounded-xl" />
               <div className="bg-teal-900 absolute top-0 left-0 bottom-0 w-24 p-1 flex flex-col items-center justify-center rounded-l-xl">
                 <span className="text-4xl mb-3 text-orange-500">{lang.flag}</span>
                 <span className="text-sm text-teal-50 mt-1">{lang.nativeName}</span>

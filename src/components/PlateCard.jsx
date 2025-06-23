@@ -56,7 +56,7 @@ const PlateCard = ({ plate }) => {
           <img
             src={plate.image || "/placeholder.svg"}
             alt={plate.title[langused]}
-            className="w-full h-48 object-cover"
+            className="w-full h-60 sm:h-60 aspect-[9/16] sm:aspect-auto object-cover"
             loading="lazy"
             onLoad={handleImageLoad}
             style={{ opacity: imageLoading ? 0 : 1 }}
@@ -79,7 +79,7 @@ const PlateCard = ({ plate }) => {
       </div>
       
       <AnimatePresence>
-        {showDetail && <PlateDetail dataPlate={plate} onClose={setShowDetail} />}
+        {showDetail && <PlateDetail dataPlate={plate} onClose={toggle} />}
       </AnimatePresence>
     </motion.div>
   )

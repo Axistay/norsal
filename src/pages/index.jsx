@@ -6,20 +6,7 @@ import { MapPin, ChevronRight, Globe } from 'lucide-react';
 
 import imagetop from '../../public/image0.png';
 
-/**
- * @typedef {Object} City
- * @property {string} id - Unique identifier for the city
- * @property {string} name - Name of the city in multiple languages
- * @property {string} image - URL of the city image
- * @property {string} color - Tailwind color class
- * @property {string} bg - Tailwind background class
- * @property {string} border - Tailwind border class for selection
- */
-
-/**
- * CityGrid component displays a grid of selectable cities with enhanced animations
- * @returns {JSX.Element}
- */
+ 
 export default function CityGrid({ cities }) {
   const { t, i18n } = useTranslation();
   const langused = i18n.language;
@@ -55,7 +42,8 @@ export default function CityGrid({ cities }) {
     // Slight delay for animation to be visible
     setTimeout(() => {
       const city = cities.find(c => c.id === cityId);
-      navigate(`/${city.id}/menu`);
+      const path = `/${city.id}/menus`;
+      navigate(path);
     }, 300);
   };
 
@@ -94,7 +82,7 @@ export default function CityGrid({ cities }) {
 
   // Skeleton loading component
   const SkeletonLoader = () => (
-    <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 gap-8">
       {[1, 2, 3, 4, 5, 6].map((item) => (
         <div 
           key={item} 
