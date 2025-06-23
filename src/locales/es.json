@@ -66,14 +66,15 @@
   },
   "menu": {
     "searchInCategory": "Search in {{category}}...",
-    "addToCart": "Add to cart",
-    "save": "Save",
+    "addToCart": "Guardar",
+    "inToCart": "Guardado",
     "price": "Price",
     "calories": "Calories",
     "protein": "Protein",
     "fat": "Fat",
     "variation": "Variation",
-    "reviews": "Reviews"
+    "reviews": "Reviews",
+    "mad": "MAD"
   },
   "search": {
     "results": "Search Results",

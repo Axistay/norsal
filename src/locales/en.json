@@ -68,8 +68,8 @@
   },
   "menu": {
     "searchInCategory": "Search in {{category}}...",
-    "addToCart": "Add to cart",
-    "inToCart": "Is in your cart",
+    "addToCart": "Save",
+    "inToCart": "Saved",
     "price": "Price",
     "calories": "Calories",
     "protein": "Protein",

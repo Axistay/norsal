@@ -7,31 +7,31 @@
   "home": {
     "search": "ابحث عن الطعام...",
     "welcity": "استرخِ واختر ما يناسبك."
-  }, 
+  },
   "menu": {
-  "searchInCategory": "ابحث في {{category}}...",
-  "addToCart": "أضف إلى السلة",
-  "inToCart": "موجود في سلتك",
-  "price": "السعر",
-  "calories": "السعرات الحرارية",
-  "protein": "البروتين",
-  "fat": "الدهون",
-  "variation": "النوع"
-},
+    "searchInCategory": "ابحث في {{category}}...",
+    "addToCart": "حفظ",
+    "inToCart": "تم الحفظ",
+    "price": "السعر",
+    "calories": "السعرات الحرارية",
+    "protein": "البروتين",
+    "fat": "الدهون",
+    "variation": "النوع",
+    "mad": "درهم"
+  },
   "cart": {
-  "title": "طلبك",
-  "empty": "لا توجد عناصر في الطلب حالياً",
-  "total": "الإجمالي",
-  "checkout": "تأكيد الطلب",
-  "remove": "حذف",
-  "continueShopping": "العودة للقائمة"
-}
-,
+    "title": "طلبك",
+    "empty": "لا توجد عناصر في الطلب حالياً",
+    "total": "الإجمالي",
+    "checkout": "تأكيد الطلب",
+    "remove": "حذف",
+    "continueShopping": "العودة للقائمة"
+  },
   "language": {
     "title": "اختر اللغة",
     "english": "الإنجليزية",
     "french": "الفرنسية",
     "arabic": "العربية",
-    "spanish" : "spanish"
+    "spanish": "spanish"
   }
 }

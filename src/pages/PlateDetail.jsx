@@ -2,6 +2,7 @@
 
 import React, { useCallback, useEffect, useMemo, useState } from "react"
 import { ShoppingCart, X, ZoomIn, Heart, Star, Clock, Users } from "lucide-react"
+import { useTranslation } from "react-i18next"
 
 // Simplified animation configurations with smooth transitions
 const ANIMATION_CONFIG = {
@@ -232,6 +233,8 @@ const ZoomedImageModal = React.memo(({ isOpen, onClose, plate }) => {
 
 // Main component
 const PlateDetail = ({ dataPlate, onClose }) => {
+  const { t, i18n } = useTranslation()
+  const langused = i18n.language
   const [isImageZoomed, setIsImageZoomed] = useState(false)
   const [isInCart, setIsInCart] = useState(false)
   
@@ -269,16 +272,40 @@ const PlateDetail = ({ dataPlate, onClose }) => {
                 <ImageSection plate={plate} onZoomClick={handleZoomOpen} />
                 
                 <div className="space-y-6">
-                  <TitleSection plate={plate} />
-                  <DescriptionSection plate={plate} />
+                  <AnimatedDiv delay={0.2} className="space-y-2">
+                    <h1 className="text-3xl font-bold text-gray-900 hover:text-orange-600 transition-colors duration-200">
+                      {plate.title?.[langused] || 'Untitled Dish'}
+                    </h1>
+                  </AnimatedDiv>
+                  <AnimatedDiv delay={0.3}>
+                    <p className="text-gray-700 leading-relaxed text-base">
+                      {plate.description?.[langused] || t('menu.noDescription', 'No description available')}
+                    </p>
+                  </AnimatedDiv>
                 </div>
               </div>
               
-              <PriceSection 
-                plate={plate}
-                isInCart={isInCart}
-                onAddToCart={handleAddToCart}
-              />
+              <AnimatedDiv delay={0.4} className="bg-white border border-gray-200 rounded-xl p-6 sticky bottom-0">
+                <div className="flex items-center justify-between">
+                  <div className="text-3xl font-bold text-gray-900">
+                    {plate.price?.toFixed(2)} {t('menu.mad')}
+                  </div>
+                  
+                  <button
+                    onClick={handleAddToCart}
+                    className={`px-4 py-4 rounded-xl font-semibold text-white transition-all duration-200 flex items-center gap-2 shadow-lg hover:scale-105 active:scale-95 ${
+                      isInCart 
+                        ? "bg-green-600 hover:bg-green-700" 
+                        : "bg-gradient-to-r from-teal-500 to-teal-900  "
+                    }`}
+                  >
+                    <div className={`transition-transform duration-200 ${isInCart ? 'rotate-12' : ''}`}>
+                      <ShoppingCart className="w-5 h-5" />
+                    </div>
+                    {isInCart ? t('menu.inToCart') : t('menu.addToCart')}
+                  </button>
+                </div>
+              </AnimatedDiv>
             </div>
           </div>
         </div>

@@ -92,7 +92,7 @@ const Footer = () => {
           )}
 
           <NavLink
-            to={`/${city}/menu`}
+            to={`/${city}/menus`}
             className={({ isActive }) =>
               `relative flex items-center justify-center p-2 rounded-full transition-all duration-300 ease-in-out flex-1 border-2 border-teal-700  ${path.includes('menu') ? "text-black shadow-lg shadow-yellow-200" : "text-gray-400 hover:text-gray-200"
               }`

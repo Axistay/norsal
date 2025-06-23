@@ -66,14 +66,15 @@
   },
   "menu": {
     "searchInCategory": "Rechercher dans {{category}}...",
-    "addToCart": "Ajouter au panier",
-    "save": "Sauvegarder",
+    "addToCart": "Enregistrer",
+    "inToCart": "Enregistré",
     "price": "Prix",
     "calories": "Calories",
     "protein": "Protéines",
     "fat": "Matières grasses",
     "variation": "Variation",
-    "reviews": "Avis"
+    "reviews": "Avis",
+    "mad" : "MAD"
   },
   "search": {
     "results": "Résultats de recherche",

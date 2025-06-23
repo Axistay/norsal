@@ -359,7 +359,7 @@ const SelectMenuAlhoceima = ({ cities = [] }) => {
                                     {t('comingSoon.openingDate', 'Opening Date')}
                                 </p>
                                 <p className="text-2xl md:text-3xl font-bold text-white">
-                                    10/07/2025
+                                    07/2025
                                 </p>
                             </motion.div>
 
