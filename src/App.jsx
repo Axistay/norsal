@@ -110,7 +110,7 @@ const App = () => {
   return (
    <>
     <div className="flex flex-col  min-h-screen h-full md:items-center md:justify-center bg-gradient-to-tr from-[#ffd699] via-[#008080] to-[#004d4d]   ">
-      <div className="flex-grow md:ps-20 lg:ps-0 pb-16 md:pb-0 md:max-w-5xl w-full shadow-teal-200 shadow-xl">
+      <div className="flex-grow md:ps-20 lg:ps-0 pb-16 md:pb-0 md:max-w-7xl w-full shadow-teal-200 shadow-xl">
         {/* {showBackButton && <BackButton />} */}
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>

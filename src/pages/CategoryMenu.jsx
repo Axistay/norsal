@@ -1,4 +1,4 @@
-"use client"
+ 
 
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
@@ -50,7 +50,78 @@ const CategoryMenu = () => {
     }
   }, [categoryId, currentCategory, types, plates, dispatch, activeType])
 
- 
+  // Scroll detection for automatic active type update
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = categoryTypes.map(type => {
+        const element = document.getElementById(`type-${type.id}`)
+        if (element) {
+          const rect = element.getBoundingClientRect()
+          return {
+            id: type.id,
+            top: rect.top,
+            bottom: rect.bottom,
+            element
+          }
+        }
+        return null
+      }).filter(Boolean)
+
+      // Find the section that's most visible in the viewport
+      const viewportHeight = window.innerHeight
+      const navbarHeight = 60 // Height of your fixed navbar
+      const threshold = viewportHeight * 0.3 // 30% of viewport height
+
+      let bestMatch = null
+      let bestScore = -1
+
+      sections.forEach(section => {
+        // Calculate how much of the section is visible
+        const visibleTop = Math.max(navbarHeight, section.top)
+        const visibleBottom = Math.min(viewportHeight, section.bottom)
+        
+        if (visibleBottom > visibleTop) {
+          const visibleHeight = visibleBottom - visibleTop
+          const totalHeight = section.bottom - section.top
+          const visibilityRatio = visibleHeight / totalHeight
+          
+          // Prefer sections that are closer to the top of the viewport
+          const distanceFromTop = Math.abs(section.top - navbarHeight)
+          const score = visibilityRatio - (distanceFromTop / viewportHeight) * 0.5
+          
+          if (score > bestScore && visibilityRatio > 0.1) { // At least 10% visible
+            bestScore = score
+            bestMatch = section
+          }
+        }
+      })
+
+      if (bestMatch && bestMatch.id !== activeType) {
+        setActiveType(bestMatch.id)
+      }
+    }
+
+    // Throttle scroll events for better performance
+    let ticking = false
+    const throttledHandleScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          handleScroll()
+          ticking = false
+        })
+        ticking = true
+      }
+    }
+
+    window.addEventListener('scroll', throttledHandleScroll)
+    
+    // Initial check
+    handleScroll()
+
+    return () => {
+      window.removeEventListener('scroll', throttledHandleScroll)
+    }
+  }, [categoryTypes, activeType])
 
   if (!currentCategory) return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-emerald-50 flex items-center justify-center">
@@ -70,7 +141,7 @@ const CategoryMenu = () => {
     >
       <div className="pt-8 pb-4 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero Section */}
-        <div className="relative  mb-8 mt-16 overflow-hidden rounded-2xl shadow-2xl">
+        <div className="relative mb-8 mt-16 overflow-hidden rounded-2xl shadow-2xl">
           <img
             src={currentCategory.image || "/placeholder.svg"}
             alt={currentCategory.name[langused]}
@@ -134,7 +205,7 @@ const CategoryMenu = () => {
 
               {/* Plates Grid */}
               {typedPlates[type.id] && typedPlates[type.id].length > 0 ? (
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
                   {typedPlates[type.id].map((plate, plateIndex) => (
                     <motion.div
                       key={plate.id}
@@ -163,10 +234,9 @@ const CategoryMenu = () => {
           ))}
         </div>
       </div>
-
-     
     </motion.div>
   )
 }
 
 export default CategoryMenu
+ 
