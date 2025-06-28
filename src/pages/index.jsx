@@ -210,7 +210,7 @@ export default function CityGrid({ cities }) {
                             initial={{ opacity: 0, y: 10 }}
                             whileHover={{ opacity: 1, y: 0 }}
                           >
-                            <Globe className="w-4 h-4 mr-1" />
+                          <span>{city?.name[langused]} </span>
                           </motion.div>
                         )}
                       </div>

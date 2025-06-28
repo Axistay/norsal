@@ -80,8 +80,10 @@
     "menu1": "MENÚ NORSAL",
     "menu2": "MENÚ TERRAZA",
     "section": "Selección de menú",
-    "mad" : "MAD"
-
+    "mad" : "MAD",
+    "untitledDish": "Plato sin título",
+    "noDescription": "No hay descripción disponible",
+    "dishImage": "Imagen del plato"
   },
   "search": {
     "results": "Resultados de búsqueda",

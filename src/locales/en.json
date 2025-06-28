@@ -80,8 +80,10 @@
     "menu1": "MENU NORSAL",
     "menu2": "MENU TERASSE",
     "section": "Menu selection",
-    "mad" : "MAD"
-
+    "mad" : "MAD",
+    "untitledDish": "Untitled Dish",
+    "noDescription": "No description available",
+    "dishImage": "Dish image"
   },
   "search": {
     "results": "Search Results",

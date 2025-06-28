@@ -1,15 +1,16 @@
- 
+
 
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { useTranslation } from "react-i18next"
 import { useSelector, useDispatch } from "react-redux"
-import { motion } from "framer-motion"
+import { AnimatePresence, motion } from "framer-motion"
 
 import { setCurrentCategory } from "../redux/slices/menuSlice"
 import SearchBar from "../components/SearchBar"
 import PlateCard from "../components/PlateCard"
 import CategoryNavbar from "../components/CategoryNavbar"
+import PlateDetail from "./PlateDetail"
 
 const CategoryMenu = () => {
   const { id } = useParams()
@@ -24,6 +25,12 @@ const CategoryMenu = () => {
   const [activeType, setActiveType] = useState(null)
   const [categoryTypes, setCategoryTypes] = useState([])
   const [typedPlates, setTypedPlates] = useState({})
+  const [dataPlate, setDataPlate] = useState(null);
+
+  const [showDetail, setShowDetail] = useState(false)
+  const toggle = () => {
+    setShowDetail(!showDetail)
+  }
 
   useEffect(() => {
     if (currentCategory) {
@@ -79,16 +86,16 @@ const CategoryMenu = () => {
         // Calculate how much of the section is visible
         const visibleTop = Math.max(navbarHeight, section.top)
         const visibleBottom = Math.min(viewportHeight, section.bottom)
-        
+
         if (visibleBottom > visibleTop) {
           const visibleHeight = visibleBottom - visibleTop
           const totalHeight = section.bottom - section.top
           const visibilityRatio = visibleHeight / totalHeight
-          
+
           // Prefer sections that are closer to the top of the viewport
           const distanceFromTop = Math.abs(section.top - navbarHeight)
           const score = visibilityRatio - (distanceFromTop / viewportHeight) * 0.5
-          
+
           if (score > bestScore && visibilityRatio > 0.1) { // At least 10% visible
             bestScore = score
             bestMatch = section
@@ -114,7 +121,7 @@ const CategoryMenu = () => {
     }
 
     window.addEventListener('scroll', throttledHandleScroll)
-    
+
     // Initial check
     handleScroll()
 
@@ -133,10 +140,10 @@ const CategoryMenu = () => {
   )
 
   return (
-    <motion.div 
-      initial={{ opacity: 0 }} 
-      animate={{ opacity: 1 }} 
-      exit={{ opacity: 0 }} 
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
       className="min-h-screen bg-gradient-to-br from-teal-300 via-white to-emerald-300 pb-20"
     >
       <div className="pt-8 pb-4 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -149,7 +156,7 @@ const CategoryMenu = () => {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
           <div className="absolute inset-0 flex items-center justify-center">
-            <motion.h1 
+            <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
@@ -161,7 +168,7 @@ const CategoryMenu = () => {
         </div>
 
         {/* Search Bar */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
@@ -184,8 +191,8 @@ const CategoryMenu = () => {
         {/* Content Sections */}
         <div className="space-y-16">
           {categoryTypes?.map((type, index) => (
-            <motion.div 
-              key={type.id} 
+            <motion.div
+              key={type.id}
               id={`type-${type.id}`}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -214,6 +221,11 @@ const CategoryMenu = () => {
                       transition={{ delay: 0.6 + index * 0.1 + plateIndex * 0.05 }}
                       whileHover={{ y: -4 }}
                       className="transform transition-all duration-300"
+                      onClick={() => {
+                        setDataPlate(plate)
+                        toggle()
+                      }
+                      }
                     >
                       <PlateCard plate={plate} />
                     </motion.div>
@@ -234,9 +246,13 @@ const CategoryMenu = () => {
           ))}
         </div>
       </div>
+
+
+      <AnimatePresence>
+        {showDetail && <PlateDetail dataPlate={dataPlate} onClose={toggle} />}
+      </AnimatePresence>
     </motion.div>
   )
 }
 
 export default CategoryMenu
- 

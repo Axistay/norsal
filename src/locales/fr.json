@@ -29,7 +29,7 @@
     "closing": "Nous vous souhaitons un agréable moment en notre compagnie.",
     "location": "Emplacement",
     "contact": "Contact",
-    "hours": "Horaires d’ouverture",
+    "hours": "Horaires d'ouverture",
     "hours_value": "Tous les jours : 9h00 - 23h00",
     "email": "E-mail"
   },
@@ -80,8 +80,10 @@
     "menu1": "MENU NORSAL",
     "menu2": "MENU TERRASSE",
     "section": "Sélection du menu",
-    "mad" : "MAD"
-
+    "mad" : "MAD",
+    "untitledDish": "Plat sans titre",
+    "noDescription": "Aucune description disponible",
+    "dishImage": "Image du plat"
   },
   "search": {
     "results": "Résultats de la recherche",
@@ -110,12 +112,12 @@
   },
   "common": {
     "goHome": "Accueil",
-    "logoAlt": "Logo de l’entreprise",
+    "logoAlt": "Logo de l'entreprise",
     "loading": "Chargement..."
   },
   "comingSoon": {
     "title": "Bientôt disponible !",
     "description": "Nous préparons quelque chose d'incroyable pour vous",
-    "openingDate": "Date d’ouverture"
+    "openingDate": "Date d'ouverture"
   }
 }

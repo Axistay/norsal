@@ -36,11 +36,11 @@ const PlateCard = ({ plate }) => {
       >
         {/* Image Container with Gradient Background */}
         <div className="relative h-[450px]   overflow-hidden bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
-          {imageLoading && (
+          {/* {imageLoading && (
             <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200">
               <Loader2 className="h-8 w-8 animate-spin text-gray-400" />
             </div>
-          )}
+          )} */}
           <img
             src={plate.image || "/placeholder.svg"}
             alt={plate.title[langused]}
@@ -54,14 +54,16 @@ const PlateCard = ({ plate }) => {
         </div>
 
         {/* Content Section */}
-        <div className="p-6">
+        <div className="p-6 h-32">
           {/* Title and ID */}
           <div className="flex items-start justify-between mb-3">
-            <div className="flex-1">
+            <div className="">
               <h3 className="font-bold text-md text-gray-800 mb-1 leading-tight">
                 {plate.title[langused]}
               </h3>
             </div>
+            <div className="bg-teal-800  rounded-full w-1 h-6"></div>
+
             <div className="flex items-center space-x-2">
               <span className="text-md font-bold text-gray-800">
                 {plate.price.toFixed(0)}
@@ -74,13 +76,13 @@ const PlateCard = ({ plate }) => {
           <p className="text-gray-600 text-sm leading-relaxed  line-clamp-2">
             {plate.description[langused]}
           </p>
- 
+
         </div>
       </div>
 
-      <AnimatePresence>
+      {/* <AnimatePresence>
         {showDetail && <PlateDetail dataPlate={plate} onClose={toggle} />}
-      </AnimatePresence>
+      </AnimatePresence> */}
     </motion.div>
   )
 }
