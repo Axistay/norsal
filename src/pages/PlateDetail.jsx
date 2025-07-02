@@ -138,7 +138,7 @@ const PlateDetail = ({ dataPlate, onClose }) => {
         onClick={onClose}
       >
         <div 
-          className="relative h-screen md:h-[80vh] bg-white rounded shadow-2xl max-w-sm w-full overflow-hidden animate-in slide-in-from-bottom-4 zoom-in-95 duration-300"
+          className="relative h-[96vh] md:h-[80vh] bg-white rounded shadow-2xl max-w-sm w-full overflow-hidden animate-in slide-in-from-bottom-4 zoom-in-95 duration-300"
           onClick={(e) => e.stopPropagation()}
         >
           <CloseButton onClose={onClose} />
