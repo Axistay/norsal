@@ -1,5 +1,3 @@
-
-
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { useTranslation } from "react-i18next"
@@ -129,6 +127,10 @@ const CategoryMenu = () => {
       window.removeEventListener('scroll', throttledHandleScroll)
     }
   }, [categoryTypes, activeType])
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   if (!currentCategory) return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-emerald-50 flex items-center justify-center">

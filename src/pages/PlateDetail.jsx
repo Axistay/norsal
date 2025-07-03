@@ -73,7 +73,7 @@ const useBodyScrollLock = () => {
 const CloseButton = React.memo(({ onClose }) => (
   <button 
     onClick={onClose}
-    className="absolute top-4 right-4 z-20 bg-teal-500 hover:bg-teal-500/70 backdrop-blur-sm p-2 rounded-lg shadow-lg transition-all duration-200 hover:rotate-90 active:scale-95"
+    className="absolute top-2 right-2 sm:top-4 sm:right-4 z-20 bg-teal-500 hover:bg-teal-500/70 backdrop-blur-sm p-3 sm:p-2 rounded-lg shadow-lg transition-all duration-200 hover:rotate-90 active:scale-95"
   >
     <X className="w-5 h-5 text-white" />
   </button>
@@ -100,7 +100,7 @@ const ZoomedImageModal = React.memo(({ isOpen, onClose, plate }) => {
       <img
         src={plate.image}
         alt={plate.title?.[langused] || t('menu.dishImage')}
-        className="max-w-full max-h-full object-contain rounded-lg shadow-2xl animate-in zoom-in-95 duration-300"
+        className="max-w-full max-h-[80vh] sm:max-h-[90vh] object-contain rounded-lg shadow-2xl animate-in zoom-in-95 duration-300"
         onClick={(e) => e.stopPropagation()}
       />
     </div>
@@ -138,14 +138,14 @@ const PlateDetail = ({ dataPlate, onClose }) => {
         onClick={onClose}
       >
         <div 
-          className="relative w-screen h-[96vh] md:h-[80vh] bg-white rounded shadow-2xl max-w-sm  overflow-hidden animate-in slide-in-from-bottom-4 zoom-in-95 duration-300"
+          className="relative w-full max-w-sm md:max-w-lg lg:max-w-xl xl:max-w-2xl h-[96vh] md:h-[80vh] bg-white rounded shadow-2xl overflow-hidden overflow-y-auto animate-in slide-in-from-bottom-4 zoom-in-95 duration-300"
           onClick={(e) => e.stopPropagation()}
         >
           <CloseButton onClose={onClose} />
           
           {/* Image Section - Full width at top */}
           <div className="relative">
-            <AnimatedDiv delay={0.1} className="relative h-[550px] overflow-hidden cursor-pointer group" onClick={handleZoomOpen}>
+            <AnimatedDiv delay={0.1} className="relative  h-[550px] overflow-hidden cursor-pointer group" onClick={handleZoomOpen}>
               <img
                 src={plate.image}
                 alt={plate.title?.[langused] || 'Dish image'}
@@ -170,7 +170,7 @@ const PlateDetail = ({ dataPlate, onClose }) => {
           </div>
           
           {/* Content Section */}
-          <div className="p-6 space-y-4">
+          <div className="p-4 sm:p-6 space-y-4">
             {/* Title and Price */}
             <AnimatedDiv delay={0.2} className="space-y-2">
               <div className="flex items-start justify-between">
@@ -196,7 +196,7 @@ const PlateDetail = ({ dataPlate, onClose }) => {
             <AnimatedDiv delay={0.4} className=" absolute bottom-4  right-4 left-0 flex justify-center">
               <button
                 onClick={handleAddToCart}
-                className={`w-1/2 py-3 px-4 rounded-full font-semibold text-white transition-all duration-200 flex items-center justify-center gap-2 shadow-lg hover:scale-105 active:scale-95 ${
+                className={`w-3/4 sm:w-1/2 py-3 px-4 rounded-full font-semibold text-white transition-all duration-200 flex items-center justify-center gap-2 shadow-lg hover:scale-105 active:scale-95 ${
                   isInCart 
                     ? "bg-green-600 hover:bg-green-700" 
                     : "bg-teal-600 hover:bg-teal-700"

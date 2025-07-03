@@ -1,197 +1,255 @@
 export const menuData = {
   categories: [
     {
-      id: 1,
-      name: {
-        en: "BREAKFAST Menu 1",
-        fr: "PETIT DÉJEUNER",
-        es: "DESAYUNO",
-        ar: "الإفطار"
+      "id": 1,
+      "name": {
+        "en": "Hot Drinks",
+        "fr": "Boissons Chaudes",
+        "es": "Bebidas Calientes",
+        "ar": "المشروبات الساخنة"
       },
-      description: {
-        en: "Delicious breakfast to start the day right",
-        fr: "Petit-déjeuner délicieux pour bien commencer la journée",
-        es: "Desayuno delicioso para empezar bien el día",
-        ar: "إفطار لذيذ لبداية يوم رائع"
+      "description": {
+        "en": "Traditional hot beverages to warm you up",
+        "fr": "Boissons chaudes traditionnelles pour vous réchauffer",
+        "es": "Bebidas calientes tradicionales para calentarse",
+        "ar": "مشروبات ساخنة تقليدية لتدفئتك"
       },
-      color: "yellow-900",
-      border: "border-yellow-900",
-      shadow: "shadow-yellow-500",
-      image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836"
+      "color": "orange-700",
+      "border": "border-orange-700",
+      "shadow": "shadow-orange-500",
+      "image": "https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5"
     },
     {
-      id: 2,
-      name: {
-        en: "À LA CARTE",
-        fr: "À LA CARTE",
-        es: "A LA CARTA",
-        ar: "من القائمة"
+      "id": 2,
+      "name": {
+        "en": "Cold Drinks",
+        "fr": "Boissons Fraîches",
+        "es": "Bebidas Frías",
+        "ar": "المشروبات الباردة"
       },
-      description: {
-        en: "Choose from a wide variety of dishes, prepared just the way you like.",
-        fr: "Choisissez parmi une grande variété de plats, préparés selon vos envies.",
-        es: "Elija entre una amplia variedad de platos, preparados a su gusto.",
-        ar: "اختر من مجموعة واسعة من الأطباق المحضّرة كما تحب."
+      "description": {
+        "en": "Refreshing beverages to cool you down",
+        "fr": "Boissons rafraîchissantes pour vous désaltérer",
+        "es": "Bebidas refrescantes para enfriarse",
+        "ar": "مشروبات منعشة لتبريدك"
       },
-      color: "sky-900",
-      border: "border-sky-900",
-      shadow: "shadow-sky-600",
-      image: "https://images.unsplash.com/photo-1600891964599-f61ba0e24092"
+      "color": "blue-500",
+      "border": "border-blue-500",
+      "shadow": "shadow-blue-300",
+      "image": "https://images.unsplash.com/photo-1551029506-0807df4e2031"
     },
     {
-      id: 3,
-      name: {
-        en: "LUNCH",
-        fr: "DÉJEUNER",
-        es: "ALMUERZO",
-        ar: "الغداء"
+      "id": 3,
+      "name": {
+        "en": "Sweet Crepes",
+        "fr": "Crêpes Sucrées",
+        "es": "Crêpes Dulces",
+        "ar": "الكريب الحلو"
       },
-      description: {
-        en: "Hearty and satisfying meals to keep you energized.",
-        fr: "Repas copieux et satisfaisants pour vous garder énergisé.",
-        es: "Comidas abundantes y satisfactorias para mantenerte con energía.",
-        ar: "وجبات مشبعة ومرضية لإبقائك نشيطًا."
+      "description": {
+        "en": "Delicious sweet crepes with various toppings",
+        "fr": "Délicieuses crêpes sucrées avec diverses garnitures",
+        "es": "Deliciosos crêpes dulces con varios toppings",
+        "ar": "كريب حلو لذيذ مع طبقات مختلفة"
       },
-      color: "green-700",
-      border: "border-green-700",
-      shadow: "shadow-green-500",
-      image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836"
+      "color": "pink-500",
+      "border": "border-pink-500",
+      "shadow": "shadow-pink-300",
+      "image": "https://images.unsplash.com/photo-1562440499-64c9a111f713"
     },
     {
-      id: 4,
-      name: {
-        en: "DINNER",
-        fr: "DÎNER",
-        es: "CENA",
-        ar: "العشاء"
+      "id": 4,
+      "name": {
+        "en": "Pancakes",
+        "fr": "Pancakes",
+        "es": "Panqueques",
+        "ar": "بانكيك"
       },
-      description: {
-        en: "End your day with a delightful dinner experience.",
-        fr: "Terminez votre journée avec un délicieux dîner.",
-        es: "Termina tu día con una cena deliciosa.",
-        ar: "اختم يومك بعشاء لذيذ."
+      "description": {
+        "en": "Fluffy pancakes with delicious toppings",
+        "fr": "Pancakes moelleux avec délicieuses garnitures",
+        "es": "Panqueques esponjosos con deliciosos toppings",
+        "ar": "بانكيك رقيق مع طبقات لذيذة"
       },
-      color: "purple-800",
-      border: "border-purple-800",
-      shadow: "shadow-purple-500",
-      image: "https://images.unsplash.com/photo-1600891964599-f61ba0e24092"
+      "color": "amber-500",
+      "border": "border-amber-500",
+      "shadow": "shadow-amber-300",
+      "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38"
     },
     {
-      id: 5,
-      name: {
-        en: "DESSERT",
-        fr: "DESSERT",
-        es: "POSTRE",
-        ar: "الحلوى"
+      "id": 5,
+      "name": {
+        "en": "Waffles",
+        "fr": "Gaufres",
+        "es": "Gofres",
+        "ar": "الوافل"
       },
-      description: {
-        en: "Sweet treats to satisfy your cravings.",
-        fr: "Douceurs sucrées pour satisfaire vos envies.",
-        es: "Dulces para satisfacer tus antojos.",
-        ar: "حلويات لإرضاء شهيتك."
+      "description": {
+        "en": "Crispy waffles with sweet toppings",
+        "fr": "Gaufres croustillantes avec garnitures sucrées",
+        "es": "Gofres crujientes con toppings dulces",
+        "ar": "وافل مقرمش مع طبقات حلوة"
       },
-      color: "pink-700",
-      border: "border-pink-700",
-      shadow: "shadow-pink-500",
-      image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836"
+      "color": "brown-500",
+      "border": "border-brown-500",
+      "shadow": "shadow-brown-300",
+      "image": "https://images.unsplash.com/photo-1562376552-0d8a4c5f2c0a"
     },
     {
-      id: 6,
-      name: {
-        en: "BEVERAGES",
-        fr: "BOISSONS",
-        es: "BEBIDAS",
-        ar: "المشروبات"
+      "id": 6,
+      "name": {
+        "en": "Churros",
+        "fr": "Chorros",
+        "es": "Churros",
+        "ar": "تشوروس"
       },
-      description: {
-        en: "Refreshing drinks to complement your meal.",
-        fr: "Boissons rafraîchissantes pour accompagner votre repas.",
-        es: "Bebidas refrescantes para complementar tu comida.",
-        ar: "مشروبات منعشة لتكمل وجبتك."
+      "description": {
+        "en": "Traditional Spanish fried-dough pastry",
+        "fr": "Pâtisserie espagnole traditionnelle à base de pâte frite",
+        "es": "Postre tradicional español de masa frita",
+        "ar": "حلوى إسبانية تقليدية من العجين المقلي"
       },
-      color: "blue-700",
-      border: "border-blue-700",
-      shadow: "shadow-blue-500",
-      image: "https://images.unsplash.com/photo-1600891964599-f61ba0e24092"
+      "color": "yellow-600",
+      "border": "border-yellow-600",
+      "shadow": "shadow-yellow-400",
+      "image": "https://images.unsplash.com/photo-1626094309830-abbb356a6e70"
     },
     {
-      id: 7,
-      name: {
-        en: "SALADS",
-        fr: "SALADES",
-        es: "ENSALADAS",
-        ar: "السلطات"
+      "id": 7,
+      "name": {
+        "en": "Salads",
+        "fr": "Salades",
+        "es": "Ensaladas",
+        "ar": "السلطات"
       },
-      description: {
-        en: "Fresh and healthy salad options.",
-        fr: "Options de salades fraîches et saines.",
-        es: "Opciones de ensaladas frescas y saludables.",
-        ar: "خيارات سلطات طازجة وصحية."
+      "description": {
+        "en": "Fresh and healthy salad options",
+        "fr": "Options de salades fraîches et saines",
+        "es": "Opciones de ensaladas frescas y saludables",
+        "ar": "خيارات سلطات طازجة وصحية"
       },
-      color: "lime-700",
-      border: "border-lime-700",
-      shadow: "shadow-lime-500",
-      image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836"
+      "color": "green-500",
+      "border": "border-green-500",
+      "shadow": "shadow-green-300",
+      "image": "https://images.unsplash.com/photo-1546793665-c74683f339c1"
     },
     {
-      id: 8,
-      name: {
-        en: "SOUPS",
-        fr: "SOUPES",
-        es: "SOPAS",
-        ar: "الشوربات"
+      "id": 8,
+      "name": {
+        "en": "Hot Appetizers",
+        "fr": "Entrées Chaudes",
+        "es": "Entradas Calientes",
+        "ar": "المقبلات الساخنة"
       },
-      description: {
-        en: "Warm and comforting soups for any occasion.",
-        fr: "Soupes chaudes et réconfortantes pour toutes les occasions.",
-        es: "Sopas cálidas y reconfortantes para cualquier ocasión.",
-        ar: "شوربات دافئة ومريحة لأي مناسبة."
+      "description": {
+        "en": "Warm and tasty starters",
+        "fr": "Entrées chaudes et savoureuses",
+        "es": "Entradas calientes y sabrosas",
+        "ar": "مقبلات ساخنة ولذيذة"
       },
-      color: "orange-700",
-      border: "border-orange-700",
-      shadow: "shadow-orange-500",
-      image: "https://images.unsplash.com/photo-1600891964599-f61ba0e24092"
+      "color": "red-500",
+      "border": "border-red-500",
+      "shadow": "shadow-red-300",
+      "image": "https://images.unsplash.com/photo-1601050690597-df0568f70950"
     },
     {
-      id: 9,
-      name: {
-        en: "GRILLED",
-        fr: "GRILLÉ",
-        es: "A LA PARRILLA",
-        ar: "مشوي"
+      "id": 9,
+      "name": {
+        "en": "Pizza",
+        "fr": "Pizza",
+        "es": "Pizza",
+        "ar": "بيتزا"
       },
-      description: {
-        en: "Grilled delights with smoky flavors.",
-        fr: "Délices grillés aux saveurs fumées.",
-        es: "Delicias a la parrilla con sabores ahumados.",
-        ar: "أطباق مشوية بنكهات مدخنة."
+      "description": {
+        "en": "Italian-style pizzas with various toppings",
+        "fr": "Pizzas de style italien avec diverses garnitures",
+        "es": "Pizzas al estilo italiano con varios toppings",
+        "ar": "بيتزا على الطريقة الإيطالية مع طبقات مختلفة"
       },
-      color: "red-700",
-      border: "border-red-700",
-      shadow: "shadow-red-500",
-      image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836"
+      "color": "orange-500",
+      "border": "border-orange-500",
+      "shadow": "shadow-orange-300",
+      "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38"
     },
     {
-      id: 10,
-      name: {
-        en: "SEAFOOD",
-        fr: "FRUITS DE MER",
-        es: "MARISCOS",
-        ar: "المأكولات البحرية"
+      "id": 10,
+      "name": {
+        "en": "Pasta",
+        "fr": "Pâtes",
+        "es": "Pastas",
+        "ar": "المعكرونة"
       },
-      description: {
-        en: "Fresh seafood dishes from the ocean.",
-        fr: "Plats de fruits de mer frais de l'océan.",
-        es: "Platos de mariscos frescos del océano.",
-        ar: "أطباق مأكولات بحرية طازجة من المحيط."
+      "description": {
+        "en": "Italian pasta dishes with delicious sauces",
+        "fr": "Plats de pâtes italiennes avec sauces délicieuses",
+        "es": "Platos de pasta italiana con salsas deliciosas",
+        "ar": "أطباق معكرونة إيطالية مع صلصات لذيذة"
       },
-      color: "teal-700",
-      border: "border-teal-700",
-      shadow: "shadow-teal-500",
-      image: "https://images.unsplash.com/photo-1600891964599-f61ba0e24092"
+      "color": "yellow-500",
+      "border": "border-yellow-500",
+      "shadow": "shadow-yellow-300",
+      "image": "https://images.unsplash.com/photo-1555949258-eb67b1ef0ceb"
+    },
+    {
+      "id": 13,
+      "name": {
+        "en": "Tacos",
+        "fr": "Tacos",
+        "es": "Tacos",
+        "ar": "تاكوس"
+      },
+      "description": {
+        "en": "Soft or crispy tortillas filled with savory ingredients.",
+        "fr": "Tortillas moelleuses ou croustillantes garnies d’ingrédients savoureux.",
+        "es": "Tortillas suaves o crujientes rellenas de ingredientes sabrosos.",
+        "ar": "تورتيلا طرية أو مقرمشة محشوة بمكونات شهية."
+      },
+      "color": "yellow-600",
+      "border": "border-yellow-600",
+      "shadow": "shadow-yellow-400",
+      "image": "https://images.unsplash.com/photo-1604908812857-1031146f6633"
+    },
+    
+    {
+      "id": 11,
+      "name": {
+        "en": "Desserts",
+        "fr": "Desserts",
+        "es": "Postres",
+        "ar": "الحلويات"
+      },
+      "description": {
+        "en": "Sweet treats to finish your meal",
+        "fr": "Douceurs sucrées pour terminer votre repas",
+        "es": "Dulces para terminar tu comida",
+        "ar": "حلويات لإنهاء وجبتك"
+      },
+      "color": "pink-400",
+      "border": "border-pink-400",
+      "shadow": "shadow-pink-200",
+      "image": "https://images.unsplash.com/photo-1563805042-7684c019e1cb"
+    },
+    {
+      "id": 12,
+      "name": {
+        "en": "Ice Cream Cups",
+        "fr": "Coupes de Glace",
+        "es": "Copas de Helado",
+        "ar": "أكواب الآيس كريم"
+      },
+      "description": {
+        "en": "Delicious ice cream combinations",
+        "fr": "Délicieuses combinaisons de glaces",
+        "es": "Deliciosas combinaciones de helado",
+        "ar": "تركيبات لذيذة من الآيس كريم"
+      },
+      "color": "blue-300",
+      "border": "border-blue-300",
+      "shadow": "shadow-blue-100",
+      "image": "https://images.unsplash.com/photo-1497034825429-c343d7c6a68f"
     }
   ],
-  
+
   types: [
     {
       id: 101,
@@ -806,7 +864,7 @@ export const menuData = {
         carbs: 65
       }
     },
-    
+
     // À LA CARTE PLATES
     {
       id: 11,
@@ -933,7 +991,7 @@ export const menuData = {
         carbs: 10
       }
     },
-    
+
     // LUNCH PLATES
     {
       id: 16,
@@ -1060,7 +1118,7 @@ export const menuData = {
         carbs: 60
       }
     },
-    
+
     // Adding more plates to reach 120+ as requested...
     // I'll continue with plates across all categories
 
@@ -1140,7 +1198,7 @@ export const menuData = {
         carbs: 70
       }
     },
-    
+
     // DESSERT PLATES
     {
       id: 24,
@@ -1217,7 +1275,7 @@ export const menuData = {
         carbs: 55
       }
     },
-    
+
     // BEVERAGES
     {
       id: 27,
@@ -1294,7 +1352,7 @@ export const menuData = {
         carbs: 26
       }
     },
-    
+
     // SALADS
     {
       id: 30,
@@ -1346,7 +1404,7 @@ export const menuData = {
         carbs: 45
       }
     },
-    
+
     // SOUPS
     {
       id: 32,
@@ -1453,7 +1511,7 @@ export const menuData = {
         carbs: 15
       }
     },
-    
+
     // SEAFOOD
     {
       id: 36,
