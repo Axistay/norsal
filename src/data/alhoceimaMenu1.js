@@ -17,7 +17,7 @@ export const menuData = {
       color: "orange-700",
       border: "border-orange-700",
       shadow: "shadow-orange-500",
-      image: "https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5",
+      image: "https://res.cloudinary.com/dxgwnmxox/image/upload/v1751551912/slow-cooker-hot-chocolate-bee4df8_afgo3w.jpg",
     },
     {
       id: 2,
@@ -36,7 +36,7 @@ export const menuData = {
       color: "blue-500",
       border: "border-blue-500",
       shadow: "shadow-blue-300",
-      image: "https://images.unsplash.com/photo-1551029506-0807df4e2031",
+      image: "https://shop.epicuriefine.fr/wp-content/uploads/2021/03/soft-drinks.jpg",
     },
     {
       id: 3,
@@ -3760,8 +3760,13 @@ export const menuData = {
           Object.values(plate.title || {}).join(' ')
         )
       );
+    
+    const isCategory2 = plate.categoryId === 2;
+  
     return isCoffee
       ? { ...plate, image: 'https://img.freepik.com/premium-photo/vertical-view-delicious-coffee-beautiful-white-cup-beans-mix-color-background_461922-19460.jpg' }
-      : plate;
-  }),
+      : isCategory2
+        ? { ...plate, image: 'https://img.freepik.com/photos-gratuite/vue-verticale-source-vitamines-coupees-entieres-oranges-fraiches-jus-fond-gris_140725-141463.jpg' }
+        : plate;
+  })
 }

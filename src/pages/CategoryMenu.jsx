@@ -32,11 +32,11 @@ const CategoryMenu = () => {
 
   useEffect(() => {
     if (currentCategory) {
-      const filteredTypes = types.filter((type) => type.categoryId === categoryId)
+      const filteredTypes = types.filter((type) => type.categoryId === categoryId )
       setCategoryTypes(filteredTypes)
 
       if (filteredTypes?.length > 0 && !activeType) {
-        setActiveType(filteredTypes[0].id)
+        setActiveType(filteredTypes[0].id )
       }
 
       // Group plates by type
@@ -150,11 +150,11 @@ const CategoryMenu = () => {
     >
       <div className="pt-8 pb-4 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero Section */}
-        <div className="relative mb-8 mt-16 overflow-hidden rounded-2xl shadow-2xl">
+        <div className="relative mb-8 mt-16  max-h-52 md:max-h-96 overflow-hidden rounded-2xl shadow-2xl">
           <img
             src={currentCategory.image || "/placeholder.svg"}
             alt={currentCategory.name[langused]}
-            className="w-full h-48 sm:h-72 lg:h-80 object-cover"
+            className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
           <div className="absolute inset-0 flex items-center justify-center">
