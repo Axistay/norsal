@@ -73,7 +73,7 @@ const useBodyScrollLock = () => {
 const CloseButton = React.memo(({ onClose }) => (
   <button 
     onClick={onClose}
-    className="absolute top-2 right-2 sm:top-4 sm:right-4 z-20 bg-teal-500 hover:bg-teal-500/70 backdrop-blur-sm p-3 sm:p-2 rounded-lg shadow-lg transition-all duration-200 hover:rotate-90 active:scale-95"
+    className="absolute top-[50%] right-0 sm:top-4 sm:right-4 z-20 h-28 w-14 bg-red-500 hover:bg-teal-500/70 backdrop-blur-sm p-3 sm:p-2 rounded-s-full  shadow-xl transition-all duration-200 hover:rotate-90 active:scale-95"
   >
     <X className="w-5 h-5 text-white" />
   </button>
