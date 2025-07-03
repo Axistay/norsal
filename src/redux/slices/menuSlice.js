@@ -31,6 +31,7 @@ export const menuSlice = createSlice({
       const matches = (plate) => {
         // Check all languages for title and description
         const langs = ['en', 'fr', 'es', 'ar'];
+       
         return langs.some(lang =>
           (plate.title?.[lang] && plate.title[lang].toLowerCase().includes(term)) ||
           (plate.description?.[lang] && plate.description[lang].toLowerCase().includes(term))

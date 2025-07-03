@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next"
 import { useSelector } from "react-redux"
 import { X, Search } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
+import PlateDetail from "../pages/PlateDetail"
 
 const SearchModal = ({ isOpen, onClose, searchTerm }) => {
   const { t, i18n } = useTranslation()
@@ -15,6 +16,10 @@ const SearchModal = ({ isOpen, onClose, searchTerm }) => {
   const [results, setResults] = useState([])
   const [categoryCounts, setCategoryCounts] = useState({})
   const { categories } = useSelector((state) => state.menu)
+  const [dataPlate, setDataPlate] = useState(null);
+
+  const langs = ['en', 'fr', 'es', 'ar'];
+
 
   useEffect(() => {
     if (searchTerm.trim() === "") {
@@ -25,8 +30,10 @@ const SearchModal = ({ isOpen, onClose, searchTerm }) => {
 
     const filteredResults = plates.filter(
       (plate) =>
-        plate.title.en.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        plate.description.en.toLowerCase().includes(searchTerm.toLowerCase()),
+        langs.some(lang =>
+          (plate.title?.[lang] && plate.title[lang].toLowerCase().includes(searchTerm.toLowerCase())) ||
+          (plate.description?.[lang] && plate.description[lang].toLowerCase().includes(searchTerm.toLowerCase()))
+        )
     )
 
     // Get counts by category
@@ -45,8 +52,8 @@ const SearchModal = ({ isOpen, onClose, searchTerm }) => {
 
   const {cityId}= useParams()
   const handlePlateClick = (id) => {
-    navigate(`/${cityId}/menu/category/plate/${id}`)
-    onClose()
+    const plate = plates.find(p => p.id === id);
+    setDataPlate(plate);
   }
   const handleCategoryClick = (categoryId) => {
     navigate(`/${cityId}/menu/category/${categoryId}`)
@@ -60,7 +67,8 @@ const SearchModal = ({ isOpen, onClose, searchTerm }) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="flex items-center justify-center "
+          dir={langused === 'ar' ? 'rtl' : 'ltr'}
+          className={`flex items-center justify-center ${langused === 'ar' ? 'text-right' : 'text-left'}`}
           onClick={onClose}
         >
           <motion.div
@@ -68,7 +76,8 @@ const SearchModal = ({ isOpen, onClose, searchTerm }) => {
             animate={{ scale: 1, y: 0, opacity: 1 }}
             exit={{ scale: 0.9, y: 50, opacity: 0 }}
             transition={{ type: "spring", duration: 0.5 }}
-            className={`bg-teal-100 rounded-xl w-full  p-5 max-h-[80vh] overflow-y-auto`}
+            dir={langused === 'ar' ? 'rtl' : 'ltr'}
+            className={`bg-teal-100 rounded-xl w-full  p-5 max-h-[80vh] overflow-y-auto ${langused === 'ar' ? 'text-right' : 'text-left'}`}
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex justify-between items-center mb-4">
@@ -95,12 +104,12 @@ const SearchModal = ({ isOpen, onClose, searchTerm }) => {
                       <img
                         src={plate.image || "/placeholder.svg"}
                         alt={plate.title[langused]}
-                        className="w-16 h-16 object-cover rounded-lg"
+                        className="w-16 h-16 object-cover rounded-lg  mx-4"
                       />
                       <div className="flex-1">
                         <h3 className="font-medium">{plate.title[langused]}</h3>
                         <p className="text-sm text-gray-500 line-clamp-1">{plate.description[langused]}</p>
-                        <p className="text-blue-600 text-sm">{plate.price.toFixed(2)} MAD</p>
+                        <p className="text-blue-600 text-sm">{plate.price.toFixed(2)} {t('menu.mad')} </p>
                       </div>
                     </div>
                   ))}
@@ -139,6 +148,11 @@ const SearchModal = ({ isOpen, onClose, searchTerm }) => {
                   </div>
                 )}
               </>
+            )}
+
+            {/* PlateDetail Modal */}
+            {dataPlate && (
+              <PlateDetail dataPlate={dataPlate} onClose={() => setDataPlate(null)} langused={langused} />
             )}
           </motion.div>
         </motion.div>
