@@ -1,1569 +1,3767 @@
 export const menuData = {
   categories: [
     {
-      "id": 1,
-      "name": {
-        "en": "Hot Drinks",
-        "fr": "Boissons Chaudes",
-        "es": "Bebidas Calientes",
-        "ar": "المشروبات الساخنة"
+      id: 1,
+      name: {
+        en: "Hot Drinks",
+        fr: "Boissons Chaudes",
+        es: "Bebidas Calientes",
+        ar: "المشروبات الساخنة",
       },
-      "description": {
-        "en": "Traditional hot beverages to warm you up",
-        "fr": "Boissons chaudes traditionnelles pour vous réchauffer",
-        "es": "Bebidas calientes tradicionales para calentarse",
-        "ar": "مشروبات ساخنة تقليدية لتدفئتك"
+      description: {
+        en: "Traditional hot beverages to warm you up",
+        fr: "Boissons chaudes traditionnelles pour vous réchauffer",
+        es: "Bebidas calientes tradicionales para calentarse",
+        ar: "مشروبات ساخنة تقليدية لتدفئتك",
       },
-      "color": "orange-700",
-      "border": "border-orange-700",
-      "shadow": "shadow-orange-500",
-      "image": "https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5"
+      color: "orange-700",
+      border: "border-orange-700",
+      shadow: "shadow-orange-500",
+      image: "https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5",
     },
     {
-      "id": 2,
-      "name": {
-        "en": "Cold Drinks",
-        "fr": "Boissons Fraîches",
-        "es": "Bebidas Frías",
-        "ar": "المشروبات الباردة"
+      id: 2,
+      name: {
+        en: "Cold Drinks",
+        fr: "Boissons Fraîches",
+        es: "Bebidas Frías",
+        ar: "المشروبات الباردة",
       },
-      "description": {
-        "en": "Refreshing beverages to cool you down",
-        "fr": "Boissons rafraîchissantes pour vous désaltérer",
-        "es": "Bebidas refrescantes para enfriarse",
-        "ar": "مشروبات منعشة لتبريدك"
+      description: {
+        en: "Refreshing beverages to cool you down",
+        fr: "Boissons rafraîchissantes pour vous désaltérer",
+        es: "Bebidas refrescantes para enfriarse",
+        ar: "مشروبات منعشة لتبريدك",
       },
-      "color": "blue-500",
-      "border": "border-blue-500",
-      "shadow": "shadow-blue-300",
-      "image": "https://images.unsplash.com/photo-1551029506-0807df4e2031"
+      color: "blue-500",
+      border: "border-blue-500",
+      shadow: "shadow-blue-300",
+      image: "https://images.unsplash.com/photo-1551029506-0807df4e2031",
     },
     {
-      "id": 3,
-      "name": {
-        "en": "Sweet Crepes",
-        "fr": "Crêpes Sucrées",
-        "es": "Crêpes Dulces",
-        "ar": "الكريب الحلو"
+      id: 3,
+      name: {
+        en: "Sweet Crepes",
+        fr: "Crêpes Sucrées",
+        es: "Crêpes Dulces",
+        ar: "الكريب الحلو",
       },
-      "description": {
-        "en": "Delicious sweet crepes with various toppings",
-        "fr": "Délicieuses crêpes sucrées avec diverses garnitures",
-        "es": "Deliciosos crêpes dulces con varios toppings",
-        "ar": "كريب حلو لذيذ مع طبقات مختلفة"
+      description: {
+        en: "Delicious sweet crepes with various toppings",
+        fr: "Délicieuses crêpes sucrées avec diverses garnitures",
+        es: "Deliciosos crêpes dulces con varios toppings",
+        ar: "كريب حلو لذيذ مع طبقات مختلفة",
       },
-      "color": "pink-500",
-      "border": "border-pink-500",
-      "shadow": "shadow-pink-300",
-      "image": "https://images.unsplash.com/photo-1562440499-64c9a111f713"
+      color: "pink-500",
+      border: "border-pink-500",
+      shadow: "shadow-pink-300",
+      image: "https://images.unsplash.com/photo-1562440499-64c9a111f713",
     },
     {
-      "id": 4,
-      "name": {
-        "en": "Pancakes",
-        "fr": "Pancakes",
-        "es": "Panqueques",
-        "ar": "بانكيك"
+      id: 4,
+      name: {
+        en: "Pancakes",
+        fr: "Pancakes",
+        es: "Panqueques",
+        ar: "بانكيك",
       },
-      "description": {
-        "en": "Fluffy pancakes with delicious toppings",
-        "fr": "Pancakes moelleux avec délicieuses garnitures",
-        "es": "Panqueques esponjosos con deliciosos toppings",
-        "ar": "بانكيك رقيق مع طبقات لذيذة"
+      description: {
+        en: "Fluffy pancakes with delicious toppings",
+        fr: "Pancakes moelleux avec délicieuses garnitures",
+        es: "Panqueques esponjosos con deliciosos toppings",
+        ar: "بانكيك رقيق مع طبقات لذيذة",
       },
-      "color": "amber-500",
-      "border": "border-amber-500",
-      "shadow": "shadow-amber-300",
-      "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38"
+      color: "amber-500",
+      border: "border-amber-500",
+      shadow: "shadow-amber-300",
+      image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38",
     },
     {
-      "id": 5,
-      "name": {
-        "en": "Waffles",
-        "fr": "Gaufres",
-        "es": "Gofres",
-        "ar": "الوافل"
+      id: 5,
+      name: {
+        en: "Waffles",
+        fr: "Gaufres",
+        es: "Gofres",
+        ar: "الوافل",
       },
-      "description": {
-        "en": "Crispy waffles with sweet toppings",
-        "fr": "Gaufres croustillantes avec garnitures sucrées",
-        "es": "Gofres crujientes con toppings dulces",
-        "ar": "وافل مقرمش مع طبقات حلوة"
+      description: {
+        en: "Crispy waffles with sweet toppings",
+        fr: "Gaufres croustillantes avec garnitures sucrées",
+        es: "Gofres crujientes con toppings dulces",
+        ar: "وافل مقرمش مع طبقات حلوة",
       },
-      "color": "brown-500",
-      "border": "border-brown-500",
-      "shadow": "shadow-brown-300",
-      "image": "https://images.unsplash.com/photo-1562376552-0d8a4c5f2c0a"
+      color: "brown-500",
+      border: "border-brown-500",
+      shadow: "shadow-brown-300",
+      image: "https://images.unsplash.com/photo-1562376552-0d8a4c5f2c0a",
     },
     {
-      "id": 6,
-      "name": {
-        "en": "Churros",
-        "fr": "Chorros",
-        "es": "Churros",
-        "ar": "تشوروس"
+      id: 6,
+      name: {
+        en: "Churros",
+        fr: "Chorros",
+        es: "Churros",
+        ar: "تشوروس",
       },
-      "description": {
-        "en": "Traditional Spanish fried-dough pastry",
-        "fr": "Pâtisserie espagnole traditionnelle à base de pâte frite",
-        "es": "Postre tradicional español de masa frita",
-        "ar": "حلوى إسبانية تقليدية من العجين المقلي"
+      description: {
+        en: "Traditional Spanish fried-dough pastry",
+        fr: "Pâtisserie espagnole traditionnelle à base de pâte frite",
+        es: "Postre tradicional español de masa frita",
+        ar: "حلوى إسبانية تقليدية من العجين المقلي",
       },
-      "color": "yellow-600",
-      "border": "border-yellow-600",
-      "shadow": "shadow-yellow-400",
-      "image": "https://images.unsplash.com/photo-1626094309830-abbb356a6e70"
+      color: "yellow-600",
+      border: "border-yellow-600",
+      shadow: "shadow-yellow-400",
+      image: "https://images.unsplash.com/photo-1626094309830-abbb356a6e70",
     },
     {
-      "id": 7,
-      "name": {
-        "en": "Salads",
-        "fr": "Salades",
-        "es": "Ensaladas",
-        "ar": "السلطات"
+      id: 7,
+      name: {
+        en: "Salads",
+        fr: "Salades",
+        es: "Ensaladas",
+        ar: "السلطات",
       },
-      "description": {
-        "en": "Fresh and healthy salad options",
-        "fr": "Options de salades fraîches et saines",
-        "es": "Opciones de ensaladas frescas y saludables",
-        "ar": "خيارات سلطات طازجة وصحية"
+      description: {
+        en: "Fresh and healthy salad options",
+        fr: "Options de salades fraîches et saines",
+        es: "Opciones de ensaladas frescas y saludables",
+        ar: "خيارات سلطات طازجة وصحية",
       },
-      "color": "green-500",
-      "border": "border-green-500",
-      "shadow": "shadow-green-300",
-      "image": "https://images.unsplash.com/photo-1546793665-c74683f339c1"
+      color: "green-500",
+      border: "border-green-500",
+      shadow: "shadow-green-300",
+      image: "https://images.unsplash.com/photo-1546793665-c74683f339c1",
     },
     {
-      "id": 8,
-      "name": {
-        "en": "Hot Appetizers",
-        "fr": "Entrées Chaudes",
-        "es": "Entradas Calientes",
-        "ar": "المقبلات الساخنة"
+      id: 8,
+      name: {
+        en: "Hot Appetizers",
+        fr: "Entrées Chaudes",
+        es: "Entradas Calientes",
+        ar: "المقبلات الساخنة",
       },
-      "description": {
-        "en": "Warm and tasty starters",
-        "fr": "Entrées chaudes et savoureuses",
-        "es": "Entradas calientes y sabrosas",
-        "ar": "مقبلات ساخنة ولذيذة"
+      description: {
+        en: "Warm and tasty starters",
+        fr: "Entrées chaudes et savoureuses",
+        es: "Entradas calientes y sabrosas",
+        ar: "مقبلات ساخنة ولذيذة",
       },
-      "color": "red-500",
-      "border": "border-red-500",
-      "shadow": "shadow-red-300",
-      "image": "https://images.unsplash.com/photo-1601050690597-df0568f70950"
+      color: "red-500",
+      border: "border-red-500",
+      shadow: "shadow-red-300",
+      image: "https://images.unsplash.com/photo-1601050690597-df0568f70950",
     },
     {
-      "id": 9,
-      "name": {
-        "en": "Pizza",
-        "fr": "Pizza",
-        "es": "Pizza",
-        "ar": "بيتزا"
+      id: 9,
+      name: {
+        en: "Pizza",
+        fr: "Pizza",
+        es: "Pizza",
+        ar: "بيتزا",
       },
-      "description": {
-        "en": "Italian-style pizzas with various toppings",
-        "fr": "Pizzas de style italien avec diverses garnitures",
-        "es": "Pizzas al estilo italiano con varios toppings",
-        "ar": "بيتزا على الطريقة الإيطالية مع طبقات مختلفة"
+      description: {
+        en: "Italian-style pizzas with various toppings",
+        fr: "Pizzas de style italien avec diverses garnitures",
+        es: "Pizzas al estilo italiano con varios toppings",
+        ar: "بيتزا على الطريقة الإيطالية مع طبقات مختلفة",
       },
-      "color": "orange-500",
-      "border": "border-orange-500",
-      "shadow": "shadow-orange-300",
-      "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38"
+      color: "orange-500",
+      border: "border-orange-500",
+      shadow: "shadow-orange-300",
+      image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38",
     },
     {
-      "id": 10,
-      "name": {
-        "en": "Pasta",
-        "fr": "Pâtes",
-        "es": "Pastas",
-        "ar": "المعكرونة"
+      id: 10,
+      name: {
+        en: "Pasta",
+        fr: "Pâtes",
+        es: "Pastas",
+        ar: "المعكرونة",
       },
-      "description": {
-        "en": "Italian pasta dishes with delicious sauces",
-        "fr": "Plats de pâtes italiennes avec sauces délicieuses",
-        "es": "Platos de pasta italiana con salsas deliciosas",
-        "ar": "أطباق معكرونة إيطالية مع صلصات لذيذة"
+      description: {
+        en: "Italian pasta dishes with delicious sauces",
+        fr: "Plats de pâtes italiennes avec sauces délicieuses",
+        es: "Platos de pasta italiana con salsas deliciosas",
+        ar: "أطباق معكرونة إيطالية مع صلصات لذيذة",
       },
-      "color": "yellow-500",
-      "border": "border-yellow-500",
-      "shadow": "shadow-yellow-300",
-      "image": "https://images.unsplash.com/photo-1555949258-eb67b1ef0ceb"
+      color: "yellow-500",
+      border: "border-yellow-500",
+      shadow: "shadow-yellow-300",
+      image: "https://images.unsplash.com/photo-1555949258-eb67b1ef0ceb",
     },
     {
-      "id": 13,
-      "name": {
-        "en": "Tacos",
-        "fr": "Tacos",
-        "es": "Tacos",
-        "ar": "تاكوس"
+      id: 11,
+      name: {
+        en: "Desserts",
+        fr: "Desserts",
+        es: "Postres",
+        ar: "الحلويات",
       },
-      "description": {
-        "en": "Soft or crispy tortillas filled with savory ingredients.",
-        "fr": "Tortillas moelleuses ou croustillantes garnies d’ingrédients savoureux.",
-        "es": "Tortillas suaves o crujientes rellenas de ingredientes sabrosos.",
-        "ar": "تورتيلا طرية أو مقرمشة محشوة بمكونات شهية."
+      description: {
+        en: "Sweet treats to finish your meal",
+        fr: "Douceurs sucrées pour terminer votre repas",
+        es: "Dulces para terminar tu comida",
+        ar: "حلويات لإنهاء وجبتك",
       },
-      "color": "yellow-600",
-      "border": "border-yellow-600",
-      "shadow": "shadow-yellow-400",
-      "image": "https://images.unsplash.com/photo-1604908812857-1031146f6633"
-    },
-    
-    {
-      "id": 11,
-      "name": {
-        "en": "Desserts",
-        "fr": "Desserts",
-        "es": "Postres",
-        "ar": "الحلويات"
-      },
-      "description": {
-        "en": "Sweet treats to finish your meal",
-        "fr": "Douceurs sucrées pour terminer votre repas",
-        "es": "Dulces para terminar tu comida",
-        "ar": "حلويات لإنهاء وجبتك"
-      },
-      "color": "pink-400",
-      "border": "border-pink-400",
-      "shadow": "shadow-pink-200",
-      "image": "https://images.unsplash.com/photo-1563805042-7684c019e1cb"
+      color: "pink-400",
+      border: "border-pink-400",
+      shadow: "shadow-pink-200",
+      image: "https://images.unsplash.com/photo-1563805042-7684c019e1cb",
     },
     {
-      "id": 12,
-      "name": {
-        "en": "Ice Cream Cups",
-        "fr": "Coupes de Glace",
-        "es": "Copas de Helado",
-        "ar": "أكواب الآيس كريم"
+      id: 12,
+      name: {
+        en: "Ice Cream Cups",
+        fr: "Coupes de Glace",
+        es: "Copas de Helado",
+        ar: "أكواب الآيس كريم",
       },
-      "description": {
-        "en": "Delicious ice cream combinations",
-        "fr": "Délicieuses combinaisons de glaces",
-        "es": "Deliciosas combinaciones de helado",
-        "ar": "تركيبات لذيذة من الآيس كريم"
+      description: {
+        en: "Delicious ice cream combinations",
+        fr: "Délicieuses combinaisons de glaces",
+        es: "Deliciosas combinaciones de helado",
+        ar: "تركيبات لذيذة من الآيس كريم",
       },
-      "color": "blue-300",
-      "border": "border-blue-300",
-      "shadow": "shadow-blue-100",
-      "image": "https://images.unsplash.com/photo-1497034825429-c343d7c6a68f"
-    }
+      color: "blue-300",
+      border: "border-blue-300",
+      shadow: "shadow-blue-100",
+      image: "https://images.unsplash.com/photo-1497034825429-c343d7c6a68f",
+    },
+    {
+      id: 13,
+      name: {
+        en: "Tacos",
+        fr: "Tacos",
+        es: "Tacos",
+        ar: "تاكوس",
+      },
+      description: {
+        en: "Soft or crispy tortillas filled with savory ingredients",
+        fr: "Tortillas moelleuses ou croustillantes garnies d'ingrédients savoureux",
+        es: "Tortillas suaves o crujientes rellenas de ingredientes sabrosos",
+        ar: "تورتيلا طرية أو مقرمشة محشوة بمكونات شهية",
+      },
+      color: "yellow-600",
+      border: "border-yellow-600",
+      shadow: "shadow-yellow-400",
+      image: "https://images.unsplash.com/photo-1604908812857-1031146f6633",
+    },
   ],
 
   types: [
+    // Hot Drinks (Category 1)
     {
       id: 101,
       name: {
-        en: "CLASSIC",
-        fr: "CLASSIQUE",
-        es: "CLÁSICO",
-        ar: "كلاسيكي"
+        en: "Our Coffee",
+        fr: "Notre café",
+        es: "Nuestro café",
+        ar: "قهوتنا",
       },
-      categoryId: 1
+      categoryId: 1,
     },
     {
       id: 102,
       name: {
-        en: "FASSI",
-        fr: "FASSI",
-        es: "FASSI",
-        ar: "فاسي"
+        en: "Cappuccino",
+        fr: "Cappuccino",
+        es: "Capuchino",
+        ar: "كابتشينو",
       },
-      categoryId: 1
+      categoryId: 1,
     },
     {
       id: 103,
       name: {
-        en: "SPLENDIDE",
-        fr: "SPLENDIDE",
-        es: "ESPLÉNDIDO",
-        ar: "رائع"
+        en: "Frappuccino",
+        fr: "Frappuccino",
+        es: "Frappuccino",
+        ar: "فرابتشينو",
       },
-      categoryId: 1
+      categoryId: 1,
     },
     {
       id: 104,
       name: {
-        en: "HOLLANDAIS",
-        fr: "HOLLANDAIS",
-        es: "HOLANDÉS",
-        ar: "هولندي"
+        en: "Cioki",
+        fr: "Cioki",
+        es: "Cioki",
+        ar: "تشوكي",
       },
-      categoryId: 1
+      categoryId: 1,
     },
-    {
-      id: 105,
-      name: {
-        en: "CATALAN",
-        fr: "CATALAN",
-        es: "CATALÁN",
-        ar: "كتالوني"
-      },
-      categoryId: 1
-    },
-    {
-      id: 106,
-      name: {
-        en: "KIDS",
-        fr: "ENFANTS",
-        es: "NIÑOS",
-        ar: "أطفال"
-      },
-      categoryId: 1
-    },
-    {
-      id: 107,
-      name: {
-        en: "BEACH CLUB",
-        fr: "BEACH CLUB",
-        es: "CLUB DE PLAYA",
-        ar: "نادي الشاطئ"
-      },
-      categoryId: 1
-    },
-    {
-      id: 108,
-      name: {
-        en: "MAROCAIN",
-        fr: "MAROCAIN",
-        es: "MARROQUÍ",
-        ar: "مغربي"
-      },
-      categoryId: 1
-    },
-    // À LA CARTE
+
+    // Cold Drinks (Category 2)
     {
       id: 201,
       name: {
-        en: "À LA CARTE",
-        fr: "À LA CARTE",
-        es: "A LA CARTA",
-        ar: "من القائمة"
+        en: "Natural Juices",
+        fr: "Jus Naturels",
+        es: "Jugos Naturales",
+        ar: "عصائر طبيعية",
       },
-      categoryId: 2
+      categoryId: 2,
     },
     {
       id: 202,
       name: {
-        en: "OMELETTES",
-        fr: "OMELETTES",
-        es: "TORTILLAS",
-        ar: "عجة"
+        en: "Cocktails",
+        fr: "Cocktails",
+        es: "Cócteles",
+        ar: "كوكتيلات",
       },
-      categoryId: 2
+      categoryId: 2,
     },
     {
       id: 203,
       name: {
-        en: "TURQUE",
-        fr: "TURQUE",
-        es: "TURCO",
-        ar: "تركي"
+        en: "Smoothies",
+        fr: "Smoothies",
+        es: "Batidos",
+        ar: "سموثيز",
       },
-      categoryId: 2
+      categoryId: 2,
     },
     {
       id: 204,
       name: {
-        en: "SUPRÊME",
-        fr: "SUPRÊME",
-        es: "SUPREMO",
-        ar: "فاخر"
+        en: "Mojitos",
+        fr: "Mojitos",
+        es: "Mojitos",
+        ar: "موهيتوس",
       },
-      categoryId: 2
+      categoryId: 2,
     },
     {
       id: 205,
       name: {
-        en: "DE LUXE",
-        fr: "DE LUXE",
-        es: "DE LUJO",
-        ar: "فاخر جداً"
+        en: "Soda & Mineral Water",
+        fr: "Soda et Eau Minérale",
+        es: "Refrescos y Agua Mineral",
+        ar: "الصودا والمياه المعدنية",
       },
-      categoryId: 2
+      categoryId: 2,
     },
-    // LUNCH TYPES
+
+    // Sweet Crepes (Category 3)
     {
       id: 301,
       name: {
-        en: "SALADS",
-        fr: "SALADES",
-        es: "ENSALADAS",
-        ar: "سلطات"
+        en: "Sweet Crepes",
+        fr: "Crêpes Sucrées",
+        es: "Crêpes Dulces",
+        ar: "كريب حلو",
       },
-      categoryId: 3
+      categoryId: 3,
     },
-    {
-      id: 302,
-      name: {
-        en: "SANDWICHES",
-        fr: "SANDWICHES",
-        es: "SÁNDWICHES",
-        ar: "سندويشات"
-      },
-      categoryId: 3
-    },
-    {
-      id: 303,
-      name: {
-        en: "MAIN COURSES",
-        fr: "PLATS PRINCIPAUX",
-        es: "PLATOS PRINCIPALES",
-        ar: "الأطباق الرئيسية"
-      },
-      categoryId: 3
-    },
-    // DINNER TYPES
+
+    // Pancakes (Category 4)
     {
       id: 401,
       name: {
-        en: "APPETIZERS",
-        fr: "ENTRÉES",
-        es: "APERITIVOS",
-        ar: "مقبلات"
+        en: "Pancakes",
+        fr: "Pancakes",
+        es: "Panqueques",
+        ar: "بانكيك",
       },
-      categoryId: 4
+      categoryId: 4,
     },
-    {
-      id: 402,
-      name: {
-        en: "MAIN COURSES",
-        fr: "PLATS PRINCIPAUX",
-        es: "PLATOS PRINCIPALES",
-        ar: "الأطباق الرئيسية"
-      },
-      categoryId: 4
-    },
-    {
-      id: 403,
-      name: {
-        en: "CHEF SPECIALS",
-        fr: "SPÉCIALITÉS DU CHEF",
-        es: "ESPECIALIDADES DEL CHEF",
-        ar: "تخصصات الشيف"
-      },
-      categoryId: 4
-    },
-    // DESSERT TYPES
+
+    // Waffles (Category 5)
     {
       id: 501,
       name: {
-        en: "CAKES",
-        fr: "GÂTEAUX",
-        es: "PASTELES",
-        ar: "كعك"
+        en: "Waffles",
+        fr: "Gaufres",
+        es: "Gofres",
+        ar: "وافل",
       },
-      categoryId: 5
+      categoryId: 5,
     },
-    {
-      id: 502,
-      name: {
-        en: "ICE CREAM",
-        fr: "GLACES",
-        es: "HELADO",
-        ar: "آيس كريم"
-      },
-      categoryId: 5
-    },
-    {
-      id: 503,
-      name: {
-        en: "TRADITIONAL",
-        fr: "TRADITIONNEL",
-        es: "TRADICIONAL",
-        ar: "تقليدي"
-      },
-      categoryId: 5
-    },
-    // BEVERAGES TYPES
+
+    // Churros (Category 6)
     {
       id: 601,
       name: {
-        en: "HOT DRINKS",
-        fr: "BOISSONS CHAUDES",
-        es: "BEBIDAS CALIENTES",
-        ar: "المشروبات الساخنة"
+        en: "Churros",
+        fr: "Chorros",
+        es: "Churros",
+        ar: "تشوروس",
       },
-      categoryId: 6
+      categoryId: 6,
     },
-    {
-      id: 602,
-      name: {
-        en: "COLD DRINKS",
-        fr: "BOISSONS FROIDES",
-        es: "BEBIDAS FRÍAS",
-        ar: "المشروبات الباردة"
-      },
-      categoryId: 6
-    },
-    {
-      id: 603,
-      name: {
-        en: "JUICES",
-        fr: "JUS",
-        es: "JUGOS",
-        ar: "عصائر"
-      },
-      categoryId: 6
-    },
-    // SALADS TYPES
+
+    // Salads (Category 7)
     {
       id: 701,
       name: {
-        en: "GREEN SALADS",
-        fr: "SALADES VERTES",
-        es: "ENSALADAS VERDES",
-        ar: "سلطات خضراء"
+        en: "Salads",
+        fr: "Salades",
+        es: "Ensaladas",
+        ar: "سلطات",
       },
-      categoryId: 7
+      categoryId: 7,
     },
-    {
-      id: 702,
-      name: {
-        en: "SPECIALTY SALADS",
-        fr: "SALADES SPÉCIALES",
-        es: "ENSALADAS ESPECIALES",
-        ar: "سلطات خاصة"
-      },
-      categoryId: 7
-    },
-    // SOUPS TYPES
+
+    // Hot Appetizers (Category 8)
     {
       id: 801,
       name: {
-        en: "CREAM SOUPS",
-        fr: "SOUPES À LA CRÈME",
-        es: "SOPAS DE CREMA",
-        ar: "شوربات كريمية"
+        en: "Croquettes",
+        fr: "Croquettes",
+        es: "Croquetas",
+        ar: "كروكيت",
       },
-      categoryId: 8
+      categoryId: 8,
     },
     {
       id: 802,
       name: {
-        en: "TRADITIONAL SOUPS",
-        fr: "SOUPES TRADITIONNELLES",
-        es: "SOPAS TRADICIONALES",
-        ar: "شوربات تقليدية"
+        en: "Tapas",
+        fr: "Tapas",
+        es: "Tapas",
+        ar: "تاپاس",
       },
-      categoryId: 8
+      categoryId: 8,
     },
-    // GRILLED TYPES
+
+    // Pizza (Category 9)
     {
       id: 901,
       name: {
-        en: "MEATS",
-        fr: "VIANDES",
-        es: "CARNES",
-        ar: "لحوم"
+        en: "Pizza",
+        fr: "Pizza",
+        es: "Pizza",
+        ar: "بيتزا",
       },
-      categoryId: 9
+      categoryId: 9,
     },
-    {
-      id: 902,
-      name: {
-        en: "POULTRY",
-        fr: "VOLAILLES",
-        es: "AVES",
-        ar: "دواجن"
-      },
-      categoryId: 9
-    },
-    {
-      id: 903,
-      name: {
-        en: "SEAFOOD",
-        fr: "FRUITS DE MER",
-        es: "MARISCOS",
-        ar: "مأكولات بحرية"
-      },
-      categoryId: 9
-    },
-    // SEAFOOD TYPES
+
+    // Pasta (Category 10)
     {
       id: 1001,
       name: {
-        en: "FISH",
-        fr: "POISSONS",
-        es: "PESCADO",
-        ar: "سمك"
+        en: "Risotto",
+        fr: "Risotto",
+        es: "Risotto",
+        ar: "ريسوتو",
       },
-      categoryId: 10
+      categoryId: 10,
     },
     {
       id: 1002,
       name: {
-        en: "SHELLFISH",
-        fr: "CRUSTACÉS",
-        es: "MARISCOS",
-        ar: "محار"
+        en: "Pasta",
+        fr: "Pâtes",
+        es: "Pastas",
+        ar: "معكرونة",
       },
-      categoryId: 10
+      categoryId: 10,
     },
     {
       id: 1003,
       name: {
-        en: "COMBO PLATTERS",
-        fr: "PLATEAUX COMBINÉS",
-        es: "PLATOS COMBINADOS",
-        ar: "أطباق مشكلة"
+        en: "Lasagna",
+        fr: "Lasagne",
+        es: "Lasaña",
+        ar: "لازانيا",
       },
-      categoryId: 10
-    }
+      categoryId: 10,
+    },
+
+    // Desserts (Category 11)
+    {
+      id: 1101,
+      name: {
+        en: "Desserts",
+        fr: "Desserts",
+        es: "Postres",
+        ar: "حلويات",
+      },
+      categoryId: 11,
+    },
+
+    // Ice Cream Cups (Category 12)
+    {
+      id: 1201,
+      name: {
+        en: "Ice Cream Cups",
+        fr: "Coupes de Glace",
+        es: "Copas de Helado",
+        ar: "أكواب الآيس كريم",
+      },
+      categoryId: 12,
+    },
+
+    // Tacos (Category 13)
+    {
+      id: 1301,
+      name: {
+        en: "Tacos",
+        fr: "Tacos",
+        es: "Tacos",
+        ar: "تاكوس",
+      },
+      categoryId: 13,
+    },
   ],
-  plates: [
-    // BREAKFAST PLATES
-    {
-      id: 1,
-      title: {
-        en: "TURQUE Breakfast",
-        fr: "Petit-déjeuner TURQUE",
-        es: "Desayuno TURCO",
-        ar: "إفطار تركي"
-      },
-      description: {
-        en: "Eggs, tomato sauce, cheese, hot drink, juice, mineral water, yogurt",
-        fr: "Œufs, sauce tomate, fromage, boisson chaude, jus naturel, eau minérale, yaourt",
-        es: "Huevos, salsa de tomate, queso, bebida caliente, jugo, agua mineral, yogur",
-        ar: "بيض، صلصة طماطم، جبن، مشروب ساخن، عصير طبيعي، ماء معدني، ياغورت"
-      },
-      price: 50.00,
-      image: "https://images.unsplash.com/photo-1533089860892-a7c6f0a88666",
-      categoryId: 1,
-      typeId: 103,
-      nutrition: {
-        calories: 500,
-        protein: 20,
-        fat: 25,
-        carbs: 40
-      }
-    },
-    {
-      id: 2,
-      title: {
-        en: "SUPRÊME Breakfast",
-        fr: "Petit-déjeuner SUPRÊME",
-        es: "Desayuno SUPREMO",
-        ar: "إفطار فاخر"
-      },
-      description: {
-        en: "Eggs, onion, mushroom, pepper, cherry tomato, cheese, juice, hot drink, mineral water, yogurt",
-        fr: "Œufs, oignon, champignon, poivre, tomate cerise, fromage, jus naturel, boisson chaude, eau minérale, yaourt",
-        es: "Huevos, cebolla, champiñón, pimienta, tomate cherry, queso, jugo, bebida caliente, agua mineral, yogur",
-        ar: "بيض، بصل، فطر، فلفل، طماطم كرزية، جبن، عصير طبيعي، مشروب ساخن، ماء معدني، ياغورت"
-      },
-      price: 55.00,
-      image: "https://images.unsplash.com/photo-1525351484163-7529414344d8",
-      categoryId: 1,
-      typeId: 104,
-      nutrition: {
-        calories: 600,
-        protein: 25,
-        fat: 30,
-        carbs: 45
-      }
-    },
-    {
-      id: 3,
-      title: {
-        en: "DE LUXE Breakfast",
-        fr: "Petit-déjeuner DE LUXE",
-        es: "Desayuno DE LUJO",
-        ar: "إفطار فاخر جداً"
-      },
-      description: {
-        en: "Quail eggs, cherry tomato, mushroom, beef pastrami, special cheese, juice, hot drink, mineral water, yogurt",
-        fr: "Œufs de caille, tomate cerise, champignon, pastrami de bœuf, fromage spécial, jus naturel, boisson chaude, eau minérale, yaourt",
-        es: "Huevos de codorniz, tomate cherry, champiñón, pastrami de res, queso especial, jugo, bebida caliente, agua mineral, yogur",
-        ar: "بيض السمان، طماطم كرزية، فطر، باسترامي اللحم، جبن خاص، عصير طبيعي، مشروب ساخن، ماء معدني، ياغورت"
-      },
-      price: 70.00,
-      image: "https://images.unsplash.com/photo-1504754524776-8f4f37790ca0",
-      categoryId: 1,
-      typeId: 105,
-      nutrition: {
-        calories: 700,
-        protein: 30,
-        fat: 35,
-        carbs: 50
-      }
-    },
-    {
-      id: 4,
-      title: {
-        en: "Classic 2 Eggs",
-        fr: "2 Œufs Classiques",
-        es: "2 Huevos Clásicos",
-        ar: "بيضتان كلاسيكيتان"
-      },
-      description: {
-        en: "2 cooked eggs served your way with toast and butter",
-        fr: "2 œufs cuits à votre convenance avec pain grillé et beurre",
-        es: "2 huevos cocinados a tu gusto con tostada y mantequilla",
-        ar: "بيضتان مطهوتان حسب رغبتك مع خبز محمص وزبدة"
-      },
-      price: 25.00,
-      image: "https://images.unsplash.com/photo-1553164898-3963d64a2ae8",
-      categoryId: 1,
-      typeId: 102,
-      nutrition: {
-        calories: 160,
-        protein: 12,
-        fat: 11,
-        carbs: 1
-      }
-    },
-    {
-      id: 5,
-      title: {
-        en: "Harcha",
-        fr: "Harcha",
-        es: "Harcha",
-        ar: "حرشة"
-      },
-      description: {
-        en: "Traditional Moroccan semolina bread served with honey and cheese",
-        fr: "Pain marocain traditionnel à la semoule servi avec miel et fromage",
-        es: "Pan marroquí tradicional de sémola servido con miel y queso",
-        ar: "خبز مغربي تقليدي مصنوع من السميد يقدم مع العسل والجبن"
-      },
-      price: 12.00,
-      image: "https://images.unsplash.com/photo-1589367920969-ab8e050bbb04",
-      categoryId: 1,
-      typeId: 101,
-      nutrition: {
-        calories: 300,
-        protein: 5,
-        fat: 10,
-        carbs: 45
-      }
-    },
-    // MORE BREAKFAST ITEMS
-    {
-      id: 6,
-      title: {
-        en: "Nature Omelette",
-        fr: "Omelette Nature",
-        es: "Tortilla Natural",
-        ar: "عجة طبيعية"
-      },
-      description: {
-        en: "Plain omelette made with fresh eggs",
-        fr: "Omelette nature préparée avec des œufs frais",
-        es: "Tortilla natural hecha con huevos frescos",
-        ar: "عجة بيض طبيعية محضرة من بيض طازج"
-      },
-      price: 25.00,
-      image: "https://images.unsplash.com/photo-1510693206972-df098062cb71",
-      categoryId: 1,
-      typeId: 102,
-      nutrition: {
-        calories: 220,
-        protein: 14,
-        fat: 18,
-        carbs: 2
-      }
-    },
-    {
-      id: 7,
-      title: {
-        en: "Cheese Omelette",
-        fr: "Omelette Fromage",
-        es: "Tortilla de Queso",
-        ar: "عجة بالجبن"
-      },
-      description: {
-        en: "Omelette with melted cheese",
-        fr: "Omelette au fromage fondu",
-        es: "Tortilla con queso derretido",
-        ar: "عجة بالجبن المذاب"
-      },
-      price: 30.00,
-      image: "https://images.unsplash.com/photo-1525351484163-7529414344d8",
-      categoryId: 1,
-      typeId: 102,
-      nutrition: {
-        calories: 280,
-        protein: 16,
-        fat: 22,
-        carbs: 3
-      }
-    },
-    {
-      id: 8,
-      title: {
-        en: "Moroccan Breakfast Plate",
-        fr: "Assiette Petit-déjeuner Marocain",
-        es: "Plato de Desayuno Marroquí",
-        ar: "طبق إفطار مغربي"
-      },
-      description: {
-        en: "Selection of Moroccan breads with olive oil, honey and olives",
-        fr: "Sélection de pains marocains avec huile d'olive, miel et olives",
-        es: "Selección de panes marroquíes con aceite de oliva, miel y aceitunas",
-        ar: "تشكيلة من الخبز المغربي مع زيت الزيتون والعسل والزيتون"
-      },
-      price: 45.00,
-      image: "https://images.unsplash.com/photo-1590846723562-a684a98429d8",
-      categoryId: 1,
-      typeId: 108,
-      nutrition: {
-        calories: 450,
-        protein: 10,
-        fat: 20,
-        carbs: 55
-      }
-    },
-    {
-      id: 9,
-      title: {
-        en: "Fresh Fruit Plate",
-        fr: "Assiette de Fruits Frais",
-        es: "Plato de Frutas Frescas",
-        ar: "طبق فواكه طازجة"
-      },
-      description: {
-        en: "Selection of seasonal fresh fruits",
-        fr: "Sélection de fruits frais de saison",
-        es: "Selección de frutas frescas de temporada",
-        ar: "تشكيلة من الفواكه الطازجة الموسمية"
-      },
-      price: 35.00,
-      image: "https://images.unsplash.com/photo-1478369402113-1fd53f17e8b4",
-      categoryId: 1,
-      typeId: 103,
-      nutrition: {
-        calories: 150,
-        protein: 2,
-        fat: 1,
-        carbs: 35
-      }
-    },
-    {
-      id: 10,
-      title: {
-        en: "Kids Breakfast",
-        fr: "Petit-déjeuner Enfants",
-        es: "Desayuno para Niños",
-        ar: "إفطار للأطفال"
-      },
-      description: {
-        en: "Pancakes with maple syrup, fruit and small hot chocolate",
-        fr: "Crêpes avec sirop d'érable, fruits et petit chocolat chaud",
-        es: "Panqueques con sirope de arce, fruta y pequeño chocolate caliente",
-        ar: "بانكيك مع شراب القيقب والفاكهة وشوكولاتة ساخنة صغيرة"
-      },
-      price: 30.00,
-      image: "https://images.unsplash.com/photo-1506084868230-bb9d95c24759",
-      categoryId: 1,
-      typeId: 106,
-      nutrition: {
-        calories: 400,
-        protein: 8,
-        fat: 12,
-        carbs: 65
-      }
-    },
 
-    // À LA CARTE PLATES
-    {
-      id: 11,
-      title: {
-        en: "Beef Tenderloin",
-        fr: "Filet de Bœuf",
-        es: "Solomillo de Res",
-        ar: "فيليه لحم بقري"
+  plates: (
+    [
+      // ===== HOT DRINKS - Our Coffee =====
+      {
+        id: 1,
+        title: {
+          en: "Black Coffee",
+          fr: "Café Noir",
+          es: "Café Negro",
+          ar: "قهوة سوداء",
+        },
+        description: {
+          en: "Traditional black coffee served strong",
+          fr: "Café noir traditionnel servi fort",
+          es: "Café negro tradicional servido fuerte",
+          ar: "قهوة سوداء تقليدية قوية",
+        },
+        price: 17.0,
+        image: "/images/coffee-noir.jpg",
+        categoryId: 1,
+        typeId: 101,
       },
-      description: {
-        en: "Prime beef tenderloin grilled to perfection with herb butter",
-        fr: "Filet de bœuf de premier choix grillé à la perfection avec beurre aux herbes",
-        es: "Solomillo de res de primera calidad a la parrilla con mantequilla de hierbas",
-        ar: "فيليه لحم بقري ممتاز مشوي بإتقان مع زبدة بالأعشاب"
+      {
+        id: 2,
+        title: {
+          en: "Double Black Coffee",
+          fr: "Café Noir double",
+          es: "Café Negro doble",
+          ar: "قهوة سوداء مزدوجة",
+        },
+        description: {
+          en: "Extra strong black coffee",
+          fr: "Café noir extra fort",
+          es: "Café negro extra fuerte",
+          ar: "قهوة سوداء قوية جداً",
+        },
+        price: 25.0,
+        image: "/images/coffee-noir-double.jpg",
+        categoryId: 1,
+        typeId: 101,
       },
-      price: 120.00,
-      image: "https://images.unsplash.com/photo-1504973960431-1c467e159aa4",
-      categoryId: 2,
-      typeId: 201,
-      nutrition: {
-        calories: 450,
-        protein: 40,
-        fat: 30,
-        carbs: 0
-      }
-    },
-    {
-      id: 12,
-      title: {
-        en: "Cheese Platter",
-        fr: "Plateau de Fromages",
-        es: "Tabla de Quesos",
-        ar: "طبق أجبان"
+      {
+        id: 3,
+        title: {
+          en: "Americano",
+          fr: "Café Americain",
+          es: "Café Americano",
+          ar: "قهوة أمريكية",
+        },
+        description: {
+          en: "Espresso with hot water",
+          fr: "Espresso avec eau chaude",
+          es: "Espresso con agua caliente",
+          ar: "إسبرسو مع الماء الساخن",
+        },
+        price: 20.0,
+        image: "/images/americano.jpg",
+        categoryId: 1,
+        typeId: 101,
       },
-      description: {
-        en: "Selection of fine cheeses with crackers and dried fruits",
-        fr: "Sélection de fromages fins avec crackers et fruits secs",
-        es: "Selección de quesos finos con galletas y frutas secas",
-        ar: "تشكيلة من الأجبان الفاخرة مع المقرمشات والفواكه المجففة"
+      {
+        id: 4,
+        title: {
+          en: "Coffee with Milk",
+          fr: "Café au lait",
+          es: "Café con leche",
+          ar: "قهوة بالحليب",
+        },
+        description: {
+          en: "Coffee with steamed milk",
+          fr: "Café avec lait chauffé",
+          es: "Café con leche caliente",
+          ar: "قهوة مع حليب ساخن",
+        },
+        price: 20.0,
+        image: "/images/cafe-au-lait.jpg",
+        categoryId: 1,
+        typeId: 101,
       },
-      price: 80.00,
-      image: "https://images.unsplash.com/photo-1452195100486-9cc805987862",
-      categoryId: 2,
-      typeId: 201,
-      nutrition: {
-        calories: 650,
-        protein: 25,
-        fat: 50,
-        carbs: 20
-      }
-    },
-    {
-      id: 13,
-      title: {
-        en: "Mushroom Omelette",
-        fr: "Omelette aux Champignons",
-        es: "Tortilla de Champiñones",
-        ar: "عجة بالفطر"
+      {
+        id: 5,
+        title: {
+          en: "Café Royale",
+          fr: "Café Royale",
+          es: "Café Royale",
+          ar: "قهوة رويال",
+        },
+        description: {
+          en: "Coffee with a shot of whiskey and whipped cream",
+          fr: "Café avec un shot de whisky et crème chantilly",
+          es: "Café con un shot de whisky y crema batida",
+          ar: "قهوة مع ويسكي وكريمة مخفوقة",
+        },
+        price: 25.0,
+        image: "/images/cafe-royale.jpg",
+        categoryId: 1,
+        typeId: 101,
       },
-      description: {
-        en: "Fluffy omelette filled with sautéed mushrooms and herbs",
-        fr: "Omelette moelleuse garnie de champignons sautés et d'herbes",
-        es: "Tortilla esponjosa rellena de champiñones salteados y hierbas",
-        ar: "عجة بيض منفوشة محشوة بالفطر المقلي والأعشاب"
+      {
+        id: 6,
+        title: {
+          en: "Nespresso",
+          fr: "Nespresso",
+          es: "Nespresso",
+          ar: "نسبرسو",
+        },
+        description: {
+          en: "Single shot of Nespresso coffee",
+          fr: "Simple dose de café Nespresso",
+          es: "Café Nespresso simple",
+          ar: "جرعة واحدة من قهوة نسبرسو",
+        },
+        price: 20.0,
+        image: "/images/nespresso.jpg",
+        categoryId: 1,
+        typeId: 101,
       },
-      price: 35.00,
-      image: "https://images.unsplash.com/photo-1555914653-567a48b8a2fb",
-      categoryId: 2,
-      typeId: 202,
-      nutrition: {
-        calories: 320,
-        protein: 18,
-        fat: 24,
-        carbs: 5
-      }
-    },
-    {
-      id: 14,
-      title: {
-        en: "Turkish Mezze",
-        fr: "Mezze Turc",
-        es: "Mezze Turco",
-        ar: "مازة تركية"
+      {
+        id: 7,
+        title: {
+          en: "Double Nespresso",
+          fr: "Double Nespresso",
+          es: "Nespresso doble",
+          ar: "نسبرسو مزدوج",
+        },
+        description: {
+          en: "Double shot of Nespresso coffee",
+          fr: "Double dose de café Nespresso",
+          es: "Doble dosis de café Nespresso",
+          ar: "جرعة مزدوجة من قهوة نسبرسو",
+        },
+        price: 28.0,
+        image: "/images/double-nespresso.jpg",
+        categoryId: 1,
+        typeId: 101,
       },
-      description: {
-        en: "Selection of Turkish appetizers with pita bread",
-        fr: "Sélection d'entrées turques avec pain pita",
-        es: "Selección de aperitivos turcos con pan de pita",
-        ar: "تشكيلة من المقبلات التركية مع خبز البيتا"
+      {
+        id: 8,
+        title: {
+          en: "Nespresso with Milk",
+          fr: "Nespresso au lait",
+          es: "Nespresso con leche",
+          ar: "نسبرسو بالحليب",
+        },
+        description: {
+          en: "Nespresso coffee with steamed milk",
+          fr: "Café Nespresso avec lait chauffé",
+          es: "Café Nespresso con leche caliente",
+          ar: "قهوة نسبرسو مع حليب ساخن",
+        },
+        price: 25.0,
+        image: "/images/nespresso-lait.jpg",
+        categoryId: 1,
+        typeId: 101,
       },
-      price: 75.00,
-      image: "https://images.unsplash.com/photo-1541528772347-3ac17636555d",
-      categoryId: 2,
-      typeId: 203,
-      nutrition: {
-        calories: 580,
-        protein: 20,
-        fat: 35,
-        carbs: 45
-      }
-    },
-    {
-      id: 15,
-      title: {
-        en: "Suprême Seafood Plate",
-        fr: "Assiette de Fruits de Mer Suprême",
-        es: "Plato Supremo de Mariscos",
-        ar: "طبق مأكولات بحرية فاخر"
+      {
+        id: 9,
+        title: {
+          en: "Hot Chocolate",
+          fr: "Chocolat Chaud",
+          es: "Chocolate Caliente",
+          ar: "شوكولاتة ساخنة",
+        },
+        description: {
+          en: "Rich hot chocolate with whipped cream",
+          fr: "Chocolat chaud riche avec crème chantilly",
+          es: "Chocolate caliente espeso con crema batida",
+          ar: "شوكولاتة ساخنة غنية مع كريمة مخفوقة",
+        },
+        price: 28.0,
+        image: "/images/chocolat-chaud.jpg",
+        categoryId: 1,
+        typeId: 101,
       },
-      description: {
-        en: "Premium selection of seafood with sauce and lemon",
-        fr: "Sélection premium de fruits de mer avec sauce et citron",
-        es: "Selección premium de mariscos con salsa y limón",
-        ar: "تشكيلة فاخرة من المأكولات البحرية مع صلصة وليمون"
+      {
+        id: 10,
+        title: {
+          en: "Viennese Chocolate",
+          fr: "Chocolat viennois",
+          es: "Chocolate vienés",
+          ar: "شوكولاتة فينيسية",
+        },
+        description: {
+          en: "Melted chocolate with milk and whipped cream",
+          fr: "Chocolat fondu avec lait et crème chantilly",
+          es: "Chocolate derretido con leche y crema batida",
+          ar: "شوكولاتة ذائبة مع الحليب وكريمة مخفوقة",
+        },
+        price: 35.0,
+        image: "/images/chocolat-viennois.jpg",
+        categoryId: 1,
+        typeId: 101,
       },
-      price: 140.00,
-      image: "https://images.unsplash.com/photo-1565557623262-b51c2513a641",
-      categoryId: 2,
-      typeId: 204,
-      nutrition: {
-        calories: 450,
-        protein: 40,
-        fat: 25,
-        carbs: 10
-      }
-    },
+      {
+        id: 11,
+        title: {
+          en: "Hot Milk",
+          fr: "Lait Chaud",
+          es: "Leche Caliente",
+          ar: "حليب ساخن",
+        },
+        description: {
+          en: "Steamed milk",
+          fr: "Lait chauffé",
+          es: "Leche caliente",
+          ar: "حليب ساخن",
+        },
+        price: 18.0,
+        image: "/images/lait-chaud.jpg",
+        categoryId: 1,
+        typeId: 101,
+      },
+      {
+        id: 12,
+        title: {
+          en: "Traditional Tea",
+          fr: "Thé traditionnel / thé noire",
+          es: "Té tradicional / té negro",
+          ar: "شاي تقليدي / شاي أسود",
+        },
+        description: {
+          en: "Classic black tea",
+          fr: "Thé noir classique",
+          es: "Té negro clásico",
+          ar: "شاي أسود تقليدي",
+        },
+        price: 20.0,
+        image: "/images/the-noir.jpg",
+        categoryId: 1,
+        typeId: 101,
+      },
+      {
+        id: 13,
+        title: {
+          en: "Special Blend Tea",
+          fr: "Thé Mélange spéciale",
+          es: "Té Mezcla especial",
+          ar: "شاي مزيج خاص",
+        },
+        description: {
+          en: "House special tea blend",
+          fr: "Mélange de thé spécial maison",
+          es: "Mezcla especial de té de la casa",
+          ar: "مزيج شاي خاص بالمنزل",
+        },
+        price: 22.0,
+        image: "/images/the-special.jpg",
+        categoryId: 1,
+        typeId: 101,
+      },
+      {
+        id: 14,
+        title: {
+          en: "Chaba Tea",
+          fr: "Thé Tchaba",
+          es: "Té Chaba",
+          ar: "شاي تشابا",
+        },
+        description: {
+          en: "Traditional Moroccan tea",
+          fr: "Thé marocain traditionnel",
+          es: "Té marroquí tradicional",
+          ar: "شاي مغربي تقليدي",
+        },
+        price: 20.0,
+        image: "/images/the-tchaba.jpg",
+        categoryId: 1,
+        typeId: 101,
+      },
+      {
+        id: 15,
+        title: {
+          en: "Verbena Tea",
+          fr: "Verveine",
+          es: "Verbena",
+          ar: "لويزة",
+        },
+        description: {
+          en: "Herbal verbena tea",
+          fr: "Thé à la verveine",
+          es: "Té de verbena",
+          ar: "شاي لويزة",
+        },
+        price: 20.0,
+        image: "/images/verveine.jpg",
+        categoryId: 1,
+        typeId: 101,
+      },
+      {
+        id: 16,
+        title: {
+          en: "Verbena with Milk",
+          fr: "Verveine au lait",
+          es: "Verbena con leche",
+          ar: "لويزة بالحليب",
+        },
+        description: {
+          en: "Verbena tea with steamed milk",
+          fr: "Verveine avec lait chauffé",
+          es: "Verbena con leche caliente",
+          ar: "لويزة مع حليب ساخن",
+        },
+        price: 25.0,
+        image: "/images/verveine-lait.jpg",
+        categoryId: 1,
+        typeId: 101,
+      },
 
-    // LUNCH PLATES
-    {
-      id: 16,
-      title: {
-        en: "Cesar Salad",
-        fr: "Salade César",
-        es: "Ensalada César",
-        ar: "سلطة سيزر"
+      // ===== HOT DRINKS - Cappuccino =====
+      {
+        id: 17,
+        title: {
+          en: "Italian Cappuccino",
+          fr: "Cappuccino Italien",
+          es: "Capuchino Italiano",
+          ar: "كابتشينو إيطالي",
+        },
+        description: {
+          en: "Espresso with milk foam and cocoa powder",
+          fr: "Espresso avec mousse de lait et poudre de cacao",
+          es: "Espresso con espuma de leche y cacao en polvo",
+          ar: "إسبرسو مع رغوة الحليب ومسحوق الكاكاو",
+        },
+        price: 24.0,
+        image: "/images/cappuccino-italien.jpg",
+        categoryId: 1,
+        typeId: 102,
       },
-      description: {
-        en: "Fresh romaine lettuce with cesar dressing, croutons and parmesan",
-        fr: "Laitue romaine fraîche avec sauce césar, croûtons et parmesan",
-        es: "Lechuga romana fresca con aderezo césar, crutones y parmesano",
-        ar: "خس روماني طازج مع صلصة سيزر وخبز محمص وجبن بارميزان"
+      {
+        id: 18,
+        title: {
+          en: "Caramel Cappuccino",
+          fr: "Cappuccino Caramel",
+          es: "Capuchino de Caramelo",
+          ar: "كابتشينو كراميل",
+        },
+        description: {
+          en: "Italian cappuccino with caramel syrup",
+          fr: "Cappuccino italien avec sirop de caramel",
+          es: "Capuchino italiano con sirope de caramelo",
+          ar: "كابتشينو إيطالي مع شراب كراميل",
+        },
+        price: 26.0,
+        image: "/images/cappuccino-caramel.jpg",
+        categoryId: 1,
+        typeId: 102,
       },
-      price: 45.00,
-      image: "https://images.unsplash.com/photo-1550304943-4f24f54ddde9",
-      categoryId: 3,
-      typeId: 301,
-      nutrition: {
-        calories: 350,
-        protein: 15,
-        fat: 28,
-        carbs: 12
-      }
-    },
-    {
-      id: 17,
-      title: {
-        en: "Club Sandwich",
-        fr: "Club Sandwich",
-        es: "Club Sándwich",
-        ar: "كلوب ساندويتش"
+      {
+        id: 19,
+        title: {
+          en: "Hazelnut Cappuccino",
+          fr: "Cappuccino Noisette",
+          es: "Capuchino Avellana",
+          ar: "كابتشينو بندق",
+        },
+        description: {
+          en: "Italian cappuccino with hazelnut flavor",
+          fr: "Cappuccino italien au goût de noisette",
+          es: "Capuchino italiano con sabor a avellana",
+          ar: "كابتشينو إيطالي بنكهة البندق",
+        },
+        price: 26.0,
+        image: "/images/cappuccino-noisette.jpg",
+        categoryId: 1,
+        typeId: 102,
       },
-      description: {
-        en: "Triple-decker sandwich with chicken, bacon, lettuce, tomato and mayo",
-        fr: "Sandwich à trois étages avec poulet, bacon, laitue, tomate et mayo",
-        es: "Sándwich triple con pollo, tocino, lechuga, tomate y mayonesa",
-        ar: "ساندويتش ثلاثي الطبقات مع دجاج ولحم مقدد وخس وطماطم ومايونيز"
+      {
+        id: 20,
+        title: {
+          en: "Vanilla Cappuccino",
+          fr: "Cappuccino Vanille",
+          es: "Capuchino Vainilla",
+          ar: "كابتشينو فانيليا",
+        },
+        description: {
+          en: "Italian cappuccino with vanilla flavor",
+          fr: "Cappuccino italien au goût de vanille",
+          es: "Capuchino italiano con sabor a vainilla",
+          ar: "كابتشينو إيطالي بنكهة الفانيليا",
+        },
+        price: 26.0,
+        image: "/images/cappuccino-vanille.jpg",
+        categoryId: 1,
+        typeId: 102,
       },
-      price: 55.00,
-      image: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af",
-      categoryId: 3,
-      typeId: 302,
-      nutrition: {
-        calories: 650,
-        protein: 35,
-        fat: 40,
-        carbs: 45
-      }
-    },
-    {
-      id: 18,
-      title: {
-        en: "Pasta Bolognese",
-        fr: "Pâtes Bolognaise",
-        es: "Pasta Boloñesa",
-        ar: "باستا بولونيز"
+      {
+        id: 21,
+        title: {
+          en: "Viennese Cappuccino",
+          fr: "Cappuccino Viennois",
+          es: "Capuchino Vienés",
+          ar: "كابتشينو فينيسي",
+        },
+        description: {
+          en: "With whipped cream and chocolate sprinkles",
+          fr: "Avec crème chantilly et pépites de chocolat",
+          es: "Con crema batida y virutas de chocolate",
+          ar: "مع كريمة مخفوقة ورذاذ شوكولاتة",
+        },
+        price: 32.0,
+        image: "/images/cappuccino-viennois.jpg",
+        categoryId: 1,
+        typeId: 102,
       },
-      description: {
-        en: "Al dente pasta with rich meat sauce and parmesan cheese",
-        fr: "Pâtes al dente avec riche sauce à la viande et fromage parmesan",
-        es: "Pasta al dente con salsa de carne y queso parmesano",
-        ar: "باستا مطهوة بشكل مثالي مع صلصة اللحم الغنية وجبن البارميزان"
-      },
-      price: 60.00,
-      image: "https://images.unsplash.com/photo-1516100882582-96c3a05fe590",
-      categoryId: 3,
-      typeId: 303,
-      nutrition: {
-        calories: 700,
-        protein: 30,
-        fat: 25,
-        carbs: 85
-      }
-    },
-    {
-      id: 19,
-      title: {
-        en: "Quinoa Bowl",
-        fr: "Bol de Quinoa",
-        es: "Tazón de Quinoa",
-        ar: "وعاء الكينوا"
-      },
-      description: {
-        en: "Nutritious quinoa bowl with roasted vegetables and avocado",
-        fr: "Bol nutritif de quinoa avec légumes rôtis et avocat",
-        es: "Tazón nutritivo de quinoa con verduras asadas y aguacate",
-        ar: "وعاء الكينوا المغذي مع الخضروات المحمصة والأفوكادو"
-      },
-      price: 50.00,
-      image: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c",
-      categoryId: 3,
-      typeId: 301,
-      nutrition: {
-        calories: 450,
-        protein: 15,
-        fat: 20,
-        carbs: 60
-      }
-    },
-    {
-      id: 20,
-      title: {
-        en: "Chicken Curry",
-        fr: "Curry de Poulet",
-        es: "Curry de Pollo",
-        ar: "كاري الدجاج"
-      },
-      description: {
-        en: "Tender chicken in aromatic curry sauce with rice",
-        fr: "Poulet tendre dans une sauce curry aromatique avec riz",
-        es: "Pollo tierno en salsa de curry aromática con arroz",
-        ar: "دجاج طري في صلصة كاري عطرية مع الأرز"
-      },
-      price: 65.00,
-      image: "https://images.unsplash.com/photo-1574653853027-5382a3d23a15",
-      categoryId: 3,
-      typeId: 303,
-      nutrition: {
-        calories: 650,
-        protein: 40,
-        fat: 30,
-        carbs: 60
-      }
-    },
 
-    // Adding more plates to reach 120+ as requested...
-    // I'll continue with plates across all categories
+      // ===== HOT DRINKS - Frappuccino =====
+      {
+        id: 22,
+        title: {
+          en: "Vanilla Frappuccino",
+          fr: "Frappuccino Vanille",
+          es: "Frappuccino Vainilla",
+          ar: "فرابتشينو فانيليا",
+        },
+        description: {
+          en: "Vanilla ice cream, coffee and whipped cream",
+          fr: "Glace vanille, café avec chantilly",
+          es: "Helado de vainilla, café con crema batida",
+          ar: "آيس كريم فانيليا، قهوة مع كريمة مخفوقة",
+        },
+        price: 38.0,
+        image: "/images/frappuccino-vanille.jpg",
+        categoryId: 1,
+        typeId: 103,
+      },
+      {
+        id: 23,
+        title: {
+          en: "Hazelnut Frappuccino",
+          fr: "Frappuccino Noisette",
+          es: "Frappuccino Avellana",
+          ar: "فرابتشينو بندق",
+        },
+        description: {
+          en: "Hazelnut ice cream, coffee and whipped cream",
+          fr: "Glace noisette, café avec chantilly",
+          es: "Helado de avellana, café con crema batida",
+          ar: "آيس كريم بندق، قهوة مع كريمة مخفوقة",
+        },
+        price: 38.0,
+        image: "/images/frappuccino-noisette.jpg",
+        categoryId: 1,
+        typeId: 103,
+      },
+      {
+        id: 24,
+        title: {
+          en: "Chocolate Frappuccino",
+          fr: "Frappuccino Chocolat",
+          es: "Frappuccino Chocolate",
+          ar: "فرابتشينو شوكولاتة",
+        },
+        description: {
+          en: "Chocolate ice cream, coffee and whipped cream",
+          fr: "Glace chocolat, café avec chantilly",
+          es: "Helado de chocolate, café con crema batida",
+          ar: "آيس كريم شوكولاتة، قهوة مع كريمة مخفوقة",
+        },
+        price: 38.0,
+        image: "/images/frappuccino-chocolat.jpg",
+        categoryId: 1,
+        typeId: 103,
+      },
+      {
+        id: 25,
+        title: {
+          en: "Caramel Frappuccino",
+          fr: "Frappuccino Caramel",
+          es: "Frappuccino Caramelo",
+          ar: "فرابتشينو كراميل",
+        },
+        description: {
+          en: "Caramel ice cream, coffee and whipped cream",
+          fr: "Glace caramel, café avec chantilly",
+          es: "Helado de caramelo, café con crema batida",
+          ar: "آيس كريم كراميل، قهوة مع كريمة مخفوقة",
+        },
+        price: 38.0,
+        image: "/images/frappuccino-caramel.jpg",
+        categoryId: 1,
+        typeId: 103,
+      },
 
-    // DINNER PLATES
-    {
-      id: 21,
-      title: {
-        en: "Bruschetta",
-        fr: "Bruschetta",
-        es: "Bruschetta",
-        ar: "بروسكيتا"
+      // ===== HOT DRINKS - Cioki =====
+      {
+        id: 26,
+        title: {
+          en: "Natural Cioki",
+          fr: "Cioki Naturel",
+          es: "Cioki Natural",
+          ar: "تشوكي طبيعي",
+        },
+        description: {
+          en: "Hot chocolate drink with milk foam",
+          fr: "Boisson chocolatée avec mousse de lait",
+          es: "Bebida de chocolate con espuma de leche",
+          ar: "مشروب شوكولاتة ساخن مع رغوة الحليب",
+        },
+        price: 28.0,
+        image: "/images/cioki-naturel.jpg",
+        categoryId: 1,
+        typeId: 104,
       },
-      description: {
-        en: "Toasted bread topped with tomatoes, garlic, basil and olive oil",
-        fr: "Pain grillé garni de tomates, ail, basilic et huile d'olive",
-        es: "Pan tostado con tomates, ajo, albahaca y aceite de oliva",
-        ar: "خبز محمص مع طماطم وثوم وريحان وزيت زيتون"
+      {
+        id: 27,
+        title: {
+          en: "Caramel Cioki",
+          fr: "Cioki Caramel",
+          es: "Cioki Caramelo",
+          ar: "تشوكي كراميل",
+        },
+        description: {
+          en: "Chocolate drink with caramel syrup",
+          fr: "Boisson chocolatée au sirop de caramel",
+          es: "Bebida de chocolate con sirope de caramelo",
+          ar: "مشروب شوكولاتة مع شراب كراميل",
+        },
+        price: 32.0,
+        image: "/images/cioki-caramel.jpg",
+        categoryId: 1,
+        typeId: 104,
       },
-      price: 40.00,
-      image: "https://images.unsplash.com/photo-1572695157835-3079e1a7c97e",
-      categoryId: 4,
-      typeId: 401,
-      nutrition: {
-        calories: 220,
-        protein: 5,
-        fat: 12,
-        carbs: 30
-      }
-    },
-    {
-      id: 22,
-      title: {
-        en: "Beef Wellington",
-        fr: "Bœuf Wellington",
-        es: "Ternera Wellington",
-        ar: "بيف ولينغتون"
+      {
+        id: 28,
+        title: {
+          en: "Hazelnut Cioki",
+          fr: "Cioki Noisette",
+          es: "Cioki Avellana",
+          ar: "تشوكي بندق",
+        },
+        description: {
+          en: "Chocolate drink with hazelnut flavor",
+          fr: "Boisson chocolatée au goût de noisette",
+          es: "Bebida de chocolate con sabor a avellana",
+          ar: "مشروب شوكولاتة بنكهة البندق",
+        },
+        price: 32.0,
+        image: "/images/cioki-noisette.jpg",
+        categoryId: 1,
+        typeId: 104,
       },
-      description: {
-        en: "Tenderloin wrapped in puff pastry with mushroom duxelles",
-        fr: "Filet enveloppé de pâte feuilletée avec duxelles de champignons",
-        es: "Solomillo envuelto en hojaldre con duxelles de champiñón",
-        ar: "فيليه لحم ملفوف بعجين منفوخ مع فطر دوكسيل"
+      {
+        id: 29,
+        title: {
+          en: "Cherry Cioki",
+          fr: "Cioki Cerise",
+          es: "Cioki Cereza",
+          ar: "تشوكي كرز",
+        },
+        description: {
+          en: "Chocolate drink with cherry syrup",
+          fr: "Boisson chocolatée au sirop de cerise",
+          es: "Bebida de chocolate con sirope de cereza",
+          ar: "مشروب شوكولاتة مع شراب كرز",
+        },
+        price: 32.0,
+        image: "/images/cioki-cerise.jpg",
+        categoryId: 1,
+        typeId: 104,
       },
-      price: 150.00,
-      image: "https://images.unsplash.com/photo-1600891964092-304c2a8e05a0",
-      categoryId: 4,
-      typeId: 402,
-      nutrition: {
-        calories: 850,
-        protein: 45,
-        fat: 55,
-        carbs: 40
-      }
-    },
-    {
-      id: 23,
-      title: {
-        en: "Chef's Special Risotto",
-        fr: "Risotto Spécial du Chef",
-        es: "Risotto Especial del Chef",
-        ar: "ريزوتو خاص بالشيف"
-      },
-      description: {
-        en: "Creamy risotto with seasonal ingredients chosen by the chef",
-        fr: "Risotto crémeux avec ingrédients de saison choisis par le chef",
-        es: "Risotto cremoso con ingredientes de temporada elegidos por el chef",
-        ar: "ريزوتو كريمي مع مكونات موسمية يختارها الشيف"
-      },
-      price: 80.00,
-      image: "https://images.unsplash.com/photo-1574484284002-952d92456975",
-      categoryId: 4,
-      typeId: 403,
-      nutrition: {
-        calories: 550,
-        protein: 15,
-        fat: 25,
-        carbs: 70
-      }
-    },
 
-    // DESSERT PLATES
-    {
-      id: 24,
-      title: {
-        en: "Chocolate Lava Cake",
-        fr: "Fondant au Chocolat",
-        es: "Pastel de Chocolate Fundido",
-        ar: "كعكة الحمم الشوكولاتة"
+      // ===== COLD DRINKS - Natural Juices =====
+      {
+        id: 30,
+        title: {
+          en: "Orange Juice",
+          fr: "Jus d'Orange",
+          es: "Jugo de Naranja",
+          ar: "عصير برتقال",
+        },
+        description: {
+          en: "Freshly squeezed orange juice",
+          fr: "Jus d'orange fraîchement pressé",
+          es: "Jugo de naranja recién exprimido",
+          ar: "عصير برتقال طازج",
+        },
+        price: 27.0,
+        image: "/images/orange-juice.jpg",
+        categoryId: 2,
+        typeId: 201,
       },
-      description: {
-        en: "Warm chocolate cake with molten center and vanilla ice cream",
-        fr: "Gâteau au chocolat chaud avec centre fondant et glace à la vanille",
-        es: "Pastel de chocolate caliente con centro fundido y helado de vainilla",
-        ar: "كعكة شوكولاتة دافئة مع مركز ذائب وآيس كريم فانيليا"
+      {
+        id: 31,
+        title: {
+          en: "Lemon Juice",
+          fr: "Jus de Citron",
+          es: "Jugo de Limón",
+          ar: "عصير ليمون",
+        },
+        description: {
+          en: "Fresh lemon juice",
+          fr: "Jus de citron frais",
+          es: "Jugo de limón fresco",
+          ar: "عصير ليمون طازج",
+        },
+        price: 25.0,
+        image: "/images/lemon-juice.jpg",
+        categoryId: 2,
+        typeId: 201,
       },
-      price: 35.00,
-      image: "https://images.unsplash.com/photo-1579954115563-e72bf1381629",
-      categoryId: 5,
-      typeId: 501,
-      nutrition: {
-        calories: 550,
-        protein: 8,
-        fat: 30,
-        carbs: 65
-      }
-    },
-    {
-      id: 25,
-      title: {
-        en: "Artisan Gelato Selection",
-        fr: "Sélection de Gelato Artisanal",
-        es: "Selección de Helado Artesanal",
-        ar: "تشكيلة جيلاتي حرفية"
+      {
+        id: 32,
+        title: {
+          en: "Strawberry Juice",
+          fr: "Jus de Fraise",
+          es: "Jugo de Fresa",
+          ar: "عصير فراولة",
+        },
+        description: {
+          en: "Fresh strawberry juice",
+          fr: "Jus de fraise frais",
+          es: "Jugo de fresa fresco",
+          ar: "عصير فراولة طازج",
+        },
+        price: 40.0,
+        image: "/images/strawberry-juice.jpg",
+        categoryId: 2,
+        typeId: 201,
       },
-      description: {
-        en: "Three scoops of our house-made gelato flavors",
-        fr: "Trois boules de nos saveurs de gelato fait maison",
-        es: "Tres bolas de nuestros sabores de helado caseros",
-        ar: "ثلاث مغارف من نكهات الجيلاتي المصنوعة في المنزل"
+      {
+        id: 33,
+        title: {
+          en: "Banana Juice",
+          fr: "Jus de Banane",
+          es: "Jugo de Banana",
+          ar: "عصير موز",
+        },
+        description: {
+          en: "Banana smoothie with milk or orange juice",
+          fr: "Smoothie banane au lait ou jus d'orange",
+          es: "Batido de banana con leche o jugo de naranja",
+          ar: "سموذي موز مع حليب أو عصير برتقال",
+        },
+        price: 35.0,
+        image: "/images/banana-juice.jpg",
+        categoryId: 2,
+        typeId: 201,
       },
-      price: 30.00,
-      image: "https://images.unsplash.com/photo-1563589173312-476d8c36b242",
-      categoryId: 5,
-      typeId: 502,
-      nutrition: {
-        calories: 350,
-        protein: 6,
-        fat: 20,
-        carbs: 40
-      }
-    },
-    {
-      id: 26,
-      title: {
-        en: "Baklava Assortment",
-        fr: "Assortiment de Baklava",
-        es: "Surtido de Baklava",
-        ar: "تشكيلة بقلاوة"
+      {
+        id: 34,
+        title: {
+          en: "Pineapple Juice",
+          fr: "Jus d'Ananas",
+          es: "Jugo de Piña",
+          ar: "عصير أناناس",
+        },
+        description: {
+          en: "Fresh pineapple juice",
+          fr: "Jus d'ananas frais",
+          es: "Jugo de piña fresco",
+          ar: "عصير أناناس طازج",
+        },
+        price: 40.0,
+        image: "/images/pineapple-juice.jpg",
+        categoryId: 2,
+        typeId: 201,
       },
-      description: {
-        en: "Selection of traditional sweet pastries with honey and nuts",
-        fr: "Sélection de pâtisseries traditionnelles sucrées avec miel et noix",
-        es: "Selección de pasteles dulces tradicionales con miel y nueces",
-        ar: "مجموعة مختارة من الحلويات التقليدية مع العسل والمكسرات"
+      {
+        id: 35,
+        title: {
+          en: "Mango Juice",
+          fr: "Jus de Mangue",
+          es: "Jugo de Mango",
+          ar: "عصير مانجو",
+        },
+        description: {
+          en: "Fresh mango juice",
+          fr: "Jus de mangue frais",
+          es: "Jugo de mango fresco",
+          ar: "عصير مانجو طازج",
+        },
+        price: 40.0,
+        image: "/images/mango-juice.jpg",
+        categoryId: 2,
+        typeId: 201,
       },
-      price: 40.00,
-      image: "https://images.unsplash.com/photo-1600431521340-491eca880813",
-      categoryId: 5,
-      typeId: 503,
-      nutrition: {
-        calories: 450,
-        protein: 8,
-        fat: 25,
-        carbs: 55
-      }
-    },
+      {
+        id: 36,
+        title: {
+          en: "Avocado Juice",
+          fr: "Jus d'Avocat",
+          es: "Jugo de Aguacate",
+          ar: "عصير أفوكادو",
+        },
+        description: {
+          en: "Creamy avocado smoothie",
+          fr: "Smoothie crémeux à l'avocat",
+          es: "Batido cremoso de aguacate",
+          ar: "سموذي أفوكادو كريمي",
+        },
+        price: 40.0,
+        image: "/images/avocado-juice.jpg",
+        categoryId: 2,
+        typeId: 201,
+      },
+      {
+        id: 37,
+        title: {
+          en: "Avocado with Nuts",
+          fr: "Jus d'Avocat fruits secs",
+          es: "Jugo de Aguacate con Nueces",
+          ar: "عصير أفوكادو مع مكسرات",
+        },
+        description: {
+          en: "Avocado smoothie with mixed nuts",
+          fr: "Smoothie avocat avec fruits secs",
+          es: "Batido de aguacate con nueces mixtas",
+          ar: "سموذي أفوكادو مع مكسرات متنوعة",
+        },
+        price: 50.0,
+        image: "/images/avocado-nuts.jpg",
+        categoryId: 2,
+        typeId: 201,
+      },
+      {
+        id: 38,
+        title: {
+          en: "Panaché",
+          fr: "Panaché",
+          es: "Panaché",
+          ar: "باناشيه",
+        },
+        description: {
+          en: "Mix of fruit juices",
+          fr: "Mélange de jus de fruits",
+          es: "Mezcla de jugos de frutas",
+          ar: "مزيج من عصائر الفواكه",
+        },
+        price: 45.0,
+        image: "/images/panache.jpg",
+        categoryId: 2,
+        typeId: 201,
+      },
 
-    // BEVERAGES
-    {
-      id: 27,
-      title: {
-        en: "Moroccan Mint Tea",
-        fr: "Thé à la Menthe Marocain",
-        es: "Té de Menta Marroquí",
-        ar: "شاي النعناع المغربي"
+      // ===== COLD DRINKS - Cocktails =====
+      {
+        id: 39,
+        title: {
+          en: "Cropoli Lemon",
+          fr: "Cropoli Citron",
+          es: "Cropoli Limón",
+          ar: "كروبولي ليمون",
+        },
+        description: {
+          en: "Lemon, lemon sorbet, whipped cream",
+          fr: "Citron, sorbet citron, crème chantilly",
+          es: "Limón, sorbete de limón, crema batida",
+          ar: "ليمون، شربات ليمون، كريمة مخفوقة",
+        },
+        price: 45.0,
+        image: "/images/cropoli-lemon.jpg",
+        categoryId: 2,
+        typeId: 202,
       },
-      description: {
-        en: "Traditional sweet mint tea served in authentic teapot",
-        fr: "Thé à la menthe sucré traditionnel servi dans une théière authentique",
-        es: "Té de menta dulce tradicional servido en tetera auténtica",
-        ar: "شاي النعناع الحلو التقليدي يقدم في إبريق شاي أصيل"
+      {
+        id: 40,
+        title: {
+          en: "Cropoli Orange",
+          fr: "Cropoli Orange",
+          es: "Cropoli Naranja",
+          ar: "كروبولي برتقال",
+        },
+        description: {
+          en: "Orange, lemon sorbet, whipped cream",
+          fr: "Orange, sorbet citron, crème chantilly",
+          es: "Naranja, sorbete de limón, crema batida",
+          ar: "برتقال، شربات ليمون، كريمة مخفوقة",
+        },
+        price: 45.0,
+        image: "/images/cropoli-orange.jpg",
+        categoryId: 2,
+        typeId: 202,
       },
-      price: 15.00,
-      image: "https://images.unsplash.com/photo-1576092768241-dec231879fc3",
-      categoryId: 6,
-      typeId: 601,
-      nutrition: {
-        calories: 50,
-        protein: 0,
-        fat: 0,
-        carbs: 12
-      }
-    },
-    {
-      id: 28,
-      title: {
-        en: "Iced Rose Lemonade",
-        fr: "Limonade Glacée à la Rose",
-        es: "Limonada Helada de Rosa",
-        ar: "عصير الليمون المثلج بالورد"
+      {
+        id: 41,
+        title: {
+          en: "Aloha Exotica",
+          fr: "Aloha Exotica",
+          es: "Aloha Exótica",
+          ar: "ألوا إكزوتيكا",
+        },
+        description: {
+          en: "Mango sorbet with orange juice",
+          fr: "Sorbet mangue au jus d'orange",
+          es: "Sorbete de mango con jugo de naranja",
+          ar: "شربات مانجو مع عصير برتقال",
+        },
+        price: 50.0,
+        image: "/images/aloha-exotica.jpg",
+        categoryId: 2,
+        typeId: 202,
       },
-      description: {
-        en: "Freshly squeezed lemon with rose water and mint",
-        fr: "Citron fraîchement pressé avec eau de rose et menthe",
-        es: "Limón recién exprimido con agua de rosas y menta",
-        ar: "ليمون طازج معصور مع ماء الورد والنعناع"
+      {
+        id: 42,
+        title: {
+          en: "Red Fruits",
+          fr: "Fruits Rouge",
+          es: "Frutos Rojos",
+          ar: "فواكه حمراء",
+        },
+        description: {
+          en: "Strawberry, raspberry, apple, blueberry",
+          fr: "Fraise, framboise, pomme, myrtille",
+          es: "Fresa, frambuesa, manzana, arándano",
+          ar: "فراولة، توت، تفاح، توت أزرق",
+        },
+        price: 50.0,
+        image: "/images/red-fruits.jpg",
+        categoryId: 2,
+        typeId: 202,
       },
-      price: 20.00,
-      image: "https://images.unsplash.com/photo-1523677011781-c91d1bbe2f9e",
-      categoryId: 6,
-      typeId: 602,
-      nutrition: {
-        calories: 120,
-        protein: 0,
-        fat: 0,
-        carbs: 30
-      }
-    },
-    {
-      id: 29,
-      title: {
-        en: "Fresh Orange Juice",
-        fr: "Jus d'Orange Frais",
-        es: "Jugo de Naranja Fresco",
-        ar: "عصير برتقال طازج"
+      {
+        id: 43,
+        title: {
+          en: "Beetroot",
+          fr: "Betterave",
+          es: "Remolacha",
+          ar: "شمندر",
+        },
+        description: {
+          en: "Beetroot, apple, carrot",
+          fr: "Betterave, pomme, carotte",
+          es: "Remolacha, manzana, zanahoria",
+          ar: "شمندر، تفاح، جزر",
+        },
+        price: 45.0,
+        image: "/images/beetroot.jpg",
+        categoryId: 2,
+        typeId: 202,
       },
-      description: {
-        en: "Freshly squeezed oranges with optional mint leaves",
-        fr: "Oranges fraîchement pressées avec feuilles de menthe en option",
-        es: "Naranjas recién exprimidas con hojas de menta opcionales",
-        ar: "برتقال طازج معصور مع أوراق نعناع اختيارية"
+      {
+        id: 44,
+        title: {
+          en: "Seven Heaven",
+          fr: "Seven Heaven",
+          es: "Seven Heaven",
+          ar: "سيفن هيفن",
+        },
+        description: {
+          en: "Pineapple, mango, kiwi",
+          fr: "Ananas, mangue, kiwi",
+          es: "Piña, mango, kiwi",
+          ar: "أناناس، مانجو، كيوي",
+        },
+        price: 50.0,
+        image: "/images/seven-heaven.jpg",
+        categoryId: 2,
+        typeId: 202,
       },
-      price: 25.00,
-      image: "https://images.unsplash.com/photo-1546470427-f3b4fb339cf1",
-      categoryId: 6,
-      typeId: 603,
-      nutrition: {
-        calories: 110,
-        protein: 2,
-        fat: 0,
-        carbs: 26
-      }
-    },
+      {
+        id: 45,
+        title: {
+          en: "Top Fresh",
+          fr: "Top Fraiche",
+          es: "Top Fresco",
+          ar: "توب فريش",
+        },
+        description: {
+          en: "Apple, orange, banana, strawberry",
+          fr: "Pomme, orange, banane, fraise",
+          es: "Manzana, naranja, banana, fresa",
+          ar: "تفاح، برتقال، موز، فراولة",
+        },
+        price: 50.0,
+        image: "/images/top-fresh.jpg",
+        categoryId: 2,
+        typeId: 202,
+      },
+      {
+        id: 46,
+        title: {
+          en: "Passion Fruit",
+          fr: "Passion Fruit",
+          es: "Fruta de la Pasión",
+          ar: "فاكهة العاطفة",
+        },
+        description: {
+          en: "Pineapple, mango, apple",
+          fr: "Ananas, mangue, pomme",
+          es: "Piña, mango, manzana",
+          ar: "أناناس، مانجو، تفاح",
+        },
+        price: 50.0,
+        image: "/images/passion-fruit.jpg",
+        categoryId: 2,
+        typeId: 202,
+      },
+      {
+        id: 47,
+        title: {
+          en: "Sumatra Dream",
+          fr: "Sumatra Dream",
+          es: "Sueño de Sumatra",
+          ar: "حلم سومطرة",
+        },
+        description: {
+          en: "Pineapple, coconut, mango",
+          fr: "Ananas, noix de coco, mangue",
+          es: "Piña, coco, mango",
+          ar: "أناناس، جوز الهند، مانجو",
+        },
+        price: 50.0,
+        image: "/images/sumatra-dream.jpg",
+        categoryId: 2,
+        typeId: 202,
+      },
+      {
+        id: 48,
+        title: {
+          en: "Top Gala",
+          fr: "Top Gala",
+          es: "Top Gala",
+          ar: "توب جالا",
+        },
+        description: {
+          en: "Pineapple, mango, ginger",
+          fr: "Ananas, mangue, gingembre",
+          es: "Piña, mango, jengibre",
+          ar: "أناناس، مانجو، زنجبيل",
+        },
+        price: 50.0,
+        image: "/images/top-gala.jpg",
+        categoryId: 2,
+        typeId: 202,
+      },
+      {
+        id: 49,
+        title: {
+          en: "Virgin Pina Colada",
+          fr: "Virgin pina Colada",
+          es: "Piña Colada Virgen",
+          ar: "بينا كولادا بدون كحول",
+        },
+        description: {
+          en: "Pineapple and coconut mix",
+          fr: "Mélange ananas et noix de coco",
+          es: "Mezcla de piña y coco",
+          ar: "مزيج أناناس وجوز الهند",
+        },
+        price: 50.0,
+        image: "/images/pina-colada.jpg",
+        categoryId: 2,
+        typeId: 202,
+      },
 
-    // SALADS
-    {
-      id: 30,
-      title: {
-        en: "Mediterranean Salad",
-        fr: "Salade Méditerranéenne",
-        es: "Ensalada Mediterránea",
-        ar: "سلطة متوسطية"
+      // ===== COLD DRINKS - Smoothies =====
+      {
+        id: 50,
+        title: {
+          en: "Raspberry Smoothie",
+          fr: "Fromboise",
+          es: "Frambuesa",
+          ar: "سموذي توت",
+        },
+        description: {
+          en: "Raspberry, raspberry sorbet, banana, orange",
+          fr: "Framboise, sorbet framboise, banane, orange",
+          es: "Frambuesa, sorbete de frambuesa, banana, naranja",
+          ar: "توت، شربات توت، موز، برتقال",
+        },
+        price: 50.0,
+        image: "/images/raspberry-smoothie.jpg",
+        categoryId: 2,
+        typeId: 203,
       },
-      description: {
-        en: "Fresh greens with cucumber, tomato, olives and feta cheese",
-        fr: "Verdures fraîches avec concombre, tomate, olives et fromage feta",
-        es: "Verduras frescas con pepino, tomate, aceitunas y queso feta",
-        ar: "خضار طازجة مع خيار وطماطم وزيتون وجبنة فيتا"
+      {
+        id: 51,
+        title: {
+          en: "King Smoothie",
+          fr: "King",
+          es: "Rey",
+          ar: "كينج",
+        },
+        description: {
+          en: "Strawberry, blackberry, banana, strawberry sorbet, orange",
+          fr: "Fraise, mure, banane, glace fraise, orange",
+          es: "Fresa, mora, banana, helado de fresa, naranja",
+          ar: "فراولة، توت أسود، موز، شربات فراولة، برتقال",
+        },
+        price: 50.0,
+        image: "/images/king-smoothie.jpg",
+        categoryId: 2,
+        typeId: 203,
       },
-      price: 45.00,
-      image: "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe",
-      categoryId: 7,
-      typeId: 701,
-      nutrition: {
-        calories: 280,
-        protein: 9,
-        fat: 22,
-        carbs: 15
-      }
-    },
-    {
-      id: 31,
-      title: {
-        en: "Quinoa Tabbouleh",
-        fr: "Taboulé au Quinoa",
-        es: "Tabulé de Quinoa",
-        ar: "تبولة الكينوا"
+      {
+        id: 52,
+        title: {
+          en: "Healthy Smoothie",
+          fr: "Healthy",
+          es: "Saludable",
+          ar: "صحي",
+        },
+        description: {
+          en: "Kiwi, pineapple sorbet, orange, banana",
+          fr: "Kiwi, sorbet ananas, orange, banane",
+          es: "Kiwi, sorbete de piña, naranja, banana",
+          ar: "كيوي، شربات أناناس، برتقال، موز",
+        },
+        price: 50.0,
+        image: "/images/healthy-smoothie.jpg",
+        categoryId: 2,
+        typeId: 203,
       },
-      description: {
-        en: "Quinoa with chopped parsley, tomatoes, mint and lemon dressing",
-        fr: "Quinoa avec persil haché, tomates, menthe et vinaigrette au citron",
-        es: "Quinoa con perejil picado, tomates, menta y aderezo de limón",
-        ar: "كينوا مع بقدونس مفروم وطماطم ونعناع وصلصة ليمون"
+      {
+        id: 53,
+        title: {
+          en: "Power Smoothie",
+          fr: "Power",
+          es: "Poder",
+          ar: "باور",
+        },
+        description: {
+          en: "Kiwi, mango sorbet, banana",
+          fr: "Kiwi, sorbet mangue, banane",
+          es: "Kiwi, sorbete de mango, banana",
+          ar: "كيوي، شربات مانجو، موز",
+        },
+        price: 50.0,
+        image: "/images/power-smoothie.jpg",
+        categoryId: 2,
+        typeId: 203,
       },
-      price: 50.00,
-      image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd",
-      categoryId: 7,
-      typeId: 702,
-      nutrition: {
-        calories: 320,
-        protein: 10,
-        fat: 15,
-        carbs: 45
-      }
-    },
+      {
+        id: 54,
+        title: {
+          en: "Chef's Smoothie",
+          fr: "Chef",
+          es: "Chef",
+          ar: "شيف",
+        },
+        description: {
+          en: "Lemon, orange, banana, mango",
+          fr: "Citron, orange, banane, mangue",
+          es: "Limón, naranja, banana, mango",
+          ar: "ليمون، برتقال، موز، مانجو",
+        },
+        price: 50.0,
+        image: "/images/chef-smoothie.jpg",
+        categoryId: 2,
+        typeId: 203,
+      },
 
-    // SOUPS
-    {
-      id: 32,
-      title: {
-        en: "Cream of Mushroom Soup",
-        fr: "Velouté de Champignons",
-        es: "Crema de Champiñones",
-        ar: "شوربة كريمة الفطر"
+      // ===== COLD DRINKS - Mojitos =====
+      {
+        id: 55,
+        title: {
+          en: "Virgin Mojito",
+          fr: "Virgen",
+          es: "Virgen",
+          ar: "موهيتو بدون كحول",
+        },
+        description: {
+          en: "Classic virgin mojito",
+          fr: "Mojito virgen classique",
+          es: "Mojito virgen clásico",
+          ar: "موهيتو كلاسيك بدون كحول",
+        },
+        price: 45.0,
+        image: "/images/virgin-mojito.jpg",
+        categoryId: 2,
+        typeId: 204,
       },
-      description: {
-        en: "Velvety soup made with fresh mushrooms and cream",
-        fr: "Soupe veloutée préparée avec des champignons frais et de la crème",
-        es: "Sopa aterciopelada hecha con champiñones frescos y crema",
-        ar: "شوربة مخملية مصنوعة من الفطر الطازج والكريمة"
+      {
+        id: 56,
+        title: {
+          en: "Green Mojito",
+          fr: "Grean",
+          es: "Verde",
+          ar: "موهيتو أخضر",
+        },
+        description: {
+          en: "Mojito with green apple",
+          fr: "Mojito à la pomme verte",
+          es: "Mojito con manzana verde",
+          ar: "موهيتو مع تفاح أخضر",
+        },
+        price: 45.0,
+        image: "/images/green-mojito.jpg",
+        categoryId: 2,
+        typeId: 204,
       },
-      price: 40.00,
-      image: "https://images.unsplash.com/photo-1603105037880-880cd4edfb0d",
-      categoryId: 8,
-      typeId: 801,
-      nutrition: {
-        calories: 300,
-        protein: 8,
-        fat: 22,
-        carbs: 20
-      }
-    },
-    {
-      id: 33,
-      title: {
-        en: "Harira Soup",
-        fr: "Soupe Harira",
-        es: "Sopa Harira",
-        ar: "حريرة"
+      {
+        id: 57,
+        title: {
+          en: "Blue Mojito",
+          fr: "Bleu",
+          es: "Azul",
+          ar: "موهيتو أزرق",
+        },
+        description: {
+          en: "Blueberry mojito",
+          fr: "Mojito myrtille",
+          es: "Mojito de arándano",
+          ar: "موهيتو توت أزرق",
+        },
+        price: 45.0,
+        image: "/images/blue-mojito.jpg",
+        categoryId: 2,
+        typeId: 204,
       },
-      description: {
-        en: "Traditional Moroccan soup with lentils, chickpeas and fresh herbs",
-        fr: "Soupe marocaine traditionnelle aux lentilles, pois chiches et herbes fraîches",
-        es: "Sopa tradicional marroquí con lentejas, garbanzos y hierbas frescas",
-        ar: "حساء مغربي تقليدي بالعدس والحمص والأعشاب الطازجة"
+      {
+        id: 58,
+        title: {
+          en: "Red Mojito",
+          fr: "Red",
+          es: "Rojo",
+          ar: "موهيتو أحمر",
+        },
+        description: {
+          en: "Strawberry mojito",
+          fr: "Mojito fraise",
+          es: "Mojito de fresa",
+          ar: "موهيتو فراولة",
+        },
+        price: 45.0,
+        image: "/images/red-mojito.jpg",
+        categoryId: 2,
+        typeId: 204,
       },
-      price: 45.00,
-      image: "https://images.unsplash.com/photo-1547592166-23ac45744acd",
-      categoryId: 8,
-      typeId: 802,
-      nutrition: {
-        calories: 250,
-        protein: 12,
-        fat: 5,
-        carbs: 40
-      }
-    },
+      {
+        id: 59,
+        title: {
+          en: "Raspberry Mojito",
+          fr: "Framboise",
+          es: "Frambuesa",
+          ar: "موهيتو توت",
+        },
+        description: {
+          en: "Raspberry mojito",
+          fr: "Mojito framboise",
+          es: "Mojito de frambuesa",
+          ar: "موهيتو توت",
+        },
+        price: 45.0,
+        image: "/images/raspberry-mojito.jpg",
+        categoryId: 2,
+        typeId: 204,
+      },
+      {
+        id: 60,
+        title: {
+          en: "Strawberry Mojito",
+          fr: "Fraise",
+          es: "Fresa",
+          ar: "موهيتو فراولة",
+        },
+        description: {
+          en: "Strawberry mojito",
+          fr: "Mojito fraise",
+          es: "Mojito de fresa",
+          ar: "موهيتو فراولة",
+        },
+        price: 45.0,
+        image: "/images/strawberry-mojito.jpg",
+        categoryId: 2,
+        typeId: 204,
+      },
+      {
+        id: 61,
+        title: {
+          en: "Kiwi Mojito",
+          fr: "Kiwi",
+          es: "Kiwi",
+          ar: "موهيتو كيوي",
+        },
+        description: {
+          en: "Kiwi mojito",
+          fr: "Mojito kiwi",
+          es: "Mojito de kiwi",
+          ar: "موهيتو كيوي",
+        },
+        price: 50.0,
+        image: "/images/kiwi-mojito.jpg",
+        categoryId: 2,
+        typeId: 204,
+      },
+      {
+        id: 62,
+        title: {
+          en: "Energy Mojito",
+          fr: "Energie",
+          es: "Energía",
+          ar: "موهيتو طاقة",
+        },
+        description: {
+          en: "Energy drink mojito",
+          fr: "Mojito énergisant",
+          es: "Mojito energético",
+          ar: "موهيتو مشروب طاقة",
+        },
+        price: 55.0,
+        image: "/images/energy-mojito.jpg",
+        categoryId: 2,
+        typeId: 204,
+      },
 
-    // Continuing with more plates to reach at least 120...
-    // This is just a selection, and I'll expand from here to reach 120+ plates
-    // GRILLED ITEMS
+      // ===== COLD DRINKS - Sodas & Water =====
+      {
+        id: 63,
+        title: {
+          en: "Mineral Water 33cl",
+          fr: "Eau Minérale 33cl",
+          es: "Agua Mineral 33cl",
+          ar: "مياه معدنية 33cl",
+        },
+        description: {
+          en: "Bottled mineral water",
+          fr: "Eau minérale en bouteille",
+          es: "Agua mineral embotellada",
+          ar: "مياه معدنية معبأة",
+        },
+        price: 5.0,
+        image: "/images/water-33cl.jpg",
+        categoryId: 2,
+        typeId: 205,
+      },
+      {
+        id: 64,
+        title: {
+          en: "Mineral Water 50cl",
+          fr: "Eau Minérale 50cl",
+          es: "Agua Mineral 50cl",
+          ar: "مياه معدنية 50cl",
+        },
+        description: {
+          en: "Large bottled mineral water",
+          fr: "Grande bouteille d'eau minérale",
+          es: "Botella grande de agua mineral",
+          ar: "زجاجة مياه معدنية كبيرة",
+        },
+        price: 12.0,
+        image: "/images/water-50cl.jpg",
+        categoryId: 2,
+        typeId: 205,
+      },
+      {
+        id: 65,
+        title: {
+          en: "Soda",
+          fr: "Soda",
+          es: "Refresco",
+          ar: "صودا",
+        },
+        description: {
+          en: "Carbonated soft drink",
+          fr: "Boisson gazeuse",
+          es: "Bebida carbonatada",
+          ar: "مشروب غازي",
+        },
+        price: 16.0,
+        image: "/images/soda.jpg",
+        categoryId: 2,
+        typeId: 205,
+      },
+      {
+        id: 66,
+        title: {
+          en: "Oasis",
+          fr: "Oasis",
+          es: "Oasis",
+          ar: "واحة",
+        },
+        description: {
+          en: "Fruit flavored drink",
+          fr: "Boisson aromatisée aux fruits",
+          es: "Bebida sabor a frutas",
+          ar: "مشروب بنكهة الفواكه",
+        },
+        price: 20.0,
+        image: "/images/oasis.jpg",
+        categoryId: 2,
+        typeId: 205,
+      },
+      {
+        id: 67,
+        title: {
+          en: "Energy Drink",
+          fr: "Boissons Energétique",
+          es: "Bebida Energética",
+          ar: "مشروب طاقة",
+        },
+        description: {
+          en: "Energy boosting drink",
+          fr: "Boisson énergisante",
+          es: "Bebida energizante",
+          ar: "مشروب يعزز الطاقة",
+        },
+        price: 45.0,
+        image: "/images/energy-drink.jpg",
+        categoryId: 2,
+        typeId: 205,
+      },
 
-    {
-      id: 34,
-      title: {
-        en: "Grilled Ribeye Steak",
-        fr: "Entrecôte Grillée",
-        es: "Ribeye a la Parrilla",
-        ar: "ستيك ريب آي مشوي"
+      // ===== SWEET CREPES =====
+      {
+        id: 68,
+        title: {
+          en: "Plain or Sugar Crepe",
+          fr: "Nature ou sucrée",
+          es: "Natural o azucarada",
+          ar: "كريب عادي أو بالسكر",
+        },
+        description: {
+          en: "Traditional crepe with sugar",
+          fr: "Crêpe traditionnelle avec sucre",
+          es: "Crepe tradicional con azúcar",
+          ar: "كريب تقليدي مع سكر",
+        },
+        price: 25.0,
+        image: "/images/crepe-nature.jpg",
+        categoryId: 3,
+        typeId: 301,
       },
-      description: {
-        en: "Premium ribeye steak grilled to your preference with herb butter",
-        fr: "Entrecôte premium grillée selon votre préférence avec beurre aux herbes",
-        es: "Ribeye premium a la parrilla a tu gusto con mantequilla de hierbas",
-        ar: "ستيك ريب آي ممتاز مشوي حسب تفضيلك مع زبدة بالأعشاب"
+      {
+        id: 69,
+        title: {
+          en: "Nutella Crepe",
+          fr: "Nutella",
+          es: "Nutella",
+          ar: "نوتيلا",
+        },
+        description: {
+          en: "Crepe with Nutella spread",
+          fr: "Crêpe garnie de Nutella",
+          es: "Crepe con Nutella",
+          ar: "كريب مع نوتيلا",
+        },
+        price: 40.0,
+        image: "/images/crepe-nutella.jpg",
+        categoryId: 3,
+        typeId: 301,
       },
-      price: 130.00,
-      image: "https://images.unsplash.com/photo-1600891964092-304c2a8e05a0",
-      categoryId: 9,
-      typeId: 901,
-      nutrition: {
-        calories: 650,
-        protein: 50,
-        fat: 45,
-        carbs: 2
-      }
-    },
-    {
-      id: 35,
-      title: {
-        en: "Grilled Chicken Skewers",
-        fr: "Brochettes de Poulet Grillées",
-        es: "Pinchos de Pollo a la Parrilla",
-        ar: "أسياخ دجاج مشوية"
+      {
+        id: 70,
+        title: {
+          en: "Nutella Banana Crepe",
+          fr: "Nutella Banane",
+          es: "Nutella Banana",
+          ar: "نوتيلا وموز",
+        },
+        description: {
+          en: "Crepe with Nutella and banana",
+          fr: "Crêpe avec Nutella et banane",
+          es: "Crepe con Nutella y banana",
+          ar: "كريب مع نوتيلا وموز",
+        },
+        price: 45.0,
+        image: "/images/crepe-nutella-banane.jpg",
+        categoryId: 3,
+        typeId: 301,
       },
-      description: {
-        en: "Marinated chicken skewers with bell peppers and onions",
-        fr: "Brochettes de poulet marinées avec poivrons et oignons",
-        es: "Pinchos de pollo marinado con pimientos y cebollas",
-        ar: "أسياخ دجاج متبلة مع الفلفل والبصل"
+      {
+        id: 71,
+        title: {
+          en: "Triple Chocolate Crepe",
+          fr: "Triple Chocolats",
+          es: "Triple Chocolate",
+          ar: "ثلاثي الشوكولاتة",
+        },
+        description: {
+          en: "Crepe with dark, milk and white chocolate",
+          fr: "Crêpe avec chocolat noir, au lait et blanc",
+          es: "Crepe con chocolate negro, con leche y blanco",
+          ar: "كريب مع شوكولاتة داكنة، بالحليب وبيضاء",
+        },
+        price: 45.0,
+        image: "/images/crepe-triple-chocolat.jpg",
+        categoryId: 3,
+        typeId: 301,
       },
-      price: 65.00,
-      image: "https://images.unsplash.com/photo-1529193591184-b1d58069ecdd",
-      categoryId: 9,
-      typeId: 902,
-      nutrition: {
-        calories: 380,
-        protein: 35,
-        fat: 20,
-        carbs: 15
-      }
-    },
+      {
+        id: 72,
+        title: {
+          en: "Triple Chocolate Brownie Crepe",
+          fr: "Triple Chocolats Brownies",
+          es: "Triple Chocolate con Brownie",
+          ar: "ثلاثي الشوكولاتة مع براوني",
+        },
+        description: {
+          en: "Crepe with three chocolates and brownie pieces",
+          fr: "Crêpe avec trois chocolats et morceaux de brownie",
+          es: "Crepe con tres chocolates y trozos de brownie",
+          ar: "كريب مع ثلاث أنواع شوكولاتة وقطع براوني",
+        },
+        price: 45.0,
+        image: "/images/crepe-brownie.jpg",
+        categoryId: 3,
+        typeId: 301,
+      },
+      {
+        id: 73,
+        title: {
+          en: "Lotus Crepe",
+          fr: "Lotus",
+          es: "Lotus",
+          ar: "لوتس",
+        },
+        description: {
+          en: "Crepe with Lotus biscuit spread",
+          fr: "Crêpe avec pâte à tartiner Lotus",
+          es: "Crepe con crema de galleta Lotus",
+          ar: "كريب مع معجون بسكويت لوتس",
+        },
+        price: 45.0,
+        image: "/images/crepe-lotus.jpg",
+        categoryId: 3,
+        typeId: 301,
+      },
+      {
+        id: 74,
+        title: {
+          en: "Oreo Crepe",
+          fr: "Oreo",
+          es: "Oreo",
+          ar: "أوريو",
+        },
+        description: {
+          en: "Crepe with Oreo cookies",
+          fr: "Crêpe avec biscuits Oreo",
+          es: "Crepe con galletas Oreo",
+          ar: "كريب مع بسكويت أوريو",
+        },
+        price: 45.0,
+        image: "/images/crepe-oreo.jpg",
+        categoryId: 3,
+        typeId: 301,
+      },
+      {
+        id: 75,
+        title: {
+          en: "Pistachio Crepe",
+          fr: "Pistache",
+          es: "Pistacho",
+          ar: "فستق",
+        },
+        description: {
+          en: "Crepe with pistachio cream",
+          fr: "Crêpe avec crème de pistache",
+          es: "Crepe con crema de pistacho",
+          ar: "كريب مع كريمة الفستق",
+        },
+        price: 70.0,
+        image: "/images/crepe-pistache.jpg",
+        categoryId: 3,
+        typeId: 301,
+      },
+      {
+        id: 76,
+        title: {
+          en: "Marshmallow Crepe",
+          fr: "Marshmallow",
+          es: "Malvavisco",
+          ar: "مارشملو",
+        },
+        description: {
+          en: "Crepe with melted marshmallows",
+          fr: "Crêpe avec marshmallows fondus",
+          es: "Crepe con malvaviscos derretidos",
+          ar: "كريب مع مارشملو ذائب",
+        },
+        price: 60.0,
+        image: "/images/crepe-marshmallow.jpg",
+        categoryId: 3,
+        typeId: 301,
+      },
+      {
+        id: 77,
+        title: {
+          en: "Raffaello Crepe",
+          fr: "Raffaello",
+          es: "Raffaello",
+          ar: "رافايلو",
+        },
+        description: {
+          en: "Crepe with Raffaello coconut balls",
+          fr: "Crêpe avec boules de noix de coco Raffaello",
+          es: "Crepe con bolitas de coco Raffaello",
+          ar: "كريب مع كرات جوز الهند رافايلو",
+        },
+        price: 60.0,
+        image: "/images/crepe-raffaello.jpg",
+        categoryId: 3,
+        typeId: 301,
+      },
+      {
+        id: 78,
+        title: {
+          en: "Ferrero Rocher Crepe",
+          fr: "Ferrero Rocher",
+          es: "Ferrero Rocher",
+          ar: "فيريرو روشيه",
+        },
+        description: {
+          en: "Crepe with Ferrero Rocher chocolates",
+          fr: "Crêpe avec chocolats Ferrero Rocher",
+          es: "Crepe con chocolates Ferrero Rocher",
+          ar: "كريب مع شوكولاتة فيريرو روشيه",
+        },
+        price: 60.0,
+        image: "/images/crepe-ferrero.jpg",
+        categoryId: 3,
+        typeId: 301,
+      },
+      {
+        id: 79,
+        title: {
+          en: "Amlou Crepe",
+          fr: "Amlou",
+          es: "Amlou",
+          ar: "أملو",
+        },
+        description: {
+          en: "Traditional Moroccan crepe with almond-argan oil paste",
+          fr: "Crêpe marocaine traditionnelle avec pâte d'amande et huile d'argan",
+          es: "Crepe marroquí tradicional con pasta de almendra y aceite de argán",
+          ar: "كريب مغربي تقليدي مع معجون اللوز وزيت الأركان",
+        },
+        price: 70.0,
+        image: "/images/crepe-amlou.jpg",
+        categoryId: 3,
+        typeId: 301,
+      },
 
-    // SEAFOOD
-    {
-      id: 36,
-      title: {
-        en: "Grilled Sea Bass",
-        fr: "Bar Grillé",
-        es: "Lubina a la Parrilla",
-        ar: "سمك القاروص المشوي"
+      // ===== PANCAKES =====
+      {
+        id: 80,
+        title: {
+          en: "Nutella Pancake",
+          fr: "Pancake Nutella",
+          es: "Panqueque Nutella",
+          ar: "بانكيك نوتيلا",
+        },
+        description: {
+          en: "Fluffy pancakes with Nutella spread",
+          fr: "Pancakes moelleux avec pâte à tartiner Nutella",
+          es: "Panqueques esponjosos con Nutella",
+          ar: "بانكيك طري مع نوتيلا",
+        },
+        price: 30.0,
+        image: "/images/pancake-nutella.jpg",
+        categoryId: 4,
+        typeId: 401,
       },
-      description: {
-        en: "Fresh sea bass grilled with lemon, herbs and olive oil",
-        fr: "Bar frais grillé avec citron, herbes et huile d'olive",
-        es: "Lubina fresca a la parrilla con limón, hierbas y aceite de oliva",
-        ar: "سمك قاروص طازج مشوي مع الليمون والأعشاب وزيت الزيتون"
+      {
+        id: 81,
+        title: {
+          en: "Triple Chocolate Pancake",
+          fr: "Pancake Triple Chocolats",
+          es: "Panqueque Triple Chocolate",
+          ar: "بانكيك ثلاثي الشوكولاتة",
+        },
+        description: {
+          en: "With dark, milk and white chocolate",
+          fr: "Avec chocolat noir, au lait et blanc",
+          es: "Con chocolate negro, con leche y blanco",
+          ar: "مع شوكولاتة داكنة، بالحليب وبيضاء",
+        },
+        price: 45.0,
+        image: "/images/pancake-triple-choco.jpg",
+        categoryId: 4,
+        typeId: 401,
       },
-      price: 90.00,
-      image: "https://images.unsplash.com/photo-1551248429-40975aa4de74",
-      categoryId: 10,
-      typeId: 1001,
-      nutrition: {
-        calories: 280,
-        protein: 38,
-        fat: 12,
-        carbs: 2
-      }
-    },
-    {
-      id: 37,
-      title: {
-        en: "Lobster Thermidor",
-        fr: "Homard Thermidor",
-        es: "Langosta Termidor",
-        ar: "كركند ثرميدور"
+      {
+        id: 82,
+        title: {
+          en: "Triple Chocolate Brownie Pancake",
+          fr: "Pancake Triple Chocolats Brownies",
+          es: "Panqueque Triple Chocolate con Brownie",
+          ar: "بانكيك ثلاثي الشوكولاتة مع براوني",
+        },
+        description: {
+          en: "With three chocolates and brownie pieces",
+          fr: "Avec trois chocolats et morceaux de brownie",
+          es: "Con tres chocolates y trozos de brownie",
+          ar: "مع ثلاث شوكولاتات وقطع براوني",
+        },
+        price: 45.0,
+        image: "/images/pancake-brownie.jpg",
+        categoryId: 4,
+        typeId: 401,
       },
-      description: {
-        en: "Lobster in creamy sauce with cheese, served in its shell",
-        fr: "Homard en sauce crémeuse au fromage, servi dans sa coquille",
-        es: "Langosta en salsa cremosa con queso, servida en su caparazón",
-        ar: "كركند في صلصة كريمية مع الجبن، يقدم في قشرته"
+      {
+        id: 83,
+        title: {
+          en: "Lotus Pancake",
+          fr: "Pancake Lotus",
+          es: "Panqueque Lotus",
+          ar: "بانكيك لوتس",
+        },
+        description: {
+          en: "With Lotus biscuit spread and white chocolate",
+          fr: "Avec pâte Lotus et chocolat blanc",
+          es: "Con crema Lotus y chocolate blanco",
+          ar: "مع معجون لوتس وشوكولاتة بيضاء",
+        },
+        price: 45.0,
+        image: "/images/pancake-lotus.jpg",
+        categoryId: 4,
+        typeId: 401,
       },
-      price: 180.00,
-      image: "https://images.unsplash.com/photo-1565557623262-b51c2513a641",
-      categoryId: 10,
-      typeId: 1002,
-      nutrition: {
-        calories: 550,
-        protein: 45,
-        fat: 35,
-        carbs: 10
-      }
-    }
-    // Additional plates would continue to be added here to reach 120+ total
-    // I'm sending a subset of the full 120+ plates to stay within constraints
-  ]
-};
+      {
+        id: 84,
+        title: {
+          en: "Oreo Pancake",
+          fr: "Pancake Oreo",
+          es: "Panqueque Oreo",
+          ar: "بانكيك أوريو",
+        },
+        description: {
+          en: "With Oreo cookies and Nutella",
+          fr: "Avec biscuits Oreo et Nutella",
+          es: "Con galletas Oreo y Nutella",
+          ar: "مع بسكويت أوريو ونوتيلا",
+        },
+        price: 45.0,
+        image: "/images/pancake-oreo.jpg",
+        categoryId: 4,
+        typeId: 401,
+      },
+      {
+        id: 85,
+        title: {
+          en: "Pistachio Pancake",
+          fr: "Pancake Pistache",
+          es: "Panqueque Pistacho",
+          ar: "بانكيك فستق",
+        },
+        description: {
+          en: "With pistachio cream and white chocolate",
+          fr: "Avec crème de pistache et chocolat blanc",
+          es: "Con crema de pistacho y chocolate blanco",
+          ar: "مع كريمة فستق وشوكولاتة بيضاء",
+        },
+        price: 70.0,
+        image: "/images/pancake-pistache.jpg",
+        categoryId: 4,
+        typeId: 401,
+      },
+      {
+        id: 86,
+        title: {
+          en: "Tropical Pancake",
+          fr: "Pancake Tropical",
+          es: "Panqueque Tropical",
+          ar: "بانكيك استوائي",
+        },
+        description: {
+          en: "With fresh tropical fruits",
+          fr: "Avec fruits tropicaux frais",
+          es: "Con frutas tropicales frescas",
+          ar: "مع فواكه استوائية طازجة",
+        },
+        price: 60.0,
+        image: "/images/pancake-tropical.jpg",
+        categoryId: 4,
+        typeId: 401,
+      },
+      {
+        id: 87,
+        title: {
+          en: "Amlou Pancake",
+          fr: "Pancake Amlou",
+          es: "Panqueque Amlou",
+          ar: "بانكيك أملو",
+        },
+        description: {
+          en: "Traditional Moroccan almond-argan cream",
+          fr: "Crème traditionnelle marocaine d'amande et d'argan",
+          es: "Crema tradicional marroquí de almendra y argán",
+          ar: "كريمة مغربية تقليدية من اللوز والأركان",
+        },
+        price: 80.0,
+        image: "/images/pancake-amlou.jpg",
+        categoryId: 4,
+        typeId: 401,
+      },
+
+      // ===== WAFFLES =====
+      {
+        id: 88,
+        title: {
+          en: "Nutella Waffle",
+          fr: "Gaufre Nutella",
+          es: "Gofre Nutella",
+          ar: "وافل نوتيلا",
+        },
+        description: {
+          en: "Crispy waffle with Nutella spread",
+          fr: "Gaufre croustillante avec pâte à tartiner Nutella",
+          es: "Gofre crujiente con Nutella",
+          ar: "وافل مقرمش مع نوتيلا",
+        },
+        price: 25.0,
+        image: "/images/waffle-nutella.jpg",
+        categoryId: 5,
+        typeId: 501,
+      },
+      {
+        id: 89,
+        title: {
+          en: "Nutella Banana Waffle",
+          fr: "Gaufre Nutella Banane",
+          es: "Gofre Nutella Banana",
+          ar: "وافل نوتيلا وموز",
+        },
+        description: {
+          en: "Waffle with Nutella and fresh banana",
+          fr: "Gaufre avec Nutella et banane fraîche",
+          es: "Gofre con Nutella y banana fresca",
+          ar: "وافل مع نوتيلا وموز طازج",
+        },
+        price: 45.0,
+        image: "/images/waffle-nutella-banane.jpg",
+        categoryId: 5,
+        typeId: 501,
+      },
+      {
+        id: 90,
+        title: {
+          en: "Lotus Waffle",
+          fr: "Gaufre Lotus",
+          es: "Gofre Lotus",
+          ar: "وافل لوتس",
+        },
+        description: {
+          en: "With Lotus cream and white chocolate",
+          fr: "Avec crème Lotus et chocolat blanc",
+          es: "Con crema Lotus y chocolate blanco",
+          ar: "مع كريمة لوتس وشوكولاتة بيضاء",
+        },
+        price: 45.0,
+        image: "/images/waffle-lotus.jpg",
+        categoryId: 5,
+        typeId: 501,
+      },
+      {
+        id: 91,
+        title: {
+          en: "Oreo Waffle",
+          fr: "Gaufre Oreo",
+          es: "Gofre Oreo",
+          ar: "وافل أوريو",
+        },
+        description: {
+          en: "With Oreo cookies and white chocolate",
+          fr: "Avec biscuits Oreo et chocolat blanc",
+          es: "Con galletas Oreo y chocolate blanco",
+          ar: "مع بسكويت أوريو وشوكولاتة بيضاء",
+        },
+        price: 45.0,
+        image: "/images/waffle-oreo.jpg",
+        categoryId: 5,
+        typeId: 501,
+      },
+      {
+        id: 92,
+        title: {
+          en: "Triple Chocolate Waffle",
+          fr: "Gaufre Triple Chocolats",
+          es: "Gofre Triple Chocolate",
+          ar: "وافل ثلاثي الشوكولاتة",
+        },
+        description: {
+          en: "With dark, milk and white chocolate",
+          fr: "Avec chocolat noir, au lait et blanc",
+          es: "Con chocolate negro, con leche y blanco",
+          ar: "مع شوكولاتة داكنة، بالحليب وبيضاء",
+        },
+        price: 45.0,
+        image: "/images/waffle-triple-choco.jpg",
+        categoryId: 5,
+        typeId: 501,
+      },
+      {
+        id: 93,
+        title: {
+          en: "Triple Chocolate Brownie Waffle",
+          fr: "Gaufre Triple Chocolats Brownies",
+          es: "Gofre Triple Chocolate con Brownie",
+          ar: "وافل ثلاثي الشوكولاتة مع براوني",
+        },
+        description: {
+          en: "With three chocolates and brownie pieces",
+          fr: "Avec trois chocolats et morceaux de brownie",
+          es: "Con tres chocolates y trozos de brownie",
+          ar: "مع ثلاث شوكولاتات وقطع براوني",
+        },
+        price: 45.0,
+        image: "/images/waffle-brownie.jpg",
+        categoryId: 5,
+        typeId: 501,
+      },
+      {
+        id: 94,
+        title: {
+          en: "Tropical Waffle",
+          fr: "Gaufre Tropical",
+          es: "Gofre Tropical",
+          ar: "وافل استوائي",
+        },
+        description: {
+          en: "With fresh tropical fruits",
+          fr: "Avec fruits tropicaux frais",
+          es: "Con frutas tropicales frescas",
+          ar: "مع فواكه استوائية طازجة",
+        },
+        price: 60.0,
+        image: "/images/waffle-tropical.jpg",
+        categoryId: 5,
+        typeId: 501,
+      },
+
+      // ===== CHURROS =====
+      {
+        id: 95,
+        title: {
+          en: "Classic Churros",
+          fr: "Chorros Classique",
+          es: "Churros Clásicos",
+          ar: "تشوروس كلاسيك",
+        },
+        description: {
+          en: "Traditional Spanish fried dough pastry with sugar",
+          fr: "Pâtisserie espagnole traditionnelle à base de pâte frite avec sucre",
+          es: "Postre tradicional español de masa frita con azúcar",
+          ar: "حلوى إسبانية تقليدية من العجين المقلي مع السكر",
+        },
+        price: 25.0,
+        image: "/images/chorros-classic.jpg",
+        categoryId: 6,
+        typeId: 601,
+      },
+      {
+        id: 96,
+        title: {
+          en: "Chocolate Churros",
+          fr: "Chorros Chocolat",
+          es: "Churros de Chocolate",
+          ar: "تشوروس شوكولاتة",
+        },
+        description: {
+          en: "Homemade chocolate-filled churros with powdered sugar",
+          fr: "Chorros fourrés au chocolat fait maison avec sucre glace",
+          es: "Churros rellenos de chocolate caseros con azúcar glas",
+          ar: "تشوروس محشوة بالشوكولاتة محلية الصنع مع سكر ناعم",
+        },
+        price: 35.0,
+        image: "/images/chorros-chocolat.jpg",
+        categoryId: 6,
+        typeId: 601,
+      },
+      {
+        id: 97,
+        title: {
+          en: "Lotus Churros",
+          fr: "Chorros Lotus",
+          es: "Churros Lotus",
+          ar: "تشوروس لوتس",
+        },
+        description: {
+          en: "Churros with Lotus biscuit spread coating",
+          fr: "Chorros enrobés de pâte à tartiner Lotus",
+          es: "Churros cubiertos con crema de galleta Lotus",
+          ar: "تشوروس مغطاة بمعجون بسكويت لوتس",
+        },
+        price: 40.0,
+        image: "/images/chorros-lotus.jpg",
+        categoryId: 6,
+        typeId: 601,
+      },
+      {
+        id: 98,
+        title: {
+          en: "Triple Chocolate Churros",
+          fr: "Chorros Trois Chocolats",
+          es: "Churros Tres Chocolates",
+          ar: "تشوروس ثلاثي الشوكولاتة",
+        },
+        description: {
+          en: "With dark, milk and white chocolate sauces",
+          fr: "Avec sauces chocolat noir, au lait et blanc",
+          es: "Con salsas de chocolate negro, con leche y blanco",
+          ar: "مع صلصات الشوكولاتة الداكنة، بالحليب والبيضاء",
+        },
+        price: 50.0,
+        image: "/images/chorros-triple-choco.jpg",
+        categoryId: 6,
+        typeId: 601,
+      },
+      {
+        id: 99,
+        title: {
+          en: "Pistachio Churros",
+          fr: "Chorros Pistache",
+          es: "Churros Pistacho",
+          ar: "تشوروس فستق",
+        },
+        description: {
+          en: "With pistachio cream and crushed pistachios",
+          fr: "Avec crème de pistache et pistaches concassées",
+          es: "Con crema de pistacho y pistachos triturados",
+          ar: "مع كريمة الفستق وفستق مجروش",
+        },
+        price: 70.0,
+        image: "/images/chorros-pistache.jpg",
+        categoryId: 6,
+        typeId: 601,
+      },
+      {
+        id: 100,
+        title: {
+          en: "Nutella Dip",
+          fr: "Tasse de Nutella",
+          es: "Taza de Nutella",
+          ar: "كوب نوتيلا",
+        },
+        description: {
+          en: "Side cup of Nutella for dipping",
+          fr: "Tasse de Nutella pour tremper",
+          es: "Taza de Nutella para mojar",
+          ar: "كوب نوتيلا للغمس",
+        },
+        price: 10.0,
+        image: "/images/nutella-dip.jpg",
+        categoryId: 6,
+        typeId: 601,
+      },
+      {
+        id: 101,
+        title: {
+          en: "Mixed Chocolate Dip",
+          fr: "Tasse de Mixte Chocolat",
+          es: "Taza de Chocolate Mixto",
+          ar: "كوب شوكولاتة متنوعة",
+        },
+        description: {
+          en: "Three chocolate blend for dipping",
+          fr: "Mélange de trois chocolats pour tremper",
+          es: "Mezcla de tres chocolates para mojar",
+          ar: "مزيج من ثلاث شوكولاتات للغمس",
+        },
+        price: 10.0,
+        image: "/images/choco-mix-dip.jpg",
+        categoryId: 6,
+        typeId: 601,
+      },
+      {
+        id: 102,
+        title: {
+          en: "Lotus Dip",
+          fr: "Tasse de Sauce Lotus",
+          es: "Taza de Salsa Lotus",
+          ar: "كوب صلصة لوتس",
+        },
+        description: {
+          en: "Creamy Lotus biscuit spread dip",
+          fr: "Sauce onctueuse à la pâte Lotus",
+          es: "Salsa cremosa de galleta Lotus",
+          ar: "صلصة كريمية من معجون بسكويت لوتس",
+        },
+        price: 10.0,
+        image: "/images/lotus-dip.jpg",
+        categoryId: 6,
+        typeId: 601,
+      },
+      {
+        id: 103,
+        title: {
+          en: "Pistachio Dip",
+          fr: "Tasse de Sauce Pistache",
+          es: "Taza de Salsa Pistacho",
+          ar: "كوب صلصة فستق",
+        },
+        description: {
+          en: "Premium pistachio cream dip",
+          fr: "Sauce premium à la crème de pistache",
+          es: "Salsa premium de crema de pistacho",
+          ar: "صلصة فاخرة من كريمة الفستق",
+        },
+        price: 20.0,
+        image: "/images/pistache-dip.jpg",
+        categoryId: 6,
+        typeId: 601,
+      },
+
+      // ===== SALADS =====
+      {
+        id: 104,
+        title: {
+          en: "Norsal Salad",
+          fr: "Salade Norsal",
+          es: "Ensalada Norsal",
+          ar: "سلطة نورسال",
+        },
+        description: {
+          en: "Romaine, tomato, onion, cherry tomato, tuna, avocado",
+          fr: "Romaine, tomate, oignon, tomate cerise, thon, avocat",
+          es: "Lechuga romana, tomate, cebolla, tomate cherry, atún, aguacate",
+          ar: "خس روماني، طماطم، بصل، طماطم كرزية، تونة، أفوكادو",
+        },
+        price: 50.0,
+        image: "/images/salade-norsal.jpg",
+        categoryId: 7,
+        typeId: 701,
+      },
+      {
+        id: 105,
+        title: {
+          en: "Rosa Salad",
+          fr: "Salade Rosa",
+          es: "Ensalada Rosa",
+          ar: "سلطة روزا",
+        },
+        description: {
+          en: "Potato, olive, egg, tuna, mayonnaise, carrots",
+          fr: "Pomme de terre, olive, œuf, thon, mayonnaise, carottes",
+          es: "Patata, aceituna, huevo, atún, mayonesa, zanahorias",
+          ar: "بطاطس، زيتون، بيض، تونة، مايونيز، جزر",
+        },
+        price: 35.0,
+        image: "/images/salade-rosa.jpg",
+        categoryId: 7,
+        typeId: 701,
+      },
+      {
+        id: 106,
+        title: {
+          en: "Moroccan Salad",
+          fr: "Salade Marocaine",
+          es: "Ensalada Marroquí",
+          ar: "سلطة مغربية",
+        },
+        description: {
+          en: "Tomato, cucumber, onion, red and green peppers, tuna, hard-boiled egg",
+          fr: "Tomate, concombre, oignon, poivrons rouge et vert, thon, œuf dur",
+          es: "Tomate, pepino, cebolla, pimientos rojo y verde, atún, huevo duro",
+          ar: "طماطم، خيار، بصل، فلفل أحمر وأخضر، تونة، بيض مسلوق",
+        },
+        price: 40.0,
+        image: "/images/salade-marocaine.jpg",
+        categoryId: 7,
+        typeId: 701,
+      },
+      {
+        id: 107,
+        title: {
+          en: "Varied Salad",
+          fr: "Salade Variés",
+          es: "Ensalada Variada",
+          ar: "سلطة متنوعة",
+        },
+        description: {
+          en: "Romaine, corn, beetroot, cucumber, rice, tomato, cherry tomato, green beans, avocado, tuna, egg, onion, carrots",
+          fr: "Romaine, maïs, betterave, concombre, riz, tomate, tomate cerise, haricot vert, avocat, thon, œuf, oignon, carottes",
+          es: "Lechuga romana, maíz, remolacha, pepino, arroz, tomate, tomate cherry, judías verdes, aguacate, atún, huevo, cebolla, zanahorias",
+          ar: "خس روماني، ذرة، شمندر، خيار، أرز، طماطم، طماطم كرزية، فاصوليا خضراء، أفوكادو، تونة، بيض، بصل، جزر",
+        },
+        price: 60.0,
+        image: "/images/salade-variee.jpg",
+        categoryId: 7,
+        typeId: 701,
+      },
+      {
+        id: 108,
+        title: {
+          en: "Octopus Salad",
+          fr: "Salade de Poulpe",
+          es: "Ensalada de Pulpo",
+          ar: "سلطة أخطبوط",
+        },
+        description: {
+          en: "Octopus, green and red pepper, onion, tomato, olive oil",
+          fr: "Poulpe, poivre vert et rouge, oignon, tomate, huile d'olive",
+          es: "Pulpo, pimiento verde y rojo, cebolla, tomate, aceite de oliva",
+          ar: "أخطبوط، فلفل أخضر وأحمر، بصل، طماطم، زيت زيتون",
+        },
+        price: 70.0,
+        image: "/images/salade-poulpe.jpg",
+        categoryId: 7,
+        typeId: 701,
+      },
+      {
+        id: 109,
+        title: {
+          en: "Seafood Salad",
+          fr: "Salade Fruits de Mer",
+          es: "Ensalada de Mariscos",
+          ar: "سلطة مأكولات بحرية",
+        },
+        description: {
+          en: "Romaine, shrimp, squid, octopus, cherry tomato, green peppers, corn, pickled cucumber",
+          fr: "Romaine, crevette, calamar, poulpe, tomate cerise, poivre verts, maïs, concombre au vinaigre",
+          es: "Lechuga romana, gamba, calamar, pulpo, tomate cherry, pimientos verdes, maíz, pepino en vinagre",
+          ar: "خس روماني، روبيان، حبار، أخطبوط، طماطم كرزية، فلفل أخضر، ذرة، خيار مخلل",
+        },
+        price: 80.0,
+        image: "/images/salade-fruits-mer.jpg",
+        categoryId: 7,
+        typeId: 701,
+      },
+      {
+        id: 110,
+        title: {
+          en: "Burrata Salad",
+          fr: "Salade Burrata",
+          es: "Ensalada Burrata",
+          ar: "سلطة بوراتا",
+        },
+        description: {
+          en: "Cherry tomato, walnuts, figs, house sauce",
+          fr: "Tomate cerise, noix, figue, sauce maison",
+          es: "Tomate cherry, nueces, higos, salsa de la casa",
+          ar: "طماطم كرزية، جوز، تين، صلصة بيتية",
+        },
+        price: 85.0,
+        image: "/images/salade-burrata.jpg",
+        categoryId: 7,
+        typeId: 701,
+      },
+      {
+        id: 111,
+        title: {
+          en: "Avocado Shrimp Salad",
+          fr: "Salade Avocat au Crevette",
+          es: "Ensalada de Aguacate con Gambas",
+          ar: "سلطة أفوكادو مع روبيان",
+        },
+        description: {
+          en: "Tomato, shrimp, avocado, cocktail sauce",
+          fr: "Tomate, crevette, avocat, sauce cocktail",
+          es: "Tomate, gamba, aguacate, salsa cóctel",
+          ar: "طماطم، روبيان، أفوكادو، صلصة كوكتيل",
+        },
+        price: 80.0,
+        image: "/images/salade-crevette.jpg",
+        categoryId: 7,
+        typeId: 701,
+      },
+      {
+        id: 112,
+        title: {
+          en: "Caesar Salad with Prawns",
+          fr: "Salade César Gambas",
+          es: "Ensalada César con Gambas",
+          ar: "سلطة سيزار مع جمبري",
+        },
+        description: {
+          en: "Romaine, cherry tomato, garlic croutons, homemade anchovies, quail egg, grilled prawns, parmesan, Caesar dressing",
+          fr: "Romaine, tomate cerise, croutons à l'ail, enchois maison, œuf de caille, gambas griller, parmesan, sauce cesar",
+          es: "Lechuga romana, tomate cherry, crutones de ajo, anchoas caseras, huevo de codorniz, gambas a la parrilla, parmesano, aderezo César",
+          ar: "خس روماني، طماطم كرزية، خبز محمص بالثوم، أنشوجة بيتية، بيض سمان، جمبري مشوي، بارميزان، صلصة سيزار",
+        },
+        price: 80.0,
+        image: "/images/salade-cesar.jpg",
+        categoryId: 7,
+        typeId: 701,
+      },
+
+      // ===== HOT APPETIZERS - Croquettes =====
+      {
+        id: 113,
+        title: {
+          en: "Shrimp Croquettes",
+          fr: "Croquettes Crevette",
+          es: "Croquetas de Gambas",
+          ar: "كروكيت روبيان",
+        },
+        description: {
+          en: "Crispy fried shrimp croquettes (4 pieces)",
+          fr: "Croquettes croustillantes aux crevettes (4 pièces)",
+          es: "Croquetas crujientes de gambas (4 unidades)",
+          ar: "كرات مقلية مقرمشة بالروبيان (4 قطع)",
+        },
+        price: 65.0,
+        image: "/images/croquette-crevette.jpg",
+        categoryId: 8,
+        typeId: 801,
+      },
+      {
+        id: 114,
+        title: {
+          en: "Fish Croquettes",
+          fr: "Croquettes Poisson",
+          es: "Croquetas de Pescado",
+          ar: "كروكيت سمك",
+        },
+        description: {
+          en: "Fried fish croquettes with herbs (4 pieces)",
+          fr: "Croquettes de poisson aux herbes (4 pièces)",
+          es: "Croquetas de pescado con hierbas (4 unidades)",
+          ar: "كرات سمك مقلية مع أعشاب (4 قطع)",
+        },
+        price: 65.0,
+        image: "/images/croquette-poisson.jpg",
+        categoryId: 8,
+        typeId: 801,
+      },
+      {
+        id: 115,
+        title: {
+          en: "Squid Croquettes",
+          fr: "Croquettes Calamar",
+          es: "Croquetas de Calamar",
+          ar: "كروكيت حبار",
+        },
+        description: {
+          en: "Tender squid in crispy coating (4 pieces)",
+          fr: "Calamar tendre dans une enveloppe croustillante (4 pièces)",
+          es: "Calamar tierno en recubrimiento crujiente (4 unidades)",
+          ar: "حبار طري مغلف بمقرمشات (4 قطع)",
+        },
+        price: 70.0,
+        image: "/images/croquette-calamar.jpg",
+        categoryId: 8,
+        typeId: 801,
+      },
+      {
+        id: 116,
+        title: {
+          en: "Tuna Croquettes",
+          fr: "Croquettes Thon",
+          es: "Croquetas de Atún",
+          ar: "كروكيت تونة",
+        },
+        description: {
+          en: "Traditional tuna croquettes (4 pieces)",
+          fr: "Croquettes traditionnelles au thon (4 pièces)",
+          es: "Croquetas tradicionales de atún (4 unidades)",
+          ar: "كرات تونة تقليدية (4 قطع)",
+        },
+        price: 50.0,
+        image: "/images/croquette-thon.jpg",
+        categoryId: 8,
+        typeId: 801,
+      },
+      {
+        id: 117,
+        title: {
+          en: "Cheese Croquettes",
+          fr: "Croquettes Fromage",
+          es: "Croquetas de Queso",
+          ar: "كروكيت جبن",
+        },
+        description: {
+          en: "Melted cheese croquettes (4 pieces)",
+          fr: "Croquettes au fromage fondu (4 pièces)",
+          es: "Croquetas de queso derretido (4 unidades)",
+          ar: "كرات جبنة ذائبة (4 قطع)",
+        },
+        price: 60.0,
+        image: "/images/croquette-fromage.jpg",
+        categoryId: 8,
+        typeId: 801,
+      },
+      {
+        id: 118,
+        title: {
+          en: "Mixed Croquettes",
+          fr: "Croquettes Mixte",
+          es: "Croquetas Mixtas",
+          ar: "كروكيت متنوع",
+        },
+        description: {
+          en: "Assortment of 4 different croquettes (shrimp, fish, squid, cheese)",
+          fr: "Assortiment de 4 croquettes différentes (crevette, poisson, calamar, fromage)",
+          es: "Surrido de 4 croquetas diferentes (gamba, pescado, calamar, queso)",
+          ar: "تشكيلة من 4 كروكيت مختلفة (روبيان، سمك، حبار، جبن)",
+        },
+        price: 75.0,
+        image: "/images/croquette-mixte.jpg",
+        categoryId: 8,
+        typeId: 801,
+      },
+
+      // ===== HOT APPETIZERS - Tapas =====
+      {
+        id: 119,
+        title: {
+          en: "Shrimp Pil Pil",
+          fr: "Crevette Pil Pil",
+          es: "Gambas al Pil Pil",
+          ar: "روبيان بيل بيل",
+        },
+        description: {
+          en: "Shrimp in spicy tomato sauce",
+          fr: "Crevettes dans une sauce tomate épicée",
+          es: "Gambas en salsa de tomate picante",
+          ar: "روبيان في صلصة طماطم حارة",
+        },
+        price: 85.0,
+        image: "/images/crevette-pilpil.jpg",
+        categoryId: 8,
+        typeId: 802,
+      },
+      {
+        id: 120,
+        title: {
+          en: "Fried Squid",
+          fr: "Friture Calamar",
+          es: "Calamares Fritos",
+          ar: "حبار مقلي",
+        },
+        description: {
+          en: "Crispy fried squid rings",
+          fr: "Anneaux de calamar frits croustillants",
+          es: "Aros de calamar fritos crujientes",
+          ar: "حلقات حبار مقلية مقرمشة",
+        },
+        price: 80.0,
+        image: "/images/friture-calamar.jpg",
+        categoryId: 8,
+        typeId: 802,
+      },
+      {
+        id: 121,
+        title: {
+          en: "Spanish Tortilla",
+          fr: "Tortilla Espagnole",
+          es: "Tortilla Española",
+          ar: "تورتيلا إسبانية",
+        },
+        description: {
+          en: "Classic potato and onion omelette",
+          fr: "Omelette classique aux pommes de terre et oignons",
+          es: "Tortilla clásica de patata y cebolla",
+          ar: "عجة تقليدية بالبطاطس والبصل",
+        },
+        price: 45.0,
+        image: "/images/tortilla-espagnole.jpg",
+        categoryId: 8,
+        typeId: 802,
+      },
+      {
+        id: 122,
+        title: {
+          en: "Seafood Tortilla",
+          fr: "Tortilla Marinera",
+          es: "Tortilla Marinera",
+          ar: "تورتيلا بحرية",
+        },
+        description: {
+          en: "Spanish omelette with mixed seafood",
+          fr: "Tortilla espagnole aux fruits de mer",
+          es: "Tortilla española con mariscos",
+          ar: "تورتيلا إسبانية مع مأكولات بحرية",
+        },
+        price: 75.0,
+        image: "/images/tortilla-marinera.jpg",
+        categoryId: 8,
+        typeId: 802,
+      },
+      {
+        id: 123,
+        title: {
+          en: "Prawn Tortilla",
+          fr: "Tortilla Gambas",
+          es: "Tortilla de Gambas",
+          ar: "تورتيلا جمبري",
+        },
+        description: {
+          en: "Spanish omelette with prawns",
+          fr: "Tortilla espagnole aux gambas",
+          es: "Tortilla española con gambas",
+          ar: "تورتيلا إسبانية مع جمبري",
+        },
+        price: 70.0,
+        image: "/images/tortilla-gambas.jpg",
+        categoryId: 8,
+        typeId: 802,
+      },
+
+      // ===== PIZZAS =====
+      {
+        id: 124,
+        title: {
+          en: "Margherita Pizza",
+          fr: "Pizza Margherita",
+          es: "Pizza Margarita",
+          ar: "بيتزا مارغريتا",
+        },
+        description: {
+          en: "Tomato sauce, mozzarella, basil, olives",
+          fr: "Sauce tomate, mozzarella, basilic, olives",
+          es: "Salsa de tomate, mozzarella, albahaca, aceitunas",
+          ar: "صلصة طماطم، موزاريلا، ريحان، زيتون",
+        },
+        price: 55.0,
+        image: "/images/pizza-margherita.jpg",
+        categoryId: 9,
+        typeId: 901,
+        size: "30cm",
+      },
+      {
+        id: 125,
+        title: {
+          en: "Vegetarian Pizza",
+          fr: "Pizza Végétarienne",
+          es: "Pizza Vegetariana",
+          ar: "بيتزا نباتية",
+        },
+        description: {
+          en: "Tomato sauce, mozzarella, grilled vegetables",
+          fr: "Sauce tomate, mozzarella, légumes grillés",
+          es: "Salsa de tomate, mozzarella, verduras a la parrilla",
+          ar: "صلصة طماطم، موزاريلا، خضروات مشوية",
+        },
+        price: 65.0,
+        image: "/images/pizza-vegetarienne.jpg",
+        categoryId: 9,
+        typeId: 901,
+        size: "30cm",
+      },
+      {
+        id: 126,
+        title: {
+          en: "Tuna Pizza",
+          fr: "Pizza Thon",
+          es: "Pizza de Atún",
+          ar: "بيتزا تونة",
+        },
+        description: {
+          en: "Tomato sauce, mozzarella, tuna, olives, onions, chili",
+          fr: "Sauce tomate, mozzarella, thon, olives, oignons, piment",
+          es: "Salsa de tomate, mozzarella, atún, aceitunas, cebollas, chile",
+          ar: "صلصة طماطم، موزاريلا، تونة، زيتون، بصل، فلفل حار",
+        },
+        price: 70.0,
+        image: "/images/pizza-thon.jpg",
+        categoryId: 9,
+        typeId: 901,
+        size: "30cm",
+      },
+      {
+        id: 127,
+        title: {
+          en: "Chicken & Mushroom Pizza",
+          fr: "Pizza Poulet et Champignons",
+          es: "Pizza de Pollo y Champiñones",
+          ar: "بيتزا دجاج وفطر",
+        },
+        description: {
+          en: "Choice of sauce, chicken, mozzarella, mushrooms, olives",
+          fr: "Sauce au choix, poulet, mozzarella, champignons, olives",
+          es: "Salsa a elegir, pollo, mozzarella, champiñones, aceitunas",
+          ar: "صلصة حسب الاختيار، دجاج، موزاريلا، فطر، زيتون",
+        },
+        price: 75.0,
+        image: "/images/pizza-poulet.jpg",
+        categoryId: 9,
+        typeId: 901,
+        size: "30cm",
+      },
+      {
+        id: 128,
+        title: {
+          en: "Seafood Pizza",
+          fr: "Pizza Fruits de Mer",
+          es: "Pizza de Mariscos",
+          ar: "بيتزا مأكولات بحرية",
+        },
+        description: {
+          en: "Tomato sauce, mozzarella, squid, surimi, mushrooms, olives",
+          fr: "Sauce tomate, mozzarella, calamar, surimi, champignons, olives",
+          es: "Salsa de tomate, mozzarella, calamar, surimi, champiñones, aceitunas",
+          ar: "صلصة طماطم، موزاريلا، حبار، سوريمي، فطر، زيتون",
+        },
+        price: 85.0,
+        image: "/images/pizza-fruits-mer.jpg",
+        categoryId: 9,
+        typeId: 901,
+        size: "30cm",
+      },
+      {
+        id: 129,
+        title: {
+          en: "Pepperoni Pizza",
+          fr: "Pizza Pepperoni",
+          es: "Pizza Pepperoni",
+          ar: "بيتزا بيبروني",
+        },
+        description: {
+          en: "Tomato sauce, mozzarella, pepperoni, olives",
+          fr: "Sauce tomate, mozzarella, pepperoni, olives",
+          es: "Salsa de tomate, mozzarella, pepperoni, aceitunas",
+          ar: "صلصة طماطم، موزاريلا، بيبروني، زيتون",
+        },
+        price: 80.0,
+        image: "/images/pizza-pepperoni.jpg",
+        categoryId: 9,
+        typeId: 901,
+        size: "30cm",
+      },
+      {
+        id: 130,
+        title: {
+          en: "Four Cheese Pizza",
+          fr: "Pizza Quatre Fromages",
+          es: "Pizza Cuatro Quesos",
+          ar: "بيتزا أربع جبن",
+        },
+        description: {
+          en: "White sauce, mozzarella, goat cheese, edam, laughing cow",
+          fr: "Sauce blanche, mozzarella, fromage de chèvre, edam, la vache qui rit",
+          es: "Salsa blanca, mozzarella, queso de cabra, edam, la vaca que ríe",
+          ar: "صلصة بيضاء، موزاريلا، جبن ماعز، إيدام، الجبنة الضاحكة",
+        },
+        price: 80.0,
+        image: "/images/pizza-4fromages.jpg",
+        categoryId: 9,
+        typeId: 901,
+        size: "30cm",
+      },
+      {
+        id: 131,
+        title: {
+          en: "Half & Half Pizza",
+          fr: "Pizza Moitié-Moitié",
+          es: "Pizza Mitad y Mitad",
+          ar: "بيتزا نصفين",
+        },
+        description: {
+          en: "Two flavors of your choice (half/half)",
+          fr: "Deux saveurs au choix (moitié/moitié)",
+          es: "Dos sabores a elegir (mitad/mitad)",
+          ar: "نوعان حسب الاختيار (نصف/نصف)",
+        },
+        price: 85.0,
+        image: "/images/pizza-mixte.jpg",
+        categoryId: 9,
+        typeId: 901,
+        size: "30cm",
+      },
+
+      // ===== PASTA - Risotto =====
+      {
+        id: 132,
+        title: {
+          en: "Four Cheese Risotto",
+          fr: "Risotto Quatre Fromages",
+          es: "Risotto Cuatro Quesos",
+          ar: "ريسوتو أربع جبن",
+        },
+        description: {
+          en: "Creamy risotto with mozzarella, goat cheese, edam and cream cheese",
+          fr: "Risotto crémeux avec mozzarella, fromage de chèvre, edam et fromage à la crème",
+          es: "Risotto cremoso con mozzarella, queso de cabra, edam y queso crema",
+          ar: "ريسوتو كريمي مع موزاريلا وجبن الماعز وإيدام والجبن الكريمي",
+        },
+        price: 80.0,
+        image: "/images/risotto-4fromages.jpg",
+        categoryId: 10,
+        typeId: 1001,
+      },
+      {
+        id: 133,
+        title: {
+          en: "Chicken Mushroom Risotto",
+          fr: "Risotto Poulet Champignons",
+          es: "Risotto de Pollo y Champiñones",
+          ar: "ريسوتو دجاج وفطر",
+        },
+        description: {
+          en: "Creamy risotto with grilled chicken and mushrooms",
+          fr: "Risotto crémeux avec poulet grillé et champignons",
+          es: "Risotto cremoso con pollo a la parrilla y champiñones",
+          ar: "ريسوتو كريمي مع دجاج مشوي وفطر",
+        },
+        price: 80.0,
+        image: "/images/risotto-poulet.jpg",
+        categoryId: 10,
+        typeId: 1001,
+      },
+      {
+        id: 134,
+        title: {
+          en: "Seafood Risotto",
+          fr: "Risotto Fruits de Mer",
+          es: "Risotto de Mariscos",
+          ar: "ريسوتو مأكولات بحرية",
+        },
+        description: {
+          en: "With mixed seafood and saffron",
+          fr: "Avec fruits de mer et safran",
+          es: "Con mariscos y azafrán",
+          ar: "مع مأكولات بحرية وزعفران",
+        },
+        price: 85.0,
+        image: "/images/risotto-fruits-mer.jpg",
+        categoryId: 10,
+        typeId: 1001,
+      },
+
+      // ===== PASTA - Regular Pasta =====
+      {
+        id: 135,
+        title: {
+          en: "Spaghetti with Tomato Sauce",
+          fr: "Spaghetti Sauce Tomate",
+          es: "Espaguetis con Salsa de Tomate",
+          ar: "معكرونة بصلصة الطماطم",
+        },
+        description: {
+          en: "Classic spaghetti with homemade tomato sauce",
+          fr: "Spaghetti classiques avec sauce tomate maison",
+          es: "Espaguetis clásicos con salsa de tomate casera",
+          ar: "معكرونة تقليدية مع صلصة طماطم بيتية",
+        },
+        price: 60.0,
+        image: "/images/pasta-tomate.jpg",
+        categoryId: 10,
+        typeId: 1002,
+        pastaType: {
+          en: "Spaghetti/Penne/Rigatoni",
+          fr: "Spaghetti/Penne/Rigatoni",
+          es: "Espaguetis/Penne/Rigatoni",
+          ar: "اسباغيتي/بيني/ريغاتوني",
+        },
+      },
+      {
+        id: 136,
+        title: {
+          en: "Cheese Sauce Pasta",
+          fr: "Pâtes Sauce Fromage",
+          es: "Pasta con Salsa de Queso",
+          ar: "معكرونة بصل صة الجبن",
+        },
+        description: {
+          en: "Pasta with rich three-cheese sauce",
+          fr: "Pâtes avec sauce riche à trois fromages",
+          es: "Pasta con salsa espesa de tres quesos",
+          ar: "معكرونة مع صلصة جبن ثلاثية غنية",
+        },
+        price: 75.0,
+        image: "/images/pasta-fromage.jpg",
+        categoryId: 10,
+        typeId: 1002,
+        pastaType: {
+          en: "Spaghetti/Penne/Rigatoni",
+          fr: "Spaghetti/Penne/Rigatoni",
+          es: "Espaguetis/Penne/Rigatoni",
+          ar: "اسباغيتي/بيني/ريغاتوني",
+        },
+      },
+      {
+        id: 137,
+        title: {
+          en: "Seafood Pasta",
+          fr: "Pâtes Fruits de Mer",
+          es: "Pasta de Mariscos",
+          ar: "معكرونة مأكولات بحرية",
+        },
+        description: {
+          en: "With squid, shrimp and mussels in white wine sauce",
+          fr: "Avec calamar, crevettes et moules en sauce au vin blanc",
+          es: "Con calamares, gambas y mejillones en salsa de vino blanco",
+          ar: "مع حبار وروبيان وبلح البحر في صلصة نبيذ أبيض",
+        },
+        price: 85.0,
+        image: "/images/pasta-fruits-mer.jpg",
+        categoryId: 10,
+        typeId: 1002,
+        pastaType: {
+          en: "Spaghetti/Penne/Rigatoni",
+          fr: "Spaghetti/Penne/Rigatoni",
+          es: "Espaguetis/Penne/Rigatoni",
+          ar: "اسباغيتي/بيني/ريغاتوني",
+        },
+      },
+      {
+        id: 138,
+        title: {
+          en: "Bolognese Pasta",
+          fr: "Pâtes Bolognaise",
+          es: "Pasta a la Boloñesa",
+          ar: "معكرونة بولونيز",
+        },
+        description: {
+          en: "Classic meat sauce with herbs",
+          fr: "Sauce bolognaise classique aux herbes",
+          es: "Salsa boloñesa clásica con hierbas",
+          ar: "صلصة لحم تقليدية مع أعشاب",
+        },
+        price: 80.0,
+        image: "/images/pasta-bolo.jpg",
+        categoryId: 10,
+        typeId: 1002,
+        pastaType: {
+          en: "Spaghetti/Penne/Rigatoni",
+          fr: "Spaghetti/Penne/Rigatoni",
+          es: "Espaguetis/Penne/Rigatoni",
+          ar: "اسباغيتي/بيني/ريغاتوني",
+        },
+      },
+      {
+        id: 139,
+        title: {
+          en: "Chicken Mushroom Pasta",
+          fr: "Pâtes Poulet Champignons",
+          es: "Pasta de Pollo y Champiñones",
+          ar: "معكرونة دجاج وفطر",
+        },
+        description: {
+          en: "Grilled chicken and mushrooms in cream sauce",
+          fr: "Poulet grillé et champignons en sauce crème",
+          es: "Pollo a la parrilla y champiñones en salsa cremosa",
+          ar: "دجاج مشوي وفطر في صلصة كريمية",
+        },
+        price: 85.0,
+        image: "/images/pasta-poulet.jpg",
+        categoryId: 10,
+        typeId: 1002,
+        pastaType: {
+          en: "Spaghetti/Penne/Rigatoni",
+          fr: "Spaghetti/Penne/Rigatoni",
+          es: "Espaguetis/Penne/Rigatoni",
+          ar: "اسباغيتي/بيني/ريغاتوني",
+        },
+      },
+      {
+        id: 140,
+        title: {
+          en: "Zucchini Scampi Pasta",
+          fr: "Pâtes Zucchini Scampi",
+          es: "Pasta de Calabacín y Langostinos",
+          ar: "معكرونة كوسة وسكامبي",
+        },
+        description: {
+          en: "With zucchini and shrimp in garlic sauce",
+          fr: "Aux courgettes et crevettes en sauce à l'ail",
+          es: "Con calabacín y gambas en salsa de ajo",
+          ar: "مع كوسة وروبيان في صلصة ثوم",
+        },
+        price: 80.0,
+        image: "/images/pasta-scampi.jpg",
+        categoryId: 10,
+        typeId: 1002,
+        pastaType: {
+          en: "Spaghetti/Penne/Rigatoni",
+          fr: "Spaghetti/Penne/Rigatoni",
+          es: "Espaguetis/Penne/Rigatoni",
+          ar: "اسباغيتي/بيني/ريغاتوني",
+        },
+      },
+      {
+        id: 141,
+        title: {
+          en: "Black Seafood Pasta",
+          fr: "Pâtes Noir Fruits de Mer",
+          es: "Pasta Negra de Mariscos",
+          ar: "معكرونة سوداء بمأكولات بحرية",
+        },
+        description: {
+          en: "Squid ink pasta with mixed seafood",
+          fr: "Pâtes à l'encre de seiche avec fruits de mer",
+          es: "Pasta de tinta de calamar con mariscos",
+          ar: "معكرونة بحبر الحبار مع مأكولات بحرية",
+        },
+        price: 110.0,
+        image: "/images/pasta-noir.jpg",
+        categoryId: 10,
+        typeId: 1002,
+        pastaType: {
+          en: "Spaghetti",
+          fr: "Spaghetti",
+          es: "Espaguetis",
+          ar: "اسباغيتي",
+        },
+      },
+
+      // ===== PASTA - Lasagna =====
+      {
+        id: 142,
+        title: {
+          en: "Lasagna Bolognese",
+          fr: "Lasagne Bolognaise",
+          es: "Lasaña a la Boloñesa",
+          ar: "لازانيا بولونيز",
+        },
+        description: {
+          en: "Layered pasta with meat sauce and cheese",
+          fr: "Pâtes superposées avec sauce bolognaise et fromage",
+          es: "Capas de pasta con salsa boloñesa y queso",
+          ar: "طبقات معكرونة مع صلصة لحم وجبن",
+        },
+        price: 90.0,
+        image: "/images/lasagne-bolo.jpg",
+        categoryId: 10,
+        typeId: 1003,
+      },
+      {
+        id: 143,
+        title: {
+          en: "Seafood Lasagna",
+          fr: "Lasagne Fruits de Mer",
+          es: "Lasaña de Mariscos",
+          ar: "لازانيا مأكولات بحرية",
+        },
+        description: {
+          en: "Layered pasta with mixed seafood in white sauce",
+          fr: "Pâtes superposées avec fruits de mer en sauce blanche",
+          es: "Capas de pasta con mariscos en salsa blanca",
+          ar: "طبقات معكرونة مع مأكولات بحرية في صلصة بيضاء",
+        },
+        price: 95.0,
+        image: "/images/lasagne-fruits-mer.jpg",
+        categoryId: 10,
+        typeId: 1003,
+      },
+      {
+        id: 144,
+        title: {
+          en: "Spinach Shrimp Cannelloni",
+          fr: "Cannelloni aux Épinards et Crevettes",
+          es: "Canelones de Espinacas y Gambas",
+          ar: "كانيلوني سبانخ وروبيان",
+        },
+        description: {
+          en: "Stuffed pasta with spinach and shrimp",
+          fr: "Pâtes farcies aux épinards et crevettes",
+          es: "Pasta rellena de espinacas y gambas",
+          ar: "معكرونة محشوة بالسبانخ والروبيان",
+        },
+        price: 95.0,
+        image: "/images/cannelloni-epinard.jpg",
+        categoryId: 10,
+        typeId: 1003,
+      },
+      {
+        id: 145,
+        title: {
+          en: "Bolognese Cannelloni",
+          fr: "Cannelloni Bolognaise",
+          es: "Canelones a la Boloñesa",
+          ar: "كانيلوني بولونيز",
+        },
+        description: {
+          en: "Stuffed pasta with meat sauce",
+          fr: "Pâtes farcies à la sauce bolognaise",
+          es: "Pasta rellena con salsa boloñesa",
+          ar: "معكرونة محشوة بصلصة اللحم",
+        },
+        price: 95.0,
+        image: "/images/cannelloni-bolo.jpg",
+        categoryId: 10,
+        typeId: 1003,
+      },
+
+      // ===== TACOS =====
+      {
+        id: 146,
+        title: {
+          en: "Chicken Tacos",
+          fr: "Tacos Poulet",
+          es: "Tacos de Pollo",
+          ar: "تاكوس دجاج",
+        },
+        description: {
+          en: "Soft tortillas with grilled chicken, lettuce, tomato, and sauce",
+          fr: "Tortillas souples avec poulet grillé, laitue, tomate et sauce",
+          es: "Tortillas suaves con pollo a la parrilla, lechuga, tomate y salsa",
+          ar: "تورتيلا طرية مع دجاج مشوي، خس، طماطم وصلصة",
+        },
+        price: 55.0,
+        image: "/images/tacos-poulet.jpg",
+        categoryId: 13,
+        typeId: 1301,
+        includes: {
+          en: "3 pieces with sides",
+          fr: "3 pièces avec accompagnements",
+          es: "3 unidades con guarniciones",
+          ar: "3 قطع مع أطباق جانبية",
+        },
+      },
+      {
+        id: 147,
+        title: {
+          en: "Beef Tacos",
+          fr: "Tacos Viande Hachée",
+          es: "Tacos de Carne Molida",
+          ar: "تاكوس لحم مفروم",
+        },
+        description: {
+          en: "Seasoned ground beef with cheese, guacamole, and salsa",
+          fr: "Viande hachée assaisonnée avec fromage, guacamole et salsa",
+          es: "Carne molida sazonada con queso, guacamole y salsa",
+          ar: "لحم مفروم متبل مع جبن، جواكامولي وصلصة",
+        },
+        price: 70.0,
+        image: "/images/tacos-viande.jpg",
+        categoryId: 13,
+        typeId: 1301,
+        includes: {
+          en: "3 pieces with sides",
+          fr: "3 pièces avec accompagnements",
+          es: "3 unidades con guarniciones",
+          ar: "3 قطع مع أطباق جانبية",
+        },
+      },
+      {
+        id: 148,
+        title: {
+          en: "Seafood Tacos",
+          fr: "Tacos Fruits de Mer",
+          es: "Tacos de Mariscos",
+          ar: "تاكوس مأكولات بحرية",
+        },
+        description: {
+          en: "Mixed seafood with cabbage slaw and lime crema",
+          fr: "Fruits de mer avec chou râpé et crème au citron vert",
+          es: "Mariscos con ensalada de repollo y crema de lima",
+          ar: "مأكولات بحرية مع سلطة ملفوف وكريمة الليمون",
+        },
+        price: 80.0,
+        image: "/images/tacos-fruits-mer.jpg",
+        categoryId: 13,
+        typeId: 1301,
+        includes: {
+          en: "3 pieces with sides",
+          fr: "3 pièces avec accompagnements",
+          es: "3 unidades con guarniciones",
+          ar: "3 قطع مع أطباق جانبية",
+        },
+      },
+      {
+        id: 149,
+        title: {
+          en: "Mixed Tacos",
+          fr: "Tacos Mixte",
+          es: "Tacos Mixtos",
+          ar: "تاكوس متنوع",
+        },
+        description: {
+          en: "Combination of chicken and beef with all toppings",
+          fr: "Combinaison de poulet et viande avec toutes les garnitures",
+          es: "Combinación de pollo y carne con todos los ingredientes",
+          ar: "مزيج من الدجاج واللحم مع جميع الإضافات",
+        },
+        price: 75.0,
+        image: "/images/tacos-mixte.jpg",
+        categoryId: 13,
+        typeId: 1301,
+        includes: {
+          en: "3 pieces with sides (2 chicken + 1 beef or vice versa)",
+          fr: "3 pièces avec accompagnements (2 poulet + 1 viande ou vice versa)",
+          es: "3 unidades con guarniciones (2 pollo + 1 carne o viceversa)",
+          ar: "3 قطع مع أطباق جانبية (2 دجاج + 1 لحم أو العكس)",
+        },
+      },
+
+      // ===== DESSERTS =====
+      {
+        id: 150,
+        title: {
+          en: "Flan Toron",
+          fr: "Flan Toron",
+          es: "Flan Toron",
+          ar: "فلان تورون",
+        },
+        description: {
+          en: "Traditional caramel flan with vanilla",
+          fr: "Flan caramel traditionnel à la vanille",
+          es: "Flan de caramelo tradicional con vainilla",
+          ar: "فلان كراميل تقليدي مع الفانيليا",
+        },
+        price: 30.0,
+        image: "/images/flan-toron.jpg",
+        categoryId: 11,
+        typeId: 1101,
+      },
+      {
+        id: 151,
+        title: {
+          en: "Tiramisu",
+          fr: "Tiramisu",
+          es: "Tiramisú",
+          ar: "تيراميسو",
+        },
+        description: {
+          en: "Classic Italian dessert with coffee and mascarpone",
+          fr: "Dessert italien classique au café et mascarpone",
+          es: "Postre italiano clásico con café y mascarpone",
+          ar: "حلوى إيطالية تقليدية مع القهوة والماسكاربوني",
+        },
+        price: 35.0,
+        image: "/images/tiramisu.jpg",
+        categoryId: 11,
+        typeId: 1101,
+      },
+      {
+        id: 152,
+        title: {
+          en: "Panna Cotta",
+          fr: "Panna Cotta",
+          es: "Panna Cotta",
+          ar: "بانا كوتا",
+        },
+        description: {
+          en: "Italian cooked cream with berry coulis",
+          fr: "Crème cuite italienne avec coulis de fruits rouges",
+          es: "Crema cocida italiana con coulis de frutos rojos",
+          ar: "كريمة إيطالية مطهوة مع صلصة التوت",
+        },
+        price: 35.0,
+        image: "/images/panna-cotta.jpg",
+        categoryId: 11,
+        typeId: 1101,
+      },
+      {
+        id: 153,
+        title: {
+          en: "Cheesecake",
+          fr: "Cheesecake",
+          es: "Tarta de Queso",
+          ar: "تشيز كيك",
+        },
+        description: {
+          en: "Classic New York style cheesecake",
+          fr: "Cheesecake classique style New York",
+          es: "Tarta de queso estilo Nueva York",
+          ar: "تشيز كيك كلاسيكي على طريقة نيويورك",
+        },
+        price: 30.0,
+        image: "/images/cheesecake.jpg",
+        categoryId: 11,
+        typeId: 1101,
+      },
+      {
+        id: 154,
+        title: {
+          en: "Oreo Cheesecake",
+          fr: "Cheesecake Oreo",
+          es: "Tarta de Queso Oreo",
+          ar: "تشيز كيك أوريو",
+        },
+        description: {
+          en: "Cheesecake with Oreo cookie crust",
+          fr: "Cheesecake avec croûte de biscuits Oreo",
+          es: "Tarta de queso con base de galleta Oreo",
+          ar: "تشيز كيك مع قشرة بسكويت أوريو",
+        },
+        price: 30.0,
+        image: "/images/cheesecake-oreo.jpg",
+        categoryId: 11,
+        typeId: 1101,
+      },
+      {
+        id: 155,
+        title: {
+          en: "Lotus Cheesecake",
+          fr: "Cheesecake Lotus",
+          es: "Tarta de Queso Lotus",
+          ar: "تشيز كيك لوتس",
+        },
+        description: {
+          en: "Cheesecake with Lotus biscuit base",
+          fr: "Cheesecake avec base de biscuits Lotus",
+          es: "Tarta de queso con base de galleta Lotus",
+          ar: "تشيز كيك مع قشرة بسكويت لوتس",
+        },
+        price: 30.0,
+        image: "/images/cheesecake-lotus.jpg",
+        categoryId: 11,
+        typeId: 1101,
+      },
+      {
+        id: 156,
+        title: {
+          en: "Raspberry Cheesecake",
+          fr: "Cheesecake Framboise",
+          es: "Tarta de Queso con Frambuesa",
+          ar: "تشيز كيك توت",
+        },
+        description: {
+          en: "Cheesecake with raspberry topping",
+          fr: "Cheesecake avec coulis de framboise",
+          es: "Tarta de queso con topping de frambuesa",
+          ar: "تشيز كيك مع طبقة توت",
+        },
+        price: 30.0,
+        image: "/images/cheesecake-framboise.jpg",
+        categoryId: 11,
+        typeId: 1101,
+      },
+      {
+        id: 157,
+        title: {
+          en: "Lemon Tart",
+          fr: "Tarte Citron",
+          es: "Tarta de Limón",
+          ar: "فطيرة ليمون",
+        },
+        description: {
+          en: "Tangy lemon curd in shortcrust pastry",
+          fr: "Crème au citron acidulée dans une pâte sablée",
+          es: "Crema de limón en masa quebrada",
+          ar: "كريمة ليمون لاذعة في عجينة سابلية",
+        },
+        price: 30.0,
+        image: "/images/tarte-citron.jpg",
+        categoryId: 11,
+        typeId: 1101,
+      },
+      {
+        id: 158,
+        title: {
+          en: "Pastry of the Day",
+          fr: "Patisserie du Jour",
+          es: "Pastelería del Día",
+          ar: "معجنات اليوم",
+        },
+        description: {
+          en: "Chef's selection of fresh daily pastry",
+          fr: "Sélection du chef de pâtisserie fraîche du jour",
+          es: "Selección del chef de pastelería fresca del día",
+          ar: "اختيار الشيف من المعجنات الطازجة اليومية",
+        },
+        price: 30.0,
+        image: "/images/patisserie-jour.jpg",
+        categoryId: 11,
+        typeId: 1101,
+      },
+      {
+        id: 159,
+        title: {
+          en: "Mille-Feuille",
+          fr: "Mille Feuille",
+          es: "Milhojas",
+          ar: "ميل فوي",
+        },
+        description: {
+          en: "Classic French layered pastry with custard",
+          fr: "Pâtisserie feuilletée classique avec crème pâtissière",
+          es: "Pastelería en capas clásica con crema pastelera",
+          ar: "معجنات فرنسية طبقية كلاسيكية مع كاسترد",
+        },
+        price: 25.0,
+        image: "/images/mille-feuille.jpg",
+        categoryId: 11,
+        typeId: 1101,
+      },
+
+      // ===== ICE CREAM CUPS =====
+      {
+        id: 160,
+        title: {
+          en: "Atalayoun Sundae",
+          fr: "Coupe Atalayoun",
+          es: "Copa Atalayoun",
+          ar: "كوب أطلايون",
+        },
+        description: {
+          en: "Strawberry, pineapple and lemon sorbet with whipped cream and pineapple",
+          fr: "Boule de fraise + ananas + citron, crème chantilly, fruit ananas",
+          es: "Bola de fresa + piña + limón, crema batida, fruta de piña",
+          ar: "شربات فراولة + أناناس + ليمون، كريمة مخفوقة، فاكهة أناناس",
+        },
+        price: 60.0,
+        image: "/images/coupe-atalayoun.jpg",
+        categoryId: 12,
+        typeId: 1201,
+      },
+      {
+        id: 161,
+        title: {
+          en: "Miami Sundae",
+          fr: "Coupe Miami",
+          es: "Copa Miami",
+          ar: "كوب ميامي",
+        },
+        description: {
+          en: "Mango, raspberry and lemon sorbet with whipped cream and mango",
+          fr: "Boule de glace Mangue + framboise + citron, crème chantilly + fruit de Mangue",
+          es: "Bola de helado de mango + frambuesa + limón, crema batida + fruta de mango",
+          ar: "آيس كريم مانجو + توت + ليمون، كريمة مخفوقة + فاكهة مانجو",
+        },
+        price: 60.0,
+        image: "/images/coupe-miami.jpg",
+        categoryId: 12,
+        typeId: 1201,
+      },
+      {
+        id: 162,
+        title: {
+          en: "Junior Sundae",
+          fr: "Coupe Junior",
+          es: "Copa Junior",
+          ar: "كوب جونيور",
+        },
+        description: {
+          en: "Chocolate and Oreo ice cream with whipped cream",
+          fr: "Boule de glace chocolat + oreo, crème chantilly",
+          es: "Bola de helado de chocolate + oreo, crema batida",
+          ar: "آيس كريم شوكولاتة + أوريو، كريمة مخفوقة",
+        },
+        price: 45.0,
+        image: "/images/coupe-junior.jpg",
+        categoryId: 12,
+        typeId: 1201,
+      },
+      {
+        id: 163,
+        title: {
+          en: "Titanic Sundae",
+          fr: "Coupe Titanic",
+          es: "Copa Titanic",
+          ar: "كوب تيتانيك",
+        },
+        description: {
+          en: "Pistachio, vanilla and nugget ice cream with whipped cream, almonds and seasonal fruits",
+          fr: "Boule de pistache + vanille + nugget, crème chantilly, amonde, fruits de saison",
+          es: "Bola de pistacho + vainilla + nugget, crema batida, almendras, frutas de temporada",
+          ar: "آيس كريم فستق + فانيليا + نوجا، كريمة مخفوقة، لوز، فواكه موسمية",
+        },
+        price: 65.0,
+        image: "/images/coupe-titanic.jpg",
+        categoryId: 12,
+        typeId: 1201,
+      },
+      {
+        id: 164,
+        title: {
+          en: "Beach Club Sundae",
+          fr: "Coupe Beach Club",
+          es: "Copa Beach Club",
+          ar: "كوب بيتش كلوب",
+        },
+        description: {
+          en: "3 scoops of your choice with whipped cream and fruit salad",
+          fr: "3 boules de glace aux choix, crème chantilly, salade de fruits",
+          es: "3 bolas de helado a elegir, crema batida, ensalada de frutas",
+          ar: "3 كرات آيس كريم حسب الاختيار، كريمة مخفوقة، سلطة فواكه",
+        },
+        price: 70.0,
+        image: "/images/coupe-beachclub.jpg",
+        categoryId: 12,
+        typeId: 1201,
+        options: {
+          en: "Choose from: Vanilla, Chocolate, Strawberry, Pistachio, Mango, Coffee, Lemon",
+          fr: "Choix parmi : Vanille, Chocolat, Fraise, Pistache, Mangue, Café, Citron",
+          es: "Opciones: Vainilla, Chocolate, Fresa, Pistacho, Mango, Café, Limón",
+          ar: "اختيار من: فانيليا، شوكولاتة، فراولة، فستق، مانجو، قهوة، ليمون",
+        },
+      },
+    ]
+  ).map((plate, idx, arr) => {
+    const isCoffee =
+      plate.categoryId === 1 &&
+      (
+        plate.typeId === 101 || plate.typeId === 102 || plate.typeId === 103 || plate.typeId === 104 || 
+        /coffee|café|nespresso|americano/i.test(
+          Object.values(plate.title || {}).join(' ')
+        )
+      );
+    return isCoffee
+      ? { ...plate, image: 'https://img.freepik.com/premium-photo/vertical-view-delicious-coffee-beautiful-white-cup-beans-mix-color-background_461922-19460.jpg' }
+      : plate;
+  }),
+}

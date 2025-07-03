@@ -79,7 +79,7 @@ const CategoryCard = React.memo(({ category, index, langused, onCategoryClick })
       <div className="relative h-36 md:h-40 lg:h-48 w-full overflow-hidden rounded-3xl aspect-square shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
         {/* Background Image with Lazy Loading */}
         <LazyImage
-          src={category.image}
+          // src={category.image}
           alt={category.name[langused]}
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         />
