@@ -119,7 +119,7 @@ const App = () => {
             <Route path="/:cityId/menus" element={<SelectMenuAlhoceima cities={cities} />} />
             <Route path="/:cityId/menus/:idMenu" element={<Home cities={cities} />} />
             <Route path="/:cityId/menu/category/:id" element={<CategoryMenu />} />
-            <Route path="/:cityId/menu/category/plate/:id" element={<PlateDetail />} />
+            <Route path="/:cityId/menu/category/plate/:id" element={<PlateDetail  />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/language" element={<Language />} />
             <Route path="/summary" element={<CartSummary />} />

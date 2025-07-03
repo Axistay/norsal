@@ -60,7 +60,7 @@ const SearchModal = ({ isOpen, onClose, searchTerm }) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="flex items-center justify-center"
+          className="flex items-center justify-center "
           onClick={onClose}
         >
           <motion.div

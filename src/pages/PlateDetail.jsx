@@ -98,8 +98,8 @@ const ZoomedImageModal = React.memo(({ isOpen, onClose, plate }) => {
       </button>
 
       <img
-        src={plate.image}
-        alt={plate.title?.[langused] || t('menu.dishImage')}
+        src={plate?.image}
+        alt={plate?.title?.[langused] || t('menu.dishImage')}
         className="max-w-full max-h-[80vh] sm:max-h-[90vh] object-contain rounded-lg shadow-2xl animate-in zoom-in-95 duration-300"
         onClick={(e) => e.stopPropagation()}
       />
@@ -113,6 +113,7 @@ const PlateDetail = ({ dataPlate, onClose }) => {
   const langused = i18n.language
   const [isImageZoomed, setIsImageZoomed] = useState(false)
   const [isInCart, setIsInCart] = useState(false)
+  
   
   // Mock data for demonstration
   const plate = dataPlate  
@@ -147,8 +148,8 @@ const PlateDetail = ({ dataPlate, onClose }) => {
           <div className="relative">
             <AnimatedDiv delay={0.1} className="relative  h-[550px] overflow-hidden cursor-pointer group" onClick={handleZoomOpen}>
               <img
-                src={plate.image}
-                alt={plate.title?.[langused] || 'Dish image'}
+                src={plate?.image}
+                alt={plate?.title?.[langused] || 'Dish image'}
                 className="w-full h-[550px] object-cover transition-all duration-300 ease-out group-hover:scale-105"
               />
               
@@ -176,11 +177,11 @@ const PlateDetail = ({ dataPlate, onClose }) => {
               <div className="flex items-start justify-between">
                 <div className="flex-1">
                   <h1 className="text-xl font-bold text-gray-900 leading-tight">
-                    {plate.title?.[langused] || t('menu.untitledDish')}
+                    {plate?.title?.[langused] || t('menu.untitledDish')}
                   </h1>
                 </div>
                 <div className="text-lg font-bold text-gray-900 ml-4">
-                  {plate.price?.toFixed(0)} {t('menu.mad')}
+                  {plate?.price?.toFixed(0)} {t('menu.mad')}
                 </div>
               </div>
             </AnimatedDiv>
@@ -188,7 +189,7 @@ const PlateDetail = ({ dataPlate, onClose }) => {
             {/* Description */}
             <AnimatedDiv delay={0.3}>
               <p className="text-gray-600 text-sm leading-relaxed">
-                {plate.description?.[langused] || t('menu.noDescription')}
+                {plate?.description?.[langused] || t('menu.noDescription')}
               </p>
             </AnimatedDiv>
             
@@ -203,7 +204,7 @@ const PlateDetail = ({ dataPlate, onClose }) => {
                 }`}
               >
                 <div className="text-lg font-bold">
-                  {plate.price?.toFixed(0)} {t('menu.mad')}
+                  {plate?.price?.toFixed(0)} {t('menu.mad')}
                 </div>
                 <div className={`transition-transform duration-200 ${isInCart ? 'rotate-12' : ''}`}>
                   <ShoppingCart className="w-5 h-5" />

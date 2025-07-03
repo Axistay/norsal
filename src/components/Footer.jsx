@@ -92,8 +92,10 @@ const Footer = () => {
           animation: slideBack 2s ease-in-out infinite;
         }
         
-        .back-button-hint:hover {
-          animation: none;
+        @media (hover: hover) and (pointer: fine) {
+          .back-button-hint:hover {
+            animation: none;
+          }
         }
         
         .ripple-effect {
@@ -110,7 +112,7 @@ const Footer = () => {
               <NavLink
                 to="/"
                 className={({ isActive }) =>
-                  `relative flex items-center justify-center p-2 rounded-full transition-all duration-300 ease-in-out border-2 flex-1 border-teal-700  ${isActive ? "text-black shadow-lg shadow-yellow-200" : "text-gray-400 hover:text-gray-200"
+                  `relative flex items-center justify-center p-2 rounded-full transition-all duration-300 ease-in-out border-2 flex-1 border-teal-700  ${isActive ? "text-black shadow-lg shadow-yellow-200" : "text-gray-400 md:hover:text-gray-200"
                   }`
                 }
               >
@@ -124,38 +126,38 @@ const Footer = () => {
             ) : (
               <button
                 onClick={handleHomeClick}
-                className="relative flex items-center justify-center p-2 rounded-full transition-all duration-300 ease-in-out border-2 flex-1 border-teal-700 text-gray-400 hover:text-yellow-300 hover:border-yellow-400 hover:shadow-lg hover:shadow-yellow-400/20 group overflow-hidden back-button-hint"
+                className="relative flex items-center justify-center p-2 rounded-full transition-all duration-300 ease-in-out border-2 flex-1 border-teal-700 text-gray-400 md:hover:text-yellow-300 md:hover:border-yellow-400 md:hover:shadow-lg md:hover:shadow-yellow-400/20 group overflow-hidden back-button-hint"
               >
-                {/* Animated background on hover */}
-                <span className="absolute inset-0 bg-gradient-to-r from-yellow-400/20 to-orange-400/20 rounded-full transform scale-0 group-hover:scale-100 transition-transform duration-300 ease-out"></span>
+                {/* Animated background on hover - desktop only */}
+                <span className="absolute inset-0 bg-gradient-to-r from-yellow-400/20 to-orange-400/20 rounded-full transform scale-0 md:group-hover:scale-100 transition-transform duration-300 ease-out"></span>
                 
-                {/* Subtle pulse animation */}
-                <span className="absolute inset-0 bg-yellow-400/10 rounded-full animate-pulse opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                {/* Subtle pulse animation - desktop only */}
+                <span className="absolute inset-0 bg-yellow-400/10 rounded-full animate-pulse opacity-0 md:group-hover:opacity-100 transition-opacity duration-300"></span>
                 
-                {/* Glowing border effect */}
-                <span className="absolute inset-0 rounded-full border-2 border-yellow-400/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></span>
+                {/* Glowing border effect - desktop only */}
+                <span className="absolute inset-0 rounded-full border-2 border-yellow-400/50 opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></span>
                 
                 {/* Arrow with enhanced animations */}
                 <ArrowLeft 
                   size={20} 
                   className={`relative z-10 transform transition-all duration-300 ease-in-out
                     ${lang === 'ar' ? 'rotate-180' : ''} 
-                    group-hover:scale-110 
-                    group-hover:${lang === 'ar' ? 'translate-x-1' : '-translate-x-1'} 
+                    md:group-hover:scale-110 
+                    md:group-hover:${lang === 'ar' ? 'translate-x-1' : '-translate-x-1'} 
                     group-active:scale-95
-                    filter group-hover:drop-shadow-sm`}
+                    filter md:group-hover:drop-shadow-sm`}
                 />
                 
-                {/* Animated arrow trail effect */}
+                {/* Animated arrow trail effect - desktop only */}
                 <ArrowLeft 
                   size={16} 
                   className={`absolute z-5 transform transition-all duration-500 ease-out opacity-0
                     ${lang === 'ar' ? 'rotate-180 translate-x-2' : '-translate-x-2'} 
-                    group-hover:opacity-30 
-                    group-hover:${lang === 'ar' ? 'translate-x-4' : '-translate-x-4'}`}
+                    md:group-hover:opacity-30 
+                    md:group-hover:${lang === 'ar' ? 'translate-x-4' : '-translate-x-4'}`}
                 />
                 
-                {/* Ripple effect on click */}
+                {/* Ripple effect on click - works on both mobile and desktop */}
                 <span className="absolute inset-0 rounded-full bg-white/20 transform scale-0 group-active:scale-100 transition-transform duration-150 ease-out"></span>
               </button>
             )}
@@ -163,7 +165,7 @@ const Footer = () => {
             <NavLink
               to={`/${city}/menus`}
               className={({ isActive }) =>
-                `relative flex items-center justify-center p-2 rounded-full transition-all duration-300 ease-in-out flex-1 border-2 border-teal-700  ${path.includes('menu') ? "text-black shadow-lg shadow-yellow-200" : "text-gray-400 hover:text-gray-200"
+                `relative flex items-center justify-center p-2 rounded-full transition-all duration-300 ease-in-out flex-1 border-2 border-teal-700  ${path.includes('menu') ? "text-black shadow-lg shadow-yellow-200" : "text-gray-400 md:hover:text-gray-200"
                 }`
               }
             >
@@ -178,7 +180,7 @@ const Footer = () => {
             {/* Changed from NavLink to button for language */}
             <button
               onClick={toggleLanguageOptions}
-              className={`relative flex items-center justify-center p-2 rounded-full transition-all duration-300 ease-in-out flex-1 border-2 border-teal-700 ${showLanguageOptions ? "text-black shadow-lg shadow-yellow-200" : "text-gray-400 hover:text-gray-200"}`}
+              className={`relative flex items-center justify-center p-2 rounded-full transition-all duration-300 ease-in-out flex-1 border-2 border-teal-700 ${showLanguageOptions ? "text-black shadow-lg shadow-yellow-200" : "text-gray-400 md:hover:text-gray-200"}`}
             >
               <>
                 {showLanguageOptions && <span className="absolute inset-0 bg-[#ffd699] rounded-full z-10"></span>}
@@ -189,7 +191,7 @@ const Footer = () => {
             <NavLink
               to="/cart"
               className={({ isActive }) =>
-                `relative flex items-center justify-center p-2 rounded-full transition-all duration-300 ease-in-out flex-1 border-2 border-teal-700 ${isActive ? "text-black shadow-lg shadow-yellow-200" : "text-gray-400 hover:text-gray-200"
+                `relative flex items-center justify-center p-2 rounded-full transition-all duration-300 ease-in-out flex-1 border-2 border-teal-700 ${isActive ? "text-black shadow-lg shadow-yellow-200" : "text-gray-400 md:hover:text-gray-200"
                 }`
               }
             >

@@ -4,7 +4,6 @@ import React, { useState, useCallback, useMemo, useEffect, useRef } from 'react'
 import { useNavigate, useParams } from "react-router-dom"
 import { useTranslation } from "react-i18next"
 import { X } from "lucide-react"
-import { motion, AnimatePresence } from "framer-motion"
 import { useSelector } from "react-redux"
 
 // Lazy Image Component with loading states
@@ -69,10 +68,7 @@ const CategoryCard = React.memo(({ category, index, langused, onCategoryClick })
   }, [category.id, onCategoryClick])
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: index * 0.1, duration: 0.3 }}
+    <div
       className="group cursor-pointer"
       onClick={handleClick}
     >
@@ -109,7 +105,7 @@ const CategoryCard = React.memo(({ category, index, langused, onCategoryClick })
         {/* Hover Effect Shine */}
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out" />
       </div>
-    </motion.div>
+    </div>
   )
 })
 
@@ -204,21 +200,14 @@ const MenuPage = () => {
   }, [categories, SCROLL_STORAGE_KEY]);
 
   return (
-    <AnimatePresence>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
+    <div>
+      <div
         dir={langused === 'ar' ? 'rtl' : 'ltr'}
         className="min-h-screen overflow-auto"
         ref={scrollContainerRef}
         onScroll={handleScroll}
       >
-        <motion.div
-          initial={{ scale: 0.9, y: 50, opacity: 0 }}
-          animate={{ scale: 1, y: 0, opacity: 1 }}
-          exit={{ scale: 0.9, y: 50, opacity: 0 }}
-          transition={{ type: "spring", duration: 0.5 }}
+        <div
           className="w-full max-w-6xl mx-auto px-4 sm:px-6 md:px-8 py-8"
           onClick={(e) => e.stopPropagation()}
         >
@@ -234,7 +223,6 @@ const MenuPage = () => {
               />
             ))}
           </div>
-          
           {/* Empty State */}
           {categories.length === 0 && (
             <div className="text-center py-16">
@@ -247,9 +235,9 @@ const MenuPage = () => {
               </p>
             </div>
           )}
-        </motion.div>
-      </motion.div>
-    </AnimatePresence>
+        </div>
+      </div>
+    </div>
   )
 }
 

@@ -28,9 +28,14 @@ export const menuSlice = createSlice({
       const term = action.payload.toLowerCase();
       state.searchTerm = term;
 
-      const matches = (plate) =>
-        plate.title.en.toLowerCase().includes(term) ||
-        plate.description.en.toLowerCase().includes(term);
+      const matches = (plate) => {
+        // Check all languages for title and description
+        const langs = ['en', 'fr', 'es', 'ar'];
+        return langs.some(lang =>
+          (plate.title?.[lang] && plate.title[lang].toLowerCase().includes(term)) ||
+          (plate.description?.[lang] && plate.description[lang].toLowerCase().includes(term))
+        );
+      };
 
       state.filteredPlates = state.plates.filter((plate) =>
         state.currentCategory

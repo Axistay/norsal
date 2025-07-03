@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 import { useTranslation } from "react-i18next"
 import { useDispatch, useSelector } from "react-redux"
 import { Link, useParams } from "react-router-dom"
@@ -50,14 +50,22 @@ const Home = ({ cities }) => {
   const [isSearchModalOpen, setIsSearchModalOpen] = useState(false)
   const [searchQuery, setSearchQuery] = useState("")
 
-  const handleSearch = (query) => {
-    setSearchQuery(query)
-    if (query.trim()) {
-      setIsSearchModalOpen(true)
-    } else {
-      setIsSearchModalOpen(false)
+  const searchBarRef = useRef(null)
+
+ const handleSearch = (query) => {
+  setSearchQuery(query)
+  if (query.trim()) {
+    // Scroll to the search bar position
+    if (searchBarRef.current) {
+      const rect = searchBarRef.current.getBoundingClientRect();
+      const scrollTop = window.scrollY + rect.top - 20; // 20px offset for padding
+      window.scrollTo({ top: scrollTop, behavior: 'smooth' });
     }
+    setIsSearchModalOpen(true)
+  } else {
+    setIsSearchModalOpen(false)
   }
+}
 
   
     // Animation variants
@@ -228,7 +236,7 @@ const Home = ({ cities }) => {
             </p>
           </div>
         </div>
-        <div className="mt-8">
+        <div className="mt-8" ref={searchBarRef}>
           <SearchBar border={city?.border} onSearch={handleSearch} />
         </div>
         </motion.header>
@@ -242,7 +250,7 @@ const Home = ({ cities }) => {
 
       {/* Search Modal */}
       {
-        isSearchModalOpen && <div className={`absolute top-[340px] z-50 border-4 rounded-2xl  mx-4 ${city?.border}`}>
+        isSearchModalOpen && <div className={`absolute top-[420px] z-50 border-4 rounded-2xl left-0 right-0 bottom-0   mx-4 ${city?.border}`}>
           <SearchModal isOpen={isSearchModalOpen} onClose={() => setIsSearchModalOpen(false)} searchTerm={searchQuery} />
         </div>
       }
