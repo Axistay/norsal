@@ -3,6 +3,7 @@
 import React, { useCallback, useEffect, useMemo, useState } from "react"
 import { ShoppingCart, X, ZoomIn, Heart, Star, Clock, Users } from "lucide-react"
 import { useTranslation } from "react-i18next"
+import { motion } from "framer-motion"
 
 // Simplified animation configurations with smooth transitions
 const ANIMATION_CONFIG = {
@@ -73,9 +74,15 @@ const useBodyScrollLock = () => {
 const CloseButton = React.memo(({ onClose }) => (
   <button 
     onClick={onClose}
-    className="absolute top-[50%] right-0 sm:top-4 sm:right-4 z-20 h-28 w-14 bg-red-500 hover:bg-teal-500/70 backdrop-blur-sm p-3 sm:p-2 rounded-s-full  shadow-xl transition-all duration-200 hover:rotate-90 active:scale-95"
+    className="absolute top-4 right-4 sm:top-4 sm:right-4 z-20   bg-teal-500 hover:bg-teal-500/70 backdrop-blur-sm p-3 sm:p-2 rounded-lg  transition-all duration-200 hover:rotate-90 active:scale-95"
   >
-    <X className="w-5 h-5 text-white" />
+    <motion.span
+      initial={{ scale: 0.8 }}
+      animate={{ scale: 1 }}
+      transition={{ duration: 0.3, ease: "easeOut" }}
+    >
+      <X className="w-6 h-6 text-red-50" />
+    </motion.span>
   </button>
 ))
 
@@ -134,8 +141,13 @@ const PlateDetail = ({ dataPlate, onClose }) => {
 
   return (
     <>
-      <div
-        className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex items-center justify-center "
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        exit={{ opacity: 0, scale: 0.95 }}
+        transition={{ duration: 0.3, ease: "easeOut" }}
+        className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex items-center justify-center"
+        dir={langused === 'ar' ? 'rtl' : 'ltr'}
         onClick={onClose}
       >
         <div 
@@ -213,7 +225,7 @@ const PlateDetail = ({ dataPlate, onClose }) => {
             </AnimatedDiv>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       <ZoomedImageModal 
         isOpen={isImageZoomed}
