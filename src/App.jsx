@@ -23,6 +23,7 @@ import CartSummary from "./pages/cart-summary"
 import Cart from "./pages/Cart"
 import CartQRCode from "./components/qrcode-generate"
 import SelectMenuAlhoceima from "./pages/SelectMenuAlhoceima"
+import SelectMenuNador from "./pages/SelectMenuNador"
 import Testtttt from "./pages/testtttt"
 
 // Restaurant data for our 3 cities
@@ -78,6 +79,17 @@ const cities = [
   }
 ];
 
+// Conditional Menu Selection Component
+const MenuSelection = ({ cities }) => {
+  const location = useLocation();
+  const cityId = location.pathname.split('/')[1]; // Extract cityId from URL
+  
+  if (cityId === 'nador') {
+    return <SelectMenuNador cities={cities} />;
+  } else {
+    return <SelectMenuAlhoceima cities={cities} />;
+  }
+};
 
 const App = () => {
 
@@ -116,7 +128,7 @@ const App = () => {
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={<CitySelection cities={cities} />} />
             <Route path="/:cityId/menu" element={<Home cities={cities} />} />
-            <Route path="/:cityId/menus" element={<SelectMenuAlhoceima cities={cities} />} />
+            <Route path="/:cityId/menus" element={<MenuSelection cities={cities} />} />
             <Route path="/:cityId/menus/:idMenu" element={<Home cities={cities} />} />
             <Route path="/:cityId/menu/category/:id" element={<CategoryMenu />} />
             <Route path="/:cityId/menu/category/plate/:id" element={<PlateDetail  />} />

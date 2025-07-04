@@ -11,11 +11,7 @@ import logo from "../../public/image0.png";
 import { loadMenuData } from "../utils/loadMenuData";
 import { setInitialMenuData } from "../redux/slices/menuSlice";
 
-// Menu background images - replace with your actual images
-import menuNorsalBg from "../../public/image0.png";
-import menuTeraceBg from "../../public/image0.png";
-
-const SelectMenuAlhoceima = ({ cities = [] }) => {
+const SelectMenuNador = ({ cities = [] }) => {
     const { cityId } = useParams();
     const { t, i18n } = useTranslation();
     const dispatch = useDispatch();
@@ -29,27 +25,33 @@ const SelectMenuAlhoceima = ({ cities = [] }) => {
     // Derived values
     const currentLanguage = i18n.language;
 
-    // Check if city is coming soon
-    const isComingSoon = cityId === 'tanger';
-
-    // Menu data configuration
+    // Menu data configuration for Nador - 3 restaurants
     const menuItems = [
         {
+            id: 'golf',
+            title: t('menu.golf', 'GOLF RESTAURANT'),
+            subtitle: 'Golf Club',
+            backgroundImage: `https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80`,
+            fallbackColor: 'bg-gradient-to-br from-green-900 to-green-700',
+            overlayColor: 'bg-green-900/60',
+            hoverOverlay: 'hover:bg-green-800/70'
+        },
+        {
             id: 'norsal',
-            title: t('menu.menu1', 'MENU NORSAL'),
-            subtitle: 'NORSAL',
+            title: t('menu.norsal', 'NORSAL RESTAURANT'),
+            subtitle: 'Fine Dining',
             backgroundImage: `https://brigade-hocare.com/info/wp-content/uploads/2024/09/decoration-restaurant.png`,
             fallbackColor: 'bg-gradient-to-br from-blue-900 to-blue-700',
             overlayColor: 'bg-blue-900/60',
             hoverOverlay: 'hover:bg-blue-800/70'
         },
         {
-            id: 'terace',
-            title: t('menu.menu2', 'MENU TERASSE'),
-            subtitle: 'Beach Club',
+            id: 'beachclub',
+            title: t('menu.beachclub', 'BEACH CLUB'),
+            subtitle: 'Beachfront Dining',
             backgroundImage: `https://poitoux.fr/wp-content/uploads/2022/02/outdoor-chairs-and-lounge-chairs-Fast-e1645544705166.jpg`,
             fallbackColor: 'bg-gradient-to-br from-teal-900 to-teal-700',
-            overlayColor: 'bg-blue-800/60',
+            overlayColor: 'bg-teal-800/60',
             hoverOverlay: 'hover:bg-teal-800/70'
         }
     ];
@@ -66,10 +68,8 @@ const SelectMenuAlhoceima = ({ cities = [] }) => {
         }
     }, [cities, cityId, t]);
 
-    // Initialize menu data (only if not coming soon)
+    // Initialize menu data
     useEffect(() => {
-        if (isComingSoon) return;
-
         const initializeMenu = async () => {
             try {
                 setIsLoading(true);
@@ -85,7 +85,7 @@ const SelectMenuAlhoceima = ({ cities = [] }) => {
         };
 
         initializeMenu();
-    }, [dispatch, t, isComingSoon]);
+    }, [dispatch, t]);
 
     // Handle image load errors
     const handleImageError = (menuId) => {
@@ -117,15 +117,6 @@ const SelectMenuAlhoceima = ({ cities = [] }) => {
             transition: { duration: 0.3, ease: "easeInOut" }
         },
         tap: { scale: 0.98 }
-    };
-
-    const comingSoonVariants = {
-        initial: { scale: 0.8, opacity: 0 },
-        animate: {
-            scale: 1,
-            opacity: 1,
-            transition: { duration: 0.8, ease: "easeOut" }
-        }
     };
 
     if (error) {
@@ -296,182 +287,98 @@ const SelectMenuAlhoceima = ({ cities = [] }) => {
                         )}
 
                         <p className="text-base text-center max-w-md text-white/90 leading-relaxed">
-                            {isComingSoon
-                                ? t('home.comingSoon', 'Opening Soon!')
-                                : t('home.chooseMenu', 'Customize Your Dining Experience')
-                            }
+                            {t('home.chooseRestaurant', 'Choose Your Restaurant Experience')}
                         </p>
                     </div>
                 </div>
             </motion.header>
 
-            {/* Coming Soon Section */}
-            {isComingSoon ? (
-                <motion.section
-                    variants={comingSoonVariants}
-                    className="mt-8 px-4 flex items-center justify-center min-h-[400px]"
-                >
-                    <div className="text-center max-w-lg mx-auto">
-                        <motion.div
-                            className={` bg-gradient-to-t from-[#114e51] ${city.to} rounded-3xl p-12 shadow-2xl`}
-                            whileHover={{ scale: 1.02 }}
-                            transition={{ duration: 0.3 }}
+            {/* Menu Section */}
+            <motion.section
+                variants={menuVariants}
+                className="mt-8 px-4"
+                aria-label={t('menu.section', 'Restaurant selection')}
+            >
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                    {menuItems.map((menu, index) => (
+                        <Link
+                            key={menu.id}
+                            to={`/${cityId}/menus/${index + 1}`}
+                            className="block"
+                            onClick={() => localStorage.setItem('idMenu', String(index + 1))}
                         >
-                            {/* Clock Icon */}
                             <motion.div
-                                className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6"
-                                animate={{
-                                    rotate: 360,
-                                    transition: { duration: 8, repeat: Infinity, ease: "linear" }
-                                }}
+                                variants={menuItemVariants}
+                                whileHover="hover"
+                                whileTap="tap"
+                                initial="initial"
+                                animate="animate"
+                                transition={{ delay: index * 0.1 }}
+                                className="group relative overflow-hidden rounded-2xl shadow-xl cursor-pointer transform-gpu"
                             >
-                                <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
+                                {/* Background Image or Fallback */}
+                                <div className={`absolute inset-0 ${menu.fallbackColor}`}>
+                                    {!imageErrors[menu.id] && (
+                                        <img
+                                            src={menu.backgroundImage}
+                                            alt={`${menu.title} background`}
+                                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                            onError={() => handleImageError(menu.id)}
+                                            loading="lazy"
+                                        />
+                                    )}
+                                </div>
+
+                                {/* Overlay */}
+                                <div className={`absolute inset-0 ${menu.overlayColor} ${menu.hoverOverlay} transition-all duration-300`}></div>
+
+                                {/* Content */}
+                                <div className="relative z-10 flex items-center justify-center h-48 md:h-64 p-6">
+                                    <div className="text-center text-white">
+                                        <motion.h3
+                                            className="text-xl md:text-2xl font-bold mb-2 tracking-wide"
+                                            initial={{ y: 10, opacity: 0 }}
+                                            animate={{ y: 0, opacity: 1 }}
+                                            transition={{ delay: 0.2 + index * 0.1 }}
+                                        >
+                                            {menu.title}
+                                        </motion.h3>
+                                        <motion.p
+                                            className="text-lg md:text-xl font-medium text-white/90"
+                                            initial={{ y: 10, opacity: 0 }}
+                                            animate={{ y: 0, opacity: 1 }}
+                                            transition={{ delay: 0.3 + index * 0.1 }}
+                                        >
+                                            {menu.subtitle}
+                                        </motion.p>
+                                        {/* Decorative element */}
+                                        <motion.div
+                                            className="mt-4 w-16 h-0.5 bg-white/60 mx-auto"
+                                            initial={{ width: 0 }}
+                                            animate={{ width: 64 }}
+                                            transition={{ delay: 0.5 + index * 0.1, duration: 0.6 }}
+                                        ></motion.div>
+                                    </div>
+                                </div>
+
+                                {/* Hover Effect Border */}
+                                <div className="absolute inset-0 border-2 border-transparent group-hover:border-white/30 rounded-2xl transition-all duration-300"></div>
                             </motion.div>
+                        </Link>
+                    ))}
+                </div>
+            </motion.section>
 
-                            <motion.h2
-                                className="text-3xl md:text-4xl font-bold text-white mb-4"
-                                initial={{ y: 20, opacity: 0 }}
-                                animate={{ y: 0, opacity: 1 }}
-                                transition={{ delay: 0.3 }}
-                            >
-                                {t('comingSoon.title', 'Coming Soon!')}
-                            </motion.h2>
-
-                            <motion.p
-                                className="text-xl text-white/90 mb-8"
-                                initial={{ y: 20, opacity: 0 }}
-                                animate={{ y: 0, opacity: 1 }}
-                                transition={{ delay: 0.4 }}
-                            >
-                                {t('comingSoon.description', 'We\'re preparing something amazing for you')}
-                            </motion.p>
-
-                            {/* Opening Date */}
-                            <motion.div
-                                className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 mb-6"
-                                initial={{ scale: 0.8, opacity: 0 }}
-                                animate={{ scale: 1, opacity: 1 }}
-                                transition={{ delay: 0.6 }}
-                            >
-                                <p className="text-white/80 text-sm uppercase tracking-wide mb-2">
-                                    {t('comingSoon.openingDate', 'Opening Date')}
-                                </p>
-                                <p className="text-2xl md:text-3xl font-bold text-white">
-                                    07/2025
-                                </p>
-                            </motion.div>
-
-                            {/* Back to Home Button */}
-                            <motion.div
-                                initial={{ y: 20, opacity: 0 }}
-                                animate={{ y: 0, opacity: 1 }}
-                                transition={{ delay: 0.8 }}
-                            >
-                                <Link
-                                    to="/"
-                                    className="inline-flex items-center px-8 py-4 bg-white text-blue-600 font-semibold rounded-xl hover:bg-white/90 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-blue-600 transition-all duration-200 transform hover:scale-105"
-                                >
-                                    <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                                    </svg>
-                                    {t('common.goHome', 'Go Home')}
-                                </Link>
-                            </motion.div>
-                        </motion.div>
-                    </div>
-                </motion.section>
-            ) : (
-                <>
-                    {/* Menu Section */}
-                    <motion.section
-                        variants={menuVariants}
-                        className="mt-8 px-4"
-                        aria-label={t('menu.section', 'Menu selection')}
-                    >
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-                            {menuItems.map((menu, index) => (
-                                <Link
-                                    key={menu.id}
-                                    to={`/${cityId}/menus/${index + 1}`}
-                                    className="block"
-                                    onClick={() => localStorage.setItem('idMenu', String(index + 1))}
-                                >
-                                    <motion.div
-                                        variants={menuItemVariants}
-                                        whileHover="hover"
-                                        whileTap="tap"
-                                        initial="initial"
-                                        animate="animate"
-                                        transition={{ delay: index * 0.1 }}
-                                        className="group relative overflow-hidden rounded-2xl shadow-xl cursor-pointer transform-gpu"
-                                    >
-                                        {/* Background Image or Fallback */}
-                                        <div className={`absolute inset-0 ${menu.fallbackColor}`}>
-                                            {!imageErrors[menu.id] && (
-                                                <img
-                                                    src={menu.backgroundImage}
-                                                    alt={`${menu.title} background`}
-                                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                                                    onError={() => handleImageError(menu.id)}
-                                                    loading="lazy"
-                                                />
-                                            )}
-                                        </div>
-
-                                        {/* Overlay */}
-                                        <div className={`absolute inset-0 ${menu.overlayColor} ${menu.hoverOverlay} transition-all duration-300`}></div>
-
-                                        {/* Content */}
-                                        <div className="relative z-10 flex items-center justify-center h-48 md:h-64 p-6">
-                                            <div className="text-center text-white">
-                                                <motion.h3
-                                                    className="text-xl md:text-2xl font-bold mb-2 tracking-wide"
-                                                    initial={{ y: 10, opacity: 0 }}
-                                                    animate={{ y: 0, opacity: 1 }}
-                                                    transition={{ delay: 0.2 + index * 0.1 }}
-                                                >
-                                                    {menu.title}
-                                                </motion.h3>
-                                                <motion.p
-                                                    className="text-lg md:text-xl font-medium text-white/90"
-                                                    initial={{ y: 10, opacity: 0 }}
-                                                    animate={{ y: 0, opacity: 1 }}
-                                                    transition={{ delay: 0.3 + index * 0.1 }}
-                                                >
-                                                    {menu.subtitle}
-                                                </motion.p>
-                                                {/* Decorative element */}
-                                                <motion.div
-                                                    className="mt-4 w-16 h-0.5 bg-white/60 mx-auto"
-                                                    initial={{ width: 0 }}
-                                                    animate={{ width: 64 }}
-                                                    transition={{ delay: 0.5 + index * 0.1, duration: 0.6 }}
-                                                ></motion.div>
-                                            </div>
-                                        </div>
-
-                                        {/* Hover Effect Border */}
-                                        <div className="absolute inset-0 border-2 border-transparent group-hover:border-white/30 rounded-2xl transition-all duration-300"></div>
-                                    </motion.div>
-                                </Link>
-                            ))}
-                        </div>
-                    </motion.section>
-
-                    {/* About Us Section */}
-                    <motion.section
-                        initial={{ y: 20, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        transition={{ delay: 0.6 }}
-                        className="mt-12 px-4"
-                        aria-label={t('about.section', 'About us section')}
-                    >
-                        <AboutUs />
-                    </motion.section>
-                </>
-            )}
+            {/* About Us Section */}
+            <motion.section
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.6 }}
+                className="mt-12 px-4"
+                aria-label={t('about.section', 'About us section')}
+            >
+                <AboutUs />
+            </motion.section>
 
             {/* Loading Overlay */}
             {isLoading && (
@@ -496,4 +403,4 @@ const SelectMenuAlhoceima = ({ cities = [] }) => {
     );
 };
 
-export default SelectMenuAlhoceima;
+export default SelectMenuNador; 

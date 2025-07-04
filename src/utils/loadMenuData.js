@@ -6,7 +6,19 @@ export async function loadMenuData() {
 
   switch (cityID) {
     case "nador":
-      return (await import("../data/mockData1")).menuData;
+      if (menuID === "1") {
+        // Golf Restaurant
+        return (await import("../data/nadorGolfMenu")).menuData;
+      } else if (menuID === "2") {
+        // Norsal Restaurant
+        return (await import("../data/nadorNorsalMenu")).menuData;
+      } else if (menuID === "3") {
+        // Beach Club
+        return (await import("../data/nadorBeachClubMenu")).menuData;
+      } else {
+        console.warn("Unknown menu ID for Nador:", menuID);
+        return { categories: [], plates: [], types: [] };
+      }
 
     case "al_hoceima":
       if (menuID === "1") {
