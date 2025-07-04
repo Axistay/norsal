@@ -1,9 +1,9 @@
 "use client"
 import React, { useState, useEffect } from "react"
 import { useTranslation } from "react-i18next"
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { motion, AnimatePresence } from "framer-motion"
-import { addToCart } from "../redux/slices/cartSlice"
+import { addToCart, removeFromCart } from "../redux/slices/cartSlice"
 import PlateDetail from "../pages/PlateDetail"
 import { Expand, Loader2, Heart } from "lucide-react"
 
@@ -12,16 +12,26 @@ const PlateCard = ({ plate }) => {
   const langused = i18n.language
   const [showDetail, setShowDetail] = useState(false)
   const [imageLoading, setImageLoading] = useState(true)
+  const dispatch = useDispatch();
+  const cartItems = useSelector(state => state.cart.items);
+  const isInCart = cartItems.some(item => item.id === plate.id);
 
   const toggle = () => {
     setShowDetail(!showDetail)
   }
 
-
-
   const handleImageLoad = () => {
     setImageLoading(false)
   }
+
+  const handleSaveClick = (e) => {
+    e.stopPropagation();
+    if (isInCart) {
+      dispatch(removeFromCart(plate.id));
+    } else {
+      dispatch(addToCart(plate));
+    }
+  };
 
   return (
     <motion.div
@@ -36,6 +46,14 @@ const PlateCard = ({ plate }) => {
       >
         {/* Image Container with Gradient Background */}
         <div className="relative h-[450px]   overflow-hidden bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
+          {/* Save Icon */}
+          <button
+            onClick={handleSaveClick}
+            className="absolute top-3 right-3 z-10 bg-white/80 rounded-full p-2 shadow hover:bg-teal-100 transition"
+            aria-label={isInCart ? t('menu.removeFromCart', 'Remove from Cart') : t('menu.addToCart', 'Add to Cart')}
+          >
+            <Heart className={`w-6 h-6 ${isInCart ? 'fill-red-500 text-red-500' : 'text-gray-400'}`} />
+          </button>
           {/* {imageLoading && (
             <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200">
               <Loader2 className="h-8 w-8 animate-spin text-gray-400" />
@@ -49,8 +67,6 @@ const PlateCard = ({ plate }) => {
             onLoad={handleImageLoad}
             style={{ opacity: imageLoading ? 0 : 1 }}
           />
-
-
         </div>
 
         {/* Content Section */}

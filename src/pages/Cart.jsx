@@ -4,8 +4,10 @@ import { useSelector, useDispatch } from "react-redux"
 import { Link, useNavigate, useParams } from "react-router-dom"
 import { Trash2, ShoppingBag } from "lucide-react"
 import { motion } from "framer-motion"
+import { useState } from "react"
 
 import { removeFromCart, updateQuantity } from "../redux/slices/cartSlice"
+import PlateDetail from "./PlateDetail"
 
 const Cart = () => {
   const { t, i18n } = useTranslation()
@@ -13,7 +15,10 @@ const Cart = () => {
 
   const dispatch = useDispatch()
   const { items, total } = useSelector((state) => state.cart)
+  console.log("Cart items:", items)
   const navigate = useNavigate()
+  const [showDetail, setShowDetail] = useState(false);
+  const [dataPlate, setDataPlate] = useState(null);
 
   const handleRemoveItem = (id) => {
     dispatch(removeFromCart(id))
@@ -66,6 +71,8 @@ const Cart = () => {
                 <div
                   key={item.id}
                   className="bg-white rounded-xl p-4 shadow-sm flex items-center"
+                  onClick={() => { setDataPlate(item); setShowDetail(true); }}
+                  style={{ cursor: 'pointer' }}
                 >
                   <img
                     src={item.image || "/placeholder.svg"}
@@ -77,7 +84,7 @@ const Cart = () => {
                     <div className="flex justify-between">
                       <h3 className="font-medium">{item.title[langused]}</h3>
                       <button
-                        onClick={() => handleRemoveItem(item.id)}
+                        onClick={(e) => { e.stopPropagation(); handleRemoveItem(item.id); }}
                         className="text-red-500"
                       >
                         <Trash2 size={18} />
@@ -91,18 +98,14 @@ const Cart = () => {
                     <div className="flex justify-between items-center mt-3">
                       <div className="flex items-center border rounded-lg">
                         <button
-                          onClick={() =>
-                            handleQuantityChange(item.id, item.quantity - 1)
-                          }
+                          onClick={(e) => { e.stopPropagation(); handleQuantityChange(item.id, item.quantity - 1); }}
                           className="px-3 py-1 text-gray-600"
                         >
                           -
                         </button>
                         <span className="px-3 py-1">{item.quantity}</span>
                         <button
-                          onClick={() =>
-                            handleQuantityChange(item.id, item.quantity + 1)
-                          }
+                          onClick={(e) => { e.stopPropagation(); handleQuantityChange(item.id, item.quantity + 1); }}
                           className="px-3 py-1 text-gray-600"
                         >
                           +
@@ -139,6 +142,9 @@ const Cart = () => {
           </>
         )}
       </div>
+      {showDetail && dataPlate && (
+        <PlateDetail dataPlate={dataPlate} onClose={() => { setShowDetail(false); setDataPlate(null); }} />
+      )}
     </motion.div>
   )
 }

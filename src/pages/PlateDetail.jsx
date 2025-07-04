@@ -4,40 +4,10 @@ import React, { useCallback, useEffect, useMemo, useState } from "react"
 import { ShoppingCart, X, ZoomIn, Heart, Star, Clock, Users } from "lucide-react"
 import { useTranslation } from "react-i18next"
 import { motion } from "framer-motion"
+import { useDispatch, useSelector } from "react-redux"
+import { addToCart, removeFromCart } from "../redux/slices/cartSlice"
 
-// Simplified animation configurations with smooth transitions
-const ANIMATION_CONFIG = {
-  backdrop: {
-    hidden: { opacity: 0 },
-    visible: { 
-      opacity: 1,
-      transition: { duration: 0.2, ease: "easeOut" }
-    },
-    exit: { opacity: 0, transition: { duration: 0.2, ease: "easeIn" } }
-  },
-  modal: {
-    hidden: { 
-      y: 30, 
-      opacity: 0,
-      scale: 0.98
-    },
-    visible: { 
-      y: 0, 
-      opacity: 1,
-      scale: 1,
-      transition: { 
-        duration: 0.3,
-        ease: "easeOut"
-      }
-    },
-    exit: { 
-      y: 20,
-      opacity: 0,
-      scale: 0.98,
-      transition: { duration: 0.2, ease: "easeIn" }
-    }
-  }
-}
+ 
 
 // Animation component wrapper
 const AnimatedDiv = ({ children, variant = "slideUp", delay = 0, className = "", ...props }) => {
@@ -119,7 +89,9 @@ const PlateDetail = ({ dataPlate, onClose }) => {
   const { t, i18n } = useTranslation()
   const langused = i18n.language
   const [isImageZoomed, setIsImageZoomed] = useState(false)
-  const [isInCart, setIsInCart] = useState(false)
+  const dispatch = useDispatch();
+  const cartItems = useSelector(state => state.cart.items);
+  const isInCart = cartItems.some(item => item.id === dataPlate?.id);
   
   
   // Mock data for demonstration
@@ -127,9 +99,13 @@ const PlateDetail = ({ dataPlate, onClose }) => {
   
   useBodyScrollLock()
 
-  const handleAddToCart = useCallback(() => {
-    setIsInCart(!isInCart)
-  }, [isInCart])
+  const handleCartButton = useCallback(() => {
+    if (isInCart) {
+      dispatch(removeFromCart(plate.id));
+    } else {
+      dispatch(addToCart(plate));
+    }
+  }, [dispatch, plate, isInCart]);
 
   const handleZoomOpen = useCallback(() => {
     setIsImageZoomed(true)
@@ -208,19 +184,23 @@ const PlateDetail = ({ dataPlate, onClose }) => {
             {/* Add to Cart Button */}
             <AnimatedDiv delay={0.4} className=" absolute bottom-4  right-4 left-0 flex justify-center">
               <button
-                onClick={handleAddToCart}
-                className={`w-3/4 sm:w-1/2 py-3 px-4 rounded-full font-semibold text-white transition-all duration-200 flex items-center justify-center gap-2 shadow-lg hover:scale-105 active:scale-95 ${
-                  isInCart 
-                    ? "bg-green-600 hover:bg-green-700" 
-                    : "bg-teal-600 hover:bg-teal-700"
-                }`}
+                onClick={handleCartButton}
+                className={`w-3/4 sm:w-1/2 py-3 px-4 rounded-full font-semibold text-white transition-all duration-200 flex items-center justify-center gap-2 shadow-lg
+                    ${isInCart
+                    ? "bg-green-600  hover:scale-105 active:scale-95"
+                    : "green-teal-600 hover:bg-teal-700 hover:scale-105 active:scale-95"
+                  } `}
               >
-                <div className="text-lg font-bold">
-                  {plate?.price?.toFixed(0)} {t('menu.mad')}
+                 
+                <div className="transition-transform duration-200">
+                  <Heart className={`${isInCart
+                    ? "text-red-600  hover:scale-105 active:scale-95"
+                    : "text-teal-00 hover:bg-teal-700 hover:scale-105 active:scale-95"
+                  }`} />
                 </div>
-                <div className={`transition-transform duration-200 ${isInCart ? 'rotate-12' : ''}`}>
-                  <ShoppingCart className="w-5 h-5" />
-                </div>
+                <span className="ml-2 text-xs font-semibold text-white">
+                  {isInCart ? t('menu.inToCart', 'Remove from Cart') : t('menu.addToCart', 'Add to Cart')}
+                </span>
               </button>
             </AnimatedDiv>
           </div>
