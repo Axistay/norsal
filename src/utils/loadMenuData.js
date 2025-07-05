@@ -1,35 +1,46 @@
 // src/utils/loadMenuData.js
 
-export async function loadMenuData() {
-  const cityID = localStorage.getItem("selectedCity");
-  const menuID = localStorage.getItem("idMenu");
+export async function loadMenuData(cityId = null, restaurantName = null) {
+  // If no parameters provided, fall back to localStorage for backward compatibility
+  if (!cityId) {
+    cityId = localStorage.getItem("selectedCity");
+  }
+  if (!restaurantName) {
+    const menuID = localStorage.getItem("idMenu");
+    // Map menu ID to restaurant name for backward compatibility
+    if (cityId === "nador") {
+      if (menuID === "1") restaurantName = "golf";
+      else if (menuID === "2") restaurantName = "norsal";
+      else if (menuID === "3") restaurantName = "beachclub";
+    } else if (cityId === "al_hoceima") {
+      if (menuID === "1") restaurantName = "norsal";
+      else if (menuID === "2") restaurantName = "terace";
+    }
+  }
 
-  switch (cityID) {
+  switch (cityId) {
     case "nador":
-      if (menuID === "1") {
-        // Golf Restaurant
-        return (await import("../data/nadorGolfMenu")).menuData;
-      } else if (menuID === "2") {
-        // Norsal Restaurant
-        return (await import("../data/nadorNorsalMenu")).menuData;
-      } else if (menuID === "3") {
-        // Beach Club
-        return (await import("../data/nadorBeachClubMenu")).menuData;
-      } else {
-        console.warn("Unknown menu ID for Nador:", menuID);
-        return { categories: [], plates: [], types: [] };
+      switch (restaurantName) {
+        case "golf":
+          return (await import("../data/nadorGolfMenu")).menuData;
+        case "norsal":
+          return (await import("../data/nadorNorsalMenu")).menuData;
+        case "beachclub":
+          return (await import("../data/nadorBeachClubMenu")).menuData;
+        default:
+          console.warn("Unknown restaurant for Nador:", restaurantName);
+          return { categories: [], plates: [], types: [] };
       }
 
     case "al_hoceima":
-      if (menuID === "1") {
-        console.log("Menu ID:", menuID);
-        console.log("City ID:", cityID);
-        return (await import("../data/alhoceimaMenu1")).menuData;
-      } else if (menuID === "2") {
-        return (await import("../data/alhoceimaMenu2")).menuData;
-      } else {
-        console.warn("Unknown menu ID for Al Hoceima:", menuID);
-        return { categories: [], plates: [], types: [] };
+      switch (restaurantName) {
+        case "norsal":
+          return (await import("../data/alhoceimaMenu1")).menuData;
+        case "terace":
+          return (await import("../data/alhoceimaMenu2")).menuData;
+        default:
+          console.warn("Unknown restaurant for Al Hoceima:", restaurantName);
+          return { categories: [], plates: [], types: [] };
       }
 
     case "tanger":

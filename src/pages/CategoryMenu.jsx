@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from "react-redux"
 import { AnimatePresence, motion } from "framer-motion"
 
 import { setCurrentCategory } from "../redux/slices/menuSlice"
+import { loadSavedItemsForRestaurant } from "../redux/slices/cartSlice"
 import SearchBar from "../components/SearchBar"
 import PlateCard from "../components/PlateCard"
 import CategoryNavbar from "../components/CategoryNavbar"
@@ -29,6 +30,11 @@ const CategoryMenu = () => {
   const toggle = () => {
     setShowDetail(!showDetail)
   }
+
+  // Load cart for current restaurant when component mounts
+  useEffect(() => {
+    dispatch(loadSavedItemsForRestaurant());
+  }, [dispatch]);
 
   useEffect(() => {
     if (currentCategory) {

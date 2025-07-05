@@ -36,8 +36,8 @@ const SelectMenuAlhoceima = ({ cities = [] }) => {
     const menuItems = [
         {
             id: 'norsal',
-            title: t('menu.menu1', 'MENU NORSAL'),
-            subtitle: 'NORSAL',
+            title: t('menu.menu1', 'MENU TERRASSE'),
+            subtitle: 'TERRASSE',
             backgroundImage: `https://brigade-hocare.com/info/wp-content/uploads/2024/09/decoration-restaurant.png`,
             fallbackColor: 'bg-gradient-to-br from-blue-900 to-blue-700',
             overlayColor: 'bg-blue-900/60',
@@ -394,7 +394,7 @@ const SelectMenuAlhoceima = ({ cities = [] }) => {
                             {menuItems.map((menu, index) => (
                                 <Link
                                     key={menu.id}
-                                    to={`/${cityId}/menus/${index + 1}`}
+                                    to={`/${cityId}/menus/${menu.id}`}
                                     className="block"
                                     onClick={() => localStorage.setItem('idMenu', String(index + 1))}
                                 >

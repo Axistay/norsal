@@ -68,17 +68,16 @@ export default function SimplifiedCitySelector({ cities }) {
 
                     {/* City grid - always displayed */}
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                        {cities?.slice(0, 3)?.map((city) => (
+                        {cities?.map((city) => (
                             <motion.button
                                 key={city.id}
                                 className={`
                   group relative overflow-hidden rounded-2xl shadow-lg 
-                  hover:shadow-xl transition-all duration-300 transform
-                  hover:-translate-y-1
-                  ${selectedCity === city.id ? 'ring-4 ring-blue-500' : ''}
-                  cursor-pointer
+                  transition-all duration-300 transform
+                  ${city.comingSoon ? 'cursor-not-allowed opacity-60' : 'hover:shadow-xl hover:-translate-y-1 cursor-pointer'}
+                  ${selectedCity === city.id && !city.comingSoon ? 'ring-4 ring-blue-500' : ''}
                 `}
-                                onClick={() => handleCitySelect(city.id)}
+                                onClick={() => !city.comingSoon && handleCitySelect(city.id)}
                                 aria-label={`Select ${city.name[currentLang]}`}
                                 initial={{ opacity: 0, y: 20 }} // Start from below
                                 animate={{ opacity: 1, y: 0 }} // Move to original position
@@ -88,10 +87,21 @@ export default function SimplifiedCitySelector({ cities }) {
                                     <img
                                         src={city.image}
                                         alt={`${city.name[currentLang]} city view`}
-                                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                                        className={`w-full h-full object-cover transition-transform duration-300 ${!city.comingSoon ? 'group-hover:scale-110' : ''}`}
                                         loading="lazy"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+                                    
+                                    {/* Coming Soon Overlay */}
+                                    {city.comingSoon && (
+                                        <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
+                                            <div className="text-center">
+                                                <div className="text-white text-lg font-bold mb-2">Coming Soon</div>
+                                                <div className="text-white/80 text-sm">قريباً</div>
+                                            </div>
+                                        </div>
+                                    )}
+                                    
                                     <div className="absolute bottom-0 left-0 right-0 p-6">
                                         <h3 className="text-white text-2xl font-bold mb-2">{city.name[currentLang]}</h3>
                                         <div className={`h-1 w-20 ${city.bg} rounded-full`} />

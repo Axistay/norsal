@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react"
 import { useTranslation } from "react-i18next"
 import { useDispatch, useSelector } from "react-redux"
 import { motion, AnimatePresence } from "framer-motion"
-import { addToCart, removeFromCart } from "../redux/slices/cartSlice"
+import { saveItem, removeSavedItem } from "../redux/slices/cartSlice"
 import PlateDetail from "../pages/PlateDetail"
 import { Expand, Loader2, Heart } from "lucide-react"
 
@@ -13,8 +13,28 @@ const PlateCard = ({ plate }) => {
   const [showDetail, setShowDetail] = useState(false)
   const [imageLoading, setImageLoading] = useState(true)
   const dispatch = useDispatch();
-  const cartItems = useSelector(state => state.cart.items);
-  const isInCart = cartItems.some(item => item.id === plate.id);
+  const savedItems = useSelector(state => state.savedItems.items);
+  
+  // Get current restaurant ID
+  const getCurrentRestaurantId = () => {
+    const cityId = localStorage.getItem("selectedCity");
+    const menuId = localStorage.getItem("idMenu");
+    
+    // Map menu ID to restaurant name
+    if (cityId === "nador") {
+      if (menuId === "1") return `${cityId}_golf`;
+      else if (menuId === "2") return `${cityId}_norsal`;
+      else if (menuId === "3") return `${cityId}_beachclub`;
+    } else if (cityId === "al_hoceima") {
+      if (menuId === "1") return `${cityId}_norsal`;
+      else if (menuId === "2") return `${cityId}_beachclub`;
+    }
+    
+    return `${cityId}_unknown`;
+  };
+  
+  const currentRestaurantId = getCurrentRestaurantId();
+  const isSaved = savedItems.some(item => item.id === plate.id && item.restaurantId === currentRestaurantId);
 
   const toggle = () => {
     setShowDetail(!showDetail)
@@ -26,10 +46,10 @@ const PlateCard = ({ plate }) => {
 
   const handleSaveClick = (e) => {
     e.stopPropagation();
-    if (isInCart) {
-      dispatch(removeFromCart(plate.id));
+    if (isSaved) {
+      dispatch(removeSavedItem(plate.id));
     } else {
-      dispatch(addToCart(plate));
+      dispatch(saveItem(plate));
     }
   };
 
@@ -50,9 +70,9 @@ const PlateCard = ({ plate }) => {
           <button
             onClick={handleSaveClick}
             className="absolute top-3 right-3 z-10 bg-white/80 rounded-full p-2 shadow hover:bg-teal-100 transition"
-            aria-label={isInCart ? t('menu.removeFromCart', 'Remove from Cart') : t('menu.addToCart', 'Add to Cart')}
+            aria-label={isSaved ? t('menu.removeFromSaved', 'Remove from Saved') : t('menu.saveItem', 'Save Item')}
           >
-            <Heart className={`w-6 h-6 ${isInCart ? 'fill-red-500 text-red-500' : 'text-gray-400'}`} />
+            <Heart className={`w-6 h-6 ${isSaved ? 'fill-red-500 text-red-500' : 'text-gray-400'}`} />
           </button>
           {/* {imageLoading && (
             <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200">

@@ -303,7 +303,7 @@ const SelectMenuNador = ({ cities = [] }) => {
                     {menuItems.map((menu, index) => (
                         <Link
                             key={menu.id}
-                            to={`/${cityId}/menus/${index + 1}`}
+                            to={`/${cityId}/menus/${menu.id}`}
                             className="block"
                             onClick={() => localStorage.setItem('idMenu', String(index + 1))}
                         >

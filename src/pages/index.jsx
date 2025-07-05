@@ -33,7 +33,7 @@ export default function CityGrid({ cities }) {
   }, []);
 
   const handleCitySelect = (cityId) => {
-    if (!cityId) return; // Prevent selection of "Coming Soon"
+    if (!cityId || cityId === 'tanger') return; // Prevent selection of "Coming Soon"
     
     // Create a visual feedback before navigation
     setSelectedCity(cityId);
@@ -170,15 +170,15 @@ export default function CityGrid({ cities }) {
                     key={city.id || `coming-soon-${index}`}
                     className={`group relative overflow-hidden rounded-2xl shadow-lg 
                       transition-all duration-300
-                      ${!city.id ? 'opacity-70 cursor-not-allowed' : 'cursor-pointer'}
-                      ${selectedCity === city.id ? `ring-4 ring-offset-2 ${city?.border || 'ring-blue-500'}` : ''}
+                      ${city.comingSoon ? 'opacity-60 cursor-not-allowed' : 'cursor-pointer'}
+                      ${selectedCity === city.id && !city.comingSoon ? `ring-4 ring-offset-2 ${city?.border || 'ring-blue-500'}` : ''}
                       ${index === cities.length - 1 ? 'col-span-full' : ''}
                     `}
                     onClick={() => handleCitySelect(city.id)}
-                    disabled={!city.id}
+                    disabled={city.comingSoon}
                     aria-label={`Select ${city.name?.[langused] || 'Coming Soon'}`}
                     variants={cardVariants}
-                    whileHover="hover"
+                    whileHover={city.comingSoon ? undefined : "hover"}
                   >
                     <div className="relative h-52 md:h-64">
                       <motion.img
@@ -187,10 +187,20 @@ export default function CityGrid({ cities }) {
                         className="w-full h-full object-cover"
                         loading="lazy"
                         initial={{ scale: 1 }}
-                        whileHover={{ scale: 1.05 }}
+                        whileHover={city.comingSoon ? undefined : { scale: 1.05 }}
                         transition={{ duration: 0.4 }}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                      
+                      {/* Coming Soon Overlay */}
+                      {city.comingSoon && (
+                        <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
+                          <div className="text-center">
+                            <div className="text-white text-xl font-bold mb-2">Coming Soon</div>
+                            <div className="text-white/80 text-sm">قريباً</div>
+                          </div>
+                        </div>
+                      )}
                       
                       {/* City Details Overlay */}
                       <div className="absolute bottom-0 left-0 right-0 p-6">
@@ -204,7 +214,7 @@ export default function CityGrid({ cities }) {
                           transition={{ duration: 0.3 }}
                         />
                         
-                        {city.id && (
+                        {!city.comingSoon && (
                           <motion.div 
                             className="mt-3 flex items-center text-white/80 text-sm"
                             initial={{ opacity: 0, y: 10 }}

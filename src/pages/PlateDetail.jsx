@@ -5,7 +5,7 @@ import { ShoppingCart, X, ZoomIn, Heart, Star, Clock, Users } from "lucide-react
 import { useTranslation } from "react-i18next"
 import { motion } from "framer-motion"
 import { useDispatch, useSelector } from "react-redux"
-import { addToCart, removeFromCart } from "../redux/slices/cartSlice"
+import { saveItem, removeSavedItem } from "../redux/slices/cartSlice"
 
  
 
@@ -90,8 +90,28 @@ const PlateDetail = ({ dataPlate, onClose }) => {
   const langused = i18n.language
   const [isImageZoomed, setIsImageZoomed] = useState(false)
   const dispatch = useDispatch();
-  const cartItems = useSelector(state => state.cart.items);
-  const isInCart = cartItems.some(item => item.id === dataPlate?.id);
+  const savedItems = useSelector(state => state.savedItems.items);
+  
+  // Get current restaurant ID
+  const getCurrentRestaurantId = () => {
+    const cityId = localStorage.getItem("selectedCity");
+    const menuId = localStorage.getItem("idMenu");
+    
+    // Map menu ID to restaurant name
+    if (cityId === "nador") {
+      if (menuId === "1") return `${cityId}_golf`;
+      else if (menuId === "2") return `${cityId}_norsal`;
+      else if (menuId === "3") return `${cityId}_beachclub`;
+    } else if (cityId === "al_hoceima") {
+      if (menuId === "1") return `${cityId}_norsal`;
+      else if (menuId === "2") return `${cityId}_beachclub`;
+    }
+    
+    return `${cityId}_unknown`;
+  };
+  
+  const currentRestaurantId = getCurrentRestaurantId();
+  const isSaved = savedItems.some(item => item.id === dataPlate?.id && item.restaurantId === currentRestaurantId);
   
   
   // Mock data for demonstration
@@ -99,13 +119,13 @@ const PlateDetail = ({ dataPlate, onClose }) => {
   
   useBodyScrollLock()
 
-  const handleCartButton = useCallback(() => {
-    if (isInCart) {
-      dispatch(removeFromCart(plate.id));
+  const handleSaveButton = useCallback(() => {
+    if (isSaved) {
+      dispatch(removeSavedItem(plate.id));
     } else {
-      dispatch(addToCart(plate));
+      dispatch(saveItem(plate));
     }
-  }, [dispatch, plate, isInCart]);
+  }, [dispatch, plate, isSaved]);
 
   const handleZoomOpen = useCallback(() => {
     setIsImageZoomed(true)
@@ -184,22 +204,22 @@ const PlateDetail = ({ dataPlate, onClose }) => {
             {/* Add to Cart Button */}
             <AnimatedDiv delay={0.4} className=" absolute bottom-4  right-4 left-0 flex justify-center">
               <button
-                onClick={handleCartButton}
+                onClick={handleSaveButton}
                 className={`w-3/4 sm:w-1/2 py-3 px-4 rounded-full font-semibold text-white transition-all duration-200 flex items-center justify-center gap-2 shadow-lg
-                    ${isInCart
+                    ${isSaved
                     ? "bg-green-600  hover:scale-105 active:scale-95"
-                    : "green-teal-600 hover:bg-teal-700 hover:scale-105 active:scale-95"
+                    : "bg-teal-600 hover:bg-teal-700 hover:scale-105 active:scale-95"
                   } `}
               >
                  
                 <div className="transition-transform duration-200">
-                  <Heart className={`${isInCart
+                  <Heart className={`${isSaved
                     ? "text-red-600  hover:scale-105 active:scale-95"
                     : "text-teal-00 hover:bg-teal-700 hover:scale-105 active:scale-95"
                   }`} />
                 </div>
                 <span className="ml-2 text-xs font-semibold text-white">
-                  {isInCart ? t('menu.inToCart', 'Remove from Cart') : t('menu.addToCart', 'Add to Cart')}
+                  {isSaved ? t('menu.inToCart', 'Remove from Cart') : t('menu.addToCart', 'Add to Cart')}
                 </span>
               </button>
             </AnimatedDiv>

@@ -12,7 +12,7 @@ const Footer = () => {
   const [city, setCity] = useState("select")
   const location = useLocation()
   const path = location.pathname
-  const { items } = useSelector((state) => state.cart)
+  const { items } = useSelector((state) => state.savedItems)
   const totalItem = items?.length || 0
   const prevItemCount = useRef(totalItem)
   const [isAnimating, setIsAnimating] = useState(false)
@@ -189,7 +189,7 @@ const Footer = () => {
             </button>
 
             <NavLink
-              to="/cart"
+              to="/saved-items"
               className={({ isActive }) =>
                 `relative flex items-center justify-center p-2 rounded-full transition-all duration-300 ease-in-out flex-1 border-2 border-teal-700 ${isActive ? "text-black shadow-lg shadow-yellow-200" : "text-gray-400 md:hover:text-gray-200"
                 }`
@@ -223,13 +223,13 @@ const Footer = () => {
         {/* Language popup panel - Improved responsive layout */}
         {showLanguageOptions && (
           <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-            <div className="bg-teal-900 rounded-lg p-4 w-full mx-4 relative md:mx-auto 
+            <div className="bg-teal-900 rounded-lg p-4 pt-10 w-full mx-4 relative md:mx-auto 
                       max-h-[70vh] md:max-h-[50vh] overflow-y-auto 
                       sm:max-w-md md:max-w-lg lg:max-w-xl">
               {/* Close button - positioned at top right */}
               <button
                 onClick={closeLanguageOptions}
-                className="absolute top-2 right-2 p-2 rounded-full bg-red-500 hover:bg-red-600 text-white z-10"
+                className="absolute top-2 right-2 p-2 rounded-xl bg-red-500 hover:bg-red-600 text-white z-10"
               >
                 <X size={20} />
               </button>
@@ -247,3 +247,7 @@ const Footer = () => {
 }
 
 export default Footer
+
+
+
+

@@ -4,6 +4,8 @@ import { useEffect, useState } from "react"
 import { Routes, Route, useLocation } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
 import { AnimatePresence } from "framer-motion"
+import { useContext } from "react"
+import { TransContext } from "./context/TransContext"
 
 // Pages
 import Home from "./pages/Home"
@@ -20,13 +22,13 @@ import { loadMenuData } from "./utils/loadMenuData"
 import { setInitialMenuData } from "./redux/slices/menuSlice"
 import SimplifiedCitySelector from "./components/ModuleSelectCity"
 import CartSummary from "./pages/cart-summary"
-import Cart from "./pages/Cart"
+import SavedItems from "./pages/Cart"
 import CartQRCode from "./components/qrcode-generate"
 import SelectMenuAlhoceima from "./pages/SelectMenuAlhoceima"
 import SelectMenuNador from "./pages/SelectMenuNador"
 import Testtttt from "./pages/testtttt"
 
-// Restaurant data for our 3 cities
+// Restaurant data for our cities
 const cities = [
   {
     id: "al_hoceima",
@@ -52,7 +54,6 @@ const cities = [
     to: "to-teal-500",
     bg: "bg-teal-400"
   },
-
   {
     id: "tanger",
     name: {
@@ -63,19 +64,8 @@ const cities = [
     },
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS76Wf0kqllUWqsEtP-UvVgyDT_BcjM4StMeQ&s",
     to: "to-sky-500",
-    bg: "bg-blue-500"
-  },
-  {
-    id: "",
-    name: {
-      en: "Coming Soon",
-      es: "Próximamente",
-      fr: "Prochainement",
-      ar: "قريباً"
-    },
-    image: "https://agencemarchica.gov.ma/wp-content/uploads/2016/10/IMG3-6.jpg",
-    to: "to-blue-500",
-    bg: "bg-black"
+    bg: "bg-blue-500",
+    comingSoon: true
   }
 ];
 
@@ -92,10 +82,8 @@ const MenuSelection = ({ cities }) => {
 };
 
 const App = () => {
-
-  // det data
-
-
+  const { state } = useContext(TransContext);
+  const [showLanguageSelection, setShowLanguageSelection] = useState(false);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -104,6 +92,17 @@ const App = () => {
       dispatch(setInitialMenuData(menuData));
     }
     initMenu();
+  }, []);
+
+  // Check if language selection should be shown on first visit
+  useEffect(() => {
+    const hasVisitedBefore = localStorage.getItem("hasVisitedBefore");
+    const savedLanguage = localStorage.getItem("language");
+    
+    if (!hasVisitedBefore || !savedLanguage) {
+      setShowLanguageSelection(true);
+      localStorage.setItem("hasVisitedBefore", "true");
+    }
   }, []);
 
   const location = useLocation()
@@ -129,10 +128,10 @@ const App = () => {
             <Route path="/" element={<CitySelection cities={cities} />} />
             <Route path="/:cityId/menu" element={<Home cities={cities} />} />
             <Route path="/:cityId/menus" element={<MenuSelection cities={cities} />} />
-            <Route path="/:cityId/menus/:idMenu" element={<Home cities={cities} />} />
+            <Route path="/:cityId/menus/:restaurantName" element={<Home cities={cities} />} />
             <Route path="/:cityId/menu/category/:id" element={<CategoryMenu />} />
             <Route path="/:cityId/menu/category/plate/:id" element={<PlateDetail  />} />
-            <Route path="/cart" element={<Cart />} />
+            <Route path="/saved-items" element={<SavedItems />} />
             <Route path="/language" element={<Language />} />
             <Route path="/summary" element={<CartSummary />} />
             <Route path="/testtttt" element={<Testtttt />} />
@@ -142,7 +141,32 @@ const App = () => {
         </AnimatePresence>
       </div>
       <Footer />
-    </div></>
+    </div>
+
+    {/* Language Selection Modal for First Visit */}
+    {showLanguageSelection && (
+      <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+        <div className="bg-teal-900 rounded-lg p-4 pt-10 w-full mx-4 relative md:mx-auto 
+                      max-h-[70vh] md:max-h-[50vh] overflow-y-auto 
+                      sm:max-w-md md:max-w-lg lg:max-w-xl">
+          {/* Close button - positioned at top right */}
+          <button
+            onClick={() => setShowLanguageSelection(false)}
+            className="absolute top-2 right-2 p-2 rounded-xl bg-red-500 hover:bg-red-600 text-white z-10"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+
+          {/* Language component with improved container */}
+          <div className="pt-8 pb-4">
+            <Language onClose={() => setShowLanguageSelection(false)} />
+          </div>
+        </div>
+      </div>
+    )}
+   </>
   )
 }
 

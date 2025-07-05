@@ -16,10 +16,11 @@ import SearchModal from "../components/SearchModal"
 import logo from '../../public/image0.png'
 import { loadMenuData } from "../utils/loadMenuData"
 import { setInitialMenuData } from "../redux/slices/menuSlice"
+import { loadSavedItemsForRestaurant } from "../redux/slices/cartSlice"
 import SimplifiedCitySelector from "../components/ModuleSelectCity"
 
 const Home = ({ cities }) => {
-  const { cityId } = useParams();
+  const { cityId, restaurantName } = useParams();
 
   const [city, setCity] = useState({});
   useEffect(() => {
@@ -30,17 +31,32 @@ const Home = ({ cities }) => {
         }
       })
     }
-  }, [])
+  }, [cities, cityId])
 
   const dispatch = useDispatch();
 
   useEffect(() => {
     async function initMenu() {
-      const menuData = await loadMenuData();
+      // Set localStorage for backward compatibility
+      localStorage.setItem('selectedCity', cityId);
+      
+      // Map restaurant name to menu ID for backward compatibility
+      if (cityId === "nador") {
+        if (restaurantName === "golf") localStorage.setItem('idMenu', "1");
+        else if (restaurantName === "norsal") localStorage.setItem('idMenu', "2");
+        else if (restaurantName === "beachclub") localStorage.setItem('idMenu', "3");
+      } else if (cityId === "al_hoceima") {
+        if (restaurantName === "norsal") localStorage.setItem('idMenu', "1");
+        else if (restaurantName === "beachclub") localStorage.setItem('idMenu', "2");
+      }
+      
+      const menuData = await loadMenuData(cityId, restaurantName);
       dispatch(setInitialMenuData(menuData));
+      // Load cart for the current restaurant
+      dispatch(loadSavedItemsForRestaurant());
     }
     initMenu();
-  }, []);
+  }, [dispatch, cityId, restaurantName]);
 
   const { t, i18n } = useTranslation()
   const langused = i18n.language;
